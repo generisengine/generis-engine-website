@@ -1,0 +1,325 @@
+.sidr {
+  display: block;
+  position: fixed;
+  top:81px;
+  z-index: 100;  
+  height: 100%; 
+  width: 250px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+  font-size: 15px; 
+  background: #222 ;
+  color: #fff; 
+  background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+  background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+  background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+  background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+  -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);; 
+  box-shadow: 0 0 0 5px #222 inset; 
+}
+.sidr .sidr-inner {
+  padding: 0 0 15px;
+}
+.sidr .sidr-inner > p {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.sidr.right {
+  left: auto;
+  right: -250px;
+}
+.sidr.left {
+  left: -250px;
+  right: auto;
+}
+.sidr h1,
+.sidr h2,
+.sidr h3,
+.sidr h4,
+.sidr h5,
+.sidr h6 {
+  //background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzRkNGQ0ZCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFhMWExYSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%; 
+  //font-size: 11px;
+  text-align: center;
+  font-weight: normal;
+  padding: 0 15px;
+  margin: 0 0 5px;
+  color: #fff;
+  line-height: 24px;
+  box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.2);
+}
+.sidr p {
+  font-size: 13px;
+  margin: 0 0 12px;
+}
+.sidr p a {
+  color: rgba(255, 255, 255, 0.9);
+}
+.sidr > p {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.sidr ul {
+  display: block;
+  margin: 0 0 15px;
+  padding: 0;
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #4d4d4d;
+}
+.sidr ul li {
+  display: block;
+  margin: 0;
+  line-height: 48px;
+  border-top: 1px solid #4d4d4d;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.sidr ul li:hover, .sidr ul li.active, .sidr ul li.sidr-class-active {
+  border-top: 0;
+  line-height: 49px;
+}
+.sidr ul li:hover > a,
+.sidr ul li:hover > span, .sidr ul li.active > a,
+.sidr ul li.active > span, .sidr ul li.sidr-class-active > a,
+.sidr ul li.sidr-class-active > span {
+  box-shadow: 0 0 15px 3px #222 inset;
+}
+.sidr ul li.active > a,
+.sidr ul li.active > span, .sidr ul li.sidr-class-active > a,
+.sidr ul li.sidr-class-active > span { 
+  background: #f00 ; //fff;
+  color: #fff; //#085e8b;
+  font: bold;
+  background-image: -webkit-linear-gradient(bootom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+  background-image: -moz-linear-gradient(bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+  background-image: -o-linear-gradient(bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+  background-image: linear-gradient(to top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+  -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);; 
+}
+.sidr ul li a,
+.sidr ul li span {
+  padding: 0 15px;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  max-height: 250px;
+}
+
+li[name=images] {  
+  text-align:center;
+}
+
+li[name=images] a{ 
+  width: 250px;
+  height: 180px;  
+  margin: 0; 
+  padding-left: 5px; 
+  overflow: auto; 
+  direction:rtl; 
+  cursor: pointer;
+}
+li[name=images] img{ 
+  //margin: 2px 2px;
+}
+li[name=images] img:hover{ 
+  border: 1px solid #666; 
+  opacity: 0.7;
+}
+li[name=images] a img {
+  padding: 2px 2px;
+  display: block;
+  float: left;
+  width: 52px;
+  height: 52px;
+}
+#Images { 
+  direction:rtl; 
+  text-align:center;
+}
+
+#Images ul li a{ 
+  width: 250px;
+  height: 180px;  
+  margin: 0; 
+  padding-left: 5px; 
+  overflow: auto; 
+  direction:ltr; 
+  cursor: pointer;
+}
+ul li[name=click]{  
+  cursor: pointer;
+}
+ul li[name=click]:active{
+  box-shadow: 0 0 15px 3px #222 inset;
+  border-bottom: 1px solid #666; 
+}
+
+#Images ul li img{ 
+  //margin: 2px 2px;
+}
+#Images ul li img:hover{ 
+  border: 1px solid #666; 
+  opacity: 0.7;
+}
+  
+.sidr ul li:hover > span {
+  box-shadow: 0 0 15px 3px #222 inset;
+  border-bottom: 1px solid #666; 
+}
+
+#Images ul li.sidr-class-active { 
+  background: #f00 ; //fff;
+  color: #fff; //#085e8b;
+  font: bold;
+  background-image: -webkit-linear-gradient(bootom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+  background-image: -moz-linear-gradient(bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+  background-image: -o-linear-gradient(bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+  background-image: linear-gradient(to top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+  -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);; 
+}
+
+#Images ul li a img {
+  padding: 2px 2px;
+  display: block;
+  float: left;
+  width: 55px;
+  height: 55px;
+}
+
+li img[name=close]{ 
+  width: 30px;
+  height: 30px;  
+  float: left;
+  margin-top: 10px;
+  cursor: pointer;
+}
+li img[name=delete]{ 
+  width: 40px;
+  height: 40px;  
+  float: right;
+  padding: 8px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.dragover {
+  border: 5px solid;
+  box-shadow: 0 5px 55px rgba(145, 92, 182, .8);
+  opacity: 0.75; 
+  -webkit-animation-name: pulse; 
+  -webkit-animation-duration: 0.5s; 
+  -webkit-animation-iteration-count: 10;  
+}
+@-webkit-keyframes pulse {
+  from {
+    border: 5px solid;
+    opacity: 0.75;
+  }
+  50% {
+    border: 0px solid;
+    opacity: 1.0;
+  }
+  to { 
+    border: 5px solid;
+    opacity: 0.75;
+  }
+} 
+
+.sidr ul li ul {
+  border-bottom: 0;
+  margin: 0;
+}
+.sidr ul li ul li {
+  line-height: 40px;
+  font-size: 13px;
+}
+.sidr ul li ul li:last-child {
+  border-bottom: 0;
+}
+.sidr ul li ul li:hover, .sidr ul li ul li.active, .sidr ul li ul li.sidr-class-active {
+  border-top: 0;
+  line-height: 41px;
+}
+.sidr ul li ul li:hover > a,
+.sidr ul li ul li:hover > span, .sidr ul li ul li.active > a,
+.sidr ul li ul li.active > span, .sidr ul li ul li.sidr-class-active > a,
+.sidr ul li ul li.sidr-class-active > span {
+  box-shadow: 0 0 15px 3px #222 inset;
+}
+.sidr ul li ul li a,
+.sidr ul li ul li span {
+  color: rgba(255, 255, 255, 0.8);
+  padding-left: 30px;
+}
+.sidr form {
+  margin: 0 15px;
+}
+.sidr label {
+  font-size: 13px;
+}
+.sidr input[type="text"],
+.sidr input[type="password"],
+.sidr input[type="date"],
+.sidr input[type="datetime"],
+.sidr input[type="email"],
+.sidr input[type="number"],
+.sidr input[type="search"],
+.sidr input[type="tel"],
+.sidr input[type="time"],
+.sidr input[type="url"],
+.sidr textarea,
+.sidr select {
+  width: 60%;
+  height: 40px;  
+  margin-top: 3px;  
+  padding:5px;
+  font-size: 15px;  
+  border: 0;  
+  float: right; 
+}
+.sidr input[type=checkbox] {
+  width: auto;
+  display: inline;
+  clear: none;
+}
+.sidr input[type=button],
+.sidr input[type=submit] {
+  color: #333;
+  background: #fff;
+}
+.sidr input[type=button]:hover,
+.sidr input[type=submit]:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+.Hide {
+  visibility:hidden;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background: rgba(255,255,255,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255,255,255,0.4); 
+}

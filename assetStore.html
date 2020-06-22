@@ -1,0 +1,644 @@
+
+<!doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang=en  xmlns="https://www.w3.org/1999/xhtml">
+  <head >
+ 
+    <title>Generis-Assets</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Community Assetss">
+    <meta name="keywords" content="Generis,Game,Engine,Assets,Web,Online,HTML,CSS,JavaScript">
+    <meta name="author" content="Geraud NT">
+  <link rel="icon" type="image/gif" href="data/images/logo11Thumb.png" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.mini.js"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+    <script src="js/dropdowns-enhancement.js"></script>
+      <link href="js/bootstrap.css" rel="stylesheet"> <!-- -->
+    <link href="js/dropdowns-enhancement.css" rel="stylesheet"> 
+  <link href="https://vjs.zencdn.net/5.4.4/video-js.css" rel="stylesheet"> 
+  <!-- If you'd like to support IE8 -->
+  <script src="https://vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js"></script>
+    <script src="js/jquery.bpopup.min.js"></script>  
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/modernizr.custom.js"></script> 
+  
+  <link rel="stylesheet" type="text/css" href="css/styleH.css" />
+  <link rel="stylesheet" href="css/style3.css" />
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+      
+      <div class="container-fluid" style="height: 80px;" ></div>
+
+    <nav id="menubar" class="navbar navbar-default navbar-fixed-top">
+
+        <a href='/engine' onclick="location.href='/engine' " data-tag="tooltip" title="Engine"><img style="width:60px; height:65px; left:45%;top:10px; position:absolute" src="data/images/logoNav.png"/></a> 
+      <div >
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button> 
+        </div> 
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-left"> 
+            <li><a href="/" onclick="location.href='/' "><h5>Home</h5></a></li> 
+            <li><a href="/engine" onclick="location.href='/engine' "><h5>Engine</h5></a></li> 
+            <li><a href="/showcase" onclick="location.href='/showcase' "><h5>Showcase</h5></a></li>  
+          </ul>               
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/tutorials" onclick="location.href='/tutorials' "><h5>Tutorials</h5></a></li>
+            <li><a class="current" onclick="location.href='/assets' "><h5>Assets</h5></a></li>
+            <li><a href="/docs" onclick="location.href='/docs' "><h5>Docs</h5></a></li>
+            <li class="dropdown"> 
+              <a id="userIcon" class="dropdown-toggle" data-toggle="dropdown" title="User" onclick="if(log.innerHTML == 'LOGIN') logPopup = $('#login').bPopup(fontsize);  " > 
+              </a>
+              <div  id="userInfo" class="dropdown-menu dropdown-menu-right userInfo" style="visibility:hidden">  
+                <div>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <a id="hostUrl" href="/" target="_blank">
+                            <img id="hostLogo" src="data/images/logoNav.png" class="logo1" data-toggle="tooltip" title="Host">
+                          </a>
+                        </div>
+                        <div class="col-sm-8">
+                          <div id="userName"> User Name </div>
+                    <div id="userEmail"> username@email.com </div>
+                    <button id="userAccount" data-toggle="tooltip" title="Account Settings"> My Account </button>
+                        </div>
+                      </div>
+                    </div>
+                <div id="log" onclick="userLoging()">LOGIN</div>
+              </div> 
+            </li>
+          
+          </ul>
+        </div> 
+      </div>
+    </nav> 
+    
+    <div class="carrousel">
+      <div id="jssor_Nav" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1200px; height: 400px; overflow: hidden; visibility: hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+            <div style="position:absolute;display:block;background:url('data/images/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+        </div>
+        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1200px; height: 400px; overflow: hidden;">
+            <div data-p="112.50" style="display: none;">
+                <img data-u="image" src="data/images/generisAssetsWall.jpg" />
+            </div>
+            <div data-p="112.50" style="display: none;">
+                <img data-u="image" src="data/images/gland_5.png" />
+            </div>
+            <div data-p="112.50" style="display: none;">
+                <img data-u="image" src="data/images/gland_7.png" />
+            </div> 
+        
+        </div>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb01" style="bottom:16px;right:16px;" data-autocenter="1">
+            <div data-u="prototype" style="width:12px;height:12px;"></div>
+        </div>
+        <!-- Arrow Navigator -->
+        <span data-u="arrowleft" class="jssora13l" style="top:0px;left:30px;width:40px;height:50px;" data-autocenter="2"></span>
+        <span data-u="arrowright" class="jssora13r" style="top:0px;right:30px;width:40px;height:50px;" data-autocenter="2"></span>
+      </div>
+    </div>
+
+    <div  class="container-fluid2 bg-blue">
+  
+          <div id="searchBar" class="form-inline form-group input-group">
+            <input type="text" class="form-control" id="search" placeholder="Search..."> </input>
+            <span class="input-group-btn btn-group" >
+              <button id="tags" data-toggle="dropdown" class="btn btn-primary dropdown-toggle"> Tags <span class="caret"></span></button>
+              <ul class="dropdown-menu"> 
+                  <li>
+                    <input type="checkbox" id="tag_4" name="tag" value="4">
+                    <label for="tag_4">Physics Objects</label>
+                  </li>  
+                  <li>
+                    <input type="checkbox" id="tag_5" name="tag" value="5">
+                    <label for="tag_5">Sprites</label>
+                  </li>  
+                  <li>
+                    <input type="checkbox" id="tag_6" name="tag" value="6">
+                    <label for="tag_6">Textures</label>
+                  </li>  
+                  <li>
+                    <input type="checkbox" id="tag_7" name="tag" value="7">
+                    <label for="tag_7">Tiles Map</label>
+                  </li>    
+                  <li>
+                    <input type="checkbox" id="tag_8" name="tag" value="8">
+                    <label for="tag_8">Other</label>
+                  </li>  
+              </ul>
+            </span>
+            <img class="input-group-addon" src="/data/images/search-icon-png-2.png"> 
+          </div> 
+
+    </div>
+  
+      <div id="showcase"> 
+        
+        <div class="main">
+          <ul id="og-grid" class="og-grid">
+          </ul>
+        </div>
+        <div id="assets" style="visibility:hidden;"> {{assets}} </div>
+      </div>
+
+    <div class="container-fluid bg-blue">
+      <div id="disqus_thread"></div>
+        <script> 
+          /*
+          var disqus_config = function () {
+          this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+          this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          };
+          */
+          (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script'); 
+          s.src = '//generiswebengine.disqus.com/embed.js'; 
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+          
+    </div>
+
+
+   <div id="login" class="popUp" >  
+        <div class="blog1"> 
+            WELCOME 
+      </div>
+      <div class="blog2">
+        <div style="width: 100%; height: 20%; position: absolute; top: 8%; "> Choose your prefered hosting service
+        </div>  
+        <div style="width: 100%; height: 70%; position: absolute; top: 30%; ">  
+            <div id="gDrive" class="niceDiv gDrive" onclick="gDriveLog()"> 
+              <img src="data/images/google-drive-logo.png"/>
+            </div>  
+            <div id="onedrive" class="niceDiv onedrive" onclick="oneDriveLog()"> 
+              <img src="data/images/drive.png"/>
+            </div>  
+            <div id="dropbox" class="niceDiv dropbox" onclick="dropBoxLog()"> 
+              <img src="data/images/Dropbox-Logo.png"/>
+            </div>  
+            <div id="box" class="niceDiv box" onclick="boxLog()"> 
+              <img src="data/images/boxdotneticon.png"/>
+            </div>  
+        </div>  
+      </div> 
+        <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>  
+    </div>
+
+    <div id="NotAvaillable" class="popUp" style="height: 30%; width: 40%;">  
+        <div class="blog1 " style="background-color: #ff0000"> <div style="width: 100%; height: 100%;  "> Not yet available </div> </div>
+      <div class="blog2">
+        <div id="NotAvaillablePopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Updates will be available very soon.
+        </div>   
+      </div> 
+        <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+         
+    </div> 
+
+    <div id="logError" class="popUp" style="height: 30%; ">  
+        <div class="blog1 " style="background-color: #ff0000"> <div style="width: 100%; height: 100%; "> Error </div> 
+      </div>
+      <div class="blog2">
+        <div id="errorPopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Sorry, an error has occurred. Please try again, or Reload the page.
+        </div>   
+      </div> 
+        <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+    </div> 
+
+     <footer class="text-center" >
+      <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      </a><br><br>
+      <p> Copyright © Generis Engine 2016 ... </p>
+      <div class="row"> 
+            <div class="col-sm-4 text-center"> 
+                <h3> <strong> TOOLS </strong> </h3>  <br>
+                <div data-toggle="tooltip" title="Tiles Map Creator" class="row"> <a href="https://www.mapeditor.org/"> 
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/tiled.png" class="logo2" alt="Tiles Map Creator">    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Tiled</h3> 
+                </div>  
+                </a> </div>   
+                <div data-toggle="tooltip" title="Texture Packer" class="row"> <a href="https://www.codeandweb.com/texturepacker">
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/texturepacker.png" class="logo2" >    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>TexturePacker</h3> 
+                </div>  
+                </a> </div>  
+                <div data-toggle="tooltip" title="Physics Editor" class="row"> <a href="https://www.codeandweb.com/physicseditor">
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/phyeditor.png" class="logo2" >    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Physics Editor</h3> 
+                </div>  
+                </a> </div>  
+                <div data-toggle="tooltip" title="Image Editor" class="row"> <a href="https://www.gimp.org">
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/gimp.png" class="logo2" >    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Gimp</h3> 
+                </div>  
+                </a> </div>   
+         
+            </div>
+            <div class="col-sm-4 text-center">  
+                <h3> <strong> RESOURCES </strong> </h3> <br>
+                <div data-toggle="tooltip" title="Showcase" class="row"> <a href="/showcase" > 
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;"  src="data/images/showcase.png">    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Showcase</h3> 
+                </div>  
+                </a> </div>   
+                <div data-toggle="tooltip" title="Tutorials" class="row"> <a href="/tutorials" >
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/tutorials.png">    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Tutorials</h3> 
+                </div>  
+                </a> </div>  
+                <div data-toggle="tooltip" title="Assets" class="row"> <a href="/assets">
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;"  src="data/images/assets1.png" >    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Assets</h3> 
+                </div>  
+                </a> </div>  
+                <div data-toggle="tooltip" title="Documentation" class="row"> <a href="/docs">
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/docs1.png" >    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Documentation</h3> 
+                </div>  
+                </a> </div>   
+              </div>
+            <div class="col-sm-4 text-center">  
+              <h3> <strong> COMMUNITY </strong>  </h3> <br>
+               <div data-toggle="tooltip" title="Forum" class="row"> <a href="/forum" > 
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;"  src="data/images/forum.png">    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Forum</h3> 
+                </div>  
+                </a> </div>   
+                <div data-toggle="tooltip" title="Github Repository" class="row"> <a href="https://github.com/Nangue-Tasse/generis2d" >
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/github.png">    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Github Repository</h3> 
+                </div>  
+                </a> </div>  
+                <div data-toggle="tooltip" title="Facebook Page" class="row"> <a href="https://www.facebook.com/generisengine">
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;"  src="data/images/facebook.png" >    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Facebook Page</h3> 
+                </div>  
+                </a> </div>  
+                <div data-toggle="tooltip" title="Twitter" class="row"> <a href="https://twitter.com/generisengine">
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/twitter.png" >    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Twitter</h3> 
+                </div>  
+                </a> </div>   
+            </div> 
+
+        </div> 
+    </footer> 
+
+    <div id="loadingP">
+      <img id="loadingImg1" src="data/images/loader1.png" style="position: relative; top: 0; left: 0;"/> 
+      <img id="loadingImg2" src="data/images/logoLoad2.png" style="position: absolute; top: 20px; left: 20px;"/> 
+    </div>
+
+    <script>
+        var Base64 = {_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",encode:function(e){var t="";var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f<e.length){n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n>>2;o=(n&3)<<4|r>>4;u=(r&15)<<2|i>>6;a=i&63;if(isNaN(r)){u=a=64}else if(isNaN(i)){a=64}t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)}return t},decode:function(e){var t="";var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9\+\/\=]/g,"");while(f<e.length){s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s<<2|o>>4;r=(o&15)<<4|u>>2;i=(u&3)<<6|a;t=t+String.fromCharCode(n);if(u!=64){t=t+String.fromCharCode(r)}if(a!=64){t=t+String.fromCharCode(i)}}t=Base64._utf8_decode(t);return t},_utf8_encode:function(e){e=e.replace(/\r\n/g,"\n");var t="";for(var n=0;n<e.length;n++){var r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r)}else if(r>127&&r<2048){t+=String.fromCharCode(r>>6|192);t+=String.fromCharCode(r&63|128)}else{t+=String.fromCharCode(r>>12|224);t+=String.fromCharCode(r>>6&63|128);t+=String.fromCharCode(r&63|128)}}return t},_utf8_decode:function(e){var t="";var n=0;var r=c1=c2=0;while(n<e.length){r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r);n++}else if(r>191&&r<224){c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&31)<<6|c2&63);n+=2}else{c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&15)<<12|(c2&63)<<6|c3&63);n+=3}}return t}};
+
+        
+        var loadingP = $('#loadingP').bPopup({modalClose: false,});
+        var log = document.getElementById("log");
+        var logPopup;
+        var displayName , emailAddress;
+        var assetN = 0;
+        var notDone = 1;
+        var rated = [];
+        var viewed = [];
+        //$('#popUp').bPopup();
+        /*
+        var myAnim = setInterval(function(){
+          if(n==19) n=1;
+          else n++;
+          $("#loadingImg1").attr('src', "data/images/loader"+n+".png"); 
+        }, 30);
+        */
+
+        var loading = setInterval( function(){
+          if(notDone==0) { 
+            $.getScript( "js/grid.js", function( ) {
+              loadingP.close();
+              Grid.init("assets");
+              clearInterval(loading); 
+            });   
+          }
+        }, 60/1000);
+    
+        $(document).ready(function(){ 
+            $('[data-toggle="tooltip"]').tooltip(); 
+        })
+
+        $(document).ready(function(){
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+                try { 
+                  // Prevent default anchor click behavior
+                  event.preventDefault(); 
+                  // Store hash
+                  var hash = this.hash; 
+                  // Using jQuery's animate() method to add smooth page scroll
+                  // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                  $('html, body').animate(
+                      { scrollTop: $(hash).offset().top }, 900, 
+                      function(){  window.location.hash = hash; }
+                  );
+                } catch(e) {}
+            }); 
+
+            var Nav_options = {
+              $AutoPlay: true,
+              $SlideWidth: 800,
+              $Cols: 2,
+              $Align: 200,
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+            
+            var Nav_slider = new $JssorSlider$("jssor_Nav", Nav_options);
+            
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizing
+            function ScaleSliderNav() {
+                var refSize = Nav_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 1200);
+                    Nav_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSliderNav, 30);
+                }
+            }
+            ScaleSliderNav();
+            $(window).bind("load", ScaleSliderNav);
+            $(window).bind("resize", ScaleSliderNav);
+            $(window).bind("orientationchange", ScaleSliderNav);
+            //responsive code end
+        })
+        
+        var assetsDiv = document.getElementById("assets");
+        var assets = JSON.parse(assetsDiv.innerHTML);
+        assets = assets.filter(function(elem, pos) {
+                  return assets.indexOf(elem) == pos;
+                });  
+        var seen = [];
+        var newAssets = [];
+
+        for(var i=0; i<assets.length; i++){
+          if(seen.indexOf(assets[i].assetUrl)==-1) { 
+              newAssets.push(assets[i]); 
+              seen.push(assets[i].assetUrl);
+          }
+        }
+        assets = newAssets;
+        notDone = assets.length;
+
+        console.log(assets);
+
+        for(var i=0; i<assets.length; i++){
+            showGameInfo(assets[i], i);  
+        }
+        
+        function showGameInfo(asset, idx){
+            assetN += 1;  
+            var thmb = asset.screenshots.split(',')[0];
+            asset.assetN = assetN;
+            var assetData = JSON.stringify(asset);
+
+            asset.rating = parseFloat( assets[idx].assetRating );
+            asset.views = parseInt( assets[idx].assetViews );
+            asset.raters = assets[idx].raters;
+            asset.viewers = assets[idx].viewers;
+
+            console.log(assetData);
+
+            var assetContent = ''+
+'<li id="'+ assetN +'"> '+ 
+"  <a data-data='"+ assetData +"'> "+ 
+ 
+'  '+  
+' <img src="'+ thmb +'" alt="Game Image" class="image" /> '+ 
+'<div class="assetInfo" >   '+
+'    <div class="assetName"> '+ asset.assetName +' </div>   '+ 
+'    <div class="assetGenres" > '+ asset.tags +'  </div>   '+ 
+'<fieldset class="rating"> '+
+'<input type="radio" id="'+ assetN +'star5" name="'+ assetN +'rating" value="5" /><label class = "full" for="'+ assetN +'star5" title="Awesome - 5 stars"></label> '+
+'<input type="radio" id="'+ assetN +'star4half" name="'+ assetN +'rating" value="4.5" /><label class="half" for="'+ assetN +'star4half" title="Pretty good - 4.5 stars"></label> '+
+'<input type="radio" id="'+ assetN +'star4" name="'+ assetN +'rating" value="4" /><label class = "full" for="'+ assetN +'star4" title="Pretty good - 4 stars"></label> '+
+'<input type="radio" id="'+ assetN +'star3half" name="'+ assetN +'rating" value="3.5" /><label class="half" for="'+ assetN +'star3half" title="Meh - 3.5 stars"></label> '+
+'<input type="radio" id="'+ assetN +'star3" name="'+ assetN +'rating" value="3" /><label class = "full" for="'+ assetN +'star3" title="Meh - 3 stars"></label> '+
+'<input type="radio" id="'+ assetN +'star2half" name="'+ assetN +'rating" value="2.5" /><label class="half" for="'+ assetN +'star2half" title="Kinda bad - 2.5 stars"></label> '+
+'<input type="radio" id="'+ assetN +'star2" name="'+ assetN +'rating" value="2" /><label class = "full" for="'+ assetN +'star2" title="Kinda bad - 2 stars"></label> '+
+'<input type="radio" id="'+ assetN +'star1half" name="'+ assetN +'rating" value="1.5" /><label class="half" for="'+ assetN +'star1half" title="Meh - 1.5 stars"></label> '+
+'<input type="radio" id="'+ assetN +'star1" name="'+ assetN +'rating" value="1" /><label class = "full" for="'+ assetN +'star1" title="Sucks big time - 1 star"></label> '+
+'<input type="radio" id="'+ assetN +'starhalf" name="'+ assetN +'rating" value="0.5" /><label class="half" for="'+ assetN +'starhalf" title="Sucks big time - 0.5 stars"></label> '+
+'</fieldset> '+
+'<div class="assetViews"> <span class="viewsN"> '+ asset.views +'</span> <span class="glyphicon glyphicon-eye-open"></span> </div>   '+  
+'</div>   '+
+
+'  '+  
+'  </a> '+ 
+'</li> ';
+            $("#og-grid").append(assetContent); 
+            $('input[name='+ assetN +'rating][value='+ asset.rating +']').trigger("click");
+
+            $('#'+assetN+' input[name='+ assetN +'rating]').click( function(e) { 
+
+                if(log.innerHTML == 'LOGIN') {
+                  logPopup = $('#login').bPopup(fontsize);
+                  return;
+                }
+
+                if( rated.indexOf(assets[idx].assetUrl) > -1 || 
+                    assets[idx].raters.indexOf(displayName) > -1) return;
+
+                var rating = ((asset.rating + parseFloat($(this).val()) )/(asset.views+1)).toFixed();
+
+                console.log(rating);
+
+                rating = rating>5?5:rating;
+
+                var postData = { "assetUrl": assets[idx].assetUrl, 
+                          "assetRating":  rating, 
+                          "raters":  assets[idx].raters+", "+displayName,
+                          "assetViews": asset.views, 
+                          "viewers": asset.viewers,
+                        };
+                $.post( "/assets", postData, 
+                        function( data ) { 
+                          asset.rating = rating ;
+                          asset.raters += ", "+displayName;
+                          rated.push(assets[idx].assetUrl);
+                          $('input[name='+ assetN +'rating][value='+ asset.rating +']').trigger("click");
+                          console.log("Ratings modified");
+                      });
+            });
+
+            $('#'+assetN+' .image').click( function(e) {
+
+                if(log.innerHTML == 'LOGIN') return;
+
+                if( viewed.indexOf(assets[idx].assetUrl) > -1 || 
+                    assets[idx].viewers.indexOf(displayName) > -1) return;
+
+                var postData = { "assetUrl": assets[idx].assetUrl, 
+                          "assetRating": asset.rating , 
+                          "raters":  asset.raters,
+                          "assetViews": asset.views + 1, 
+                          "viewers": assets[idx].viewers+", "+displayName,
+                        };
+                $.post( "/assets", postData, 
+                        function( data ) { 
+                          asset.views += 1;
+                          asset.viewers += ", "+displayName;
+                          viewed.push(assets[idx].assetUrl);
+                          $('#'+assetN+' .assetViews .views').html(" "+ asset.views +" ");
+                          console.log("Views added");
+                      });
+            });
+
+            notDone--;
+
+        }
+         
+       function fontsize(){
+          var blog1 = $(this).find(".blog1");
+          var blog2 = $(this).find(".blog2"); 
+          var This = this;
+
+                  function resize() { 
+                    var newHeight = $(This).height() - blog1.height();  
+            $(this).css("height", newHeight); 
+          } 
+          blog2.each(resize);
+          $(window).resize(function(){
+              blog2.each(resize);
+          }); 
+
+                  blog1.fitText(1, { maxFontSize: '50px' }); 
+       }  
+
+        CLIENT_ID= '414084492097-5tdnrmuu79k3fqecf8sn6t2211celnjc.apps.googleusercontent.com';
+        SCOPES= ['https://www.googleapis.com/auth/drive'];
+ 
+        function gDriveLog() {     
+          gapi.auth.authorize( {client_id: this.CLIENT_ID, scope: this.SCOPES, immediate: false},
+                                  gDriveAuthResult_2);
+        }
+
+        function checkAuth() { 
+          gapi.auth.authorize( {client_id: this.CLIENT_ID, scope: this.SCOPES.join(' '), immediate: true},
+                                  gDriveAuthResult_1);
+        }
+        function gDriveAuthResult_1(authResult) { 
+            if (authResult && !authResult.error) loadDriveApi(); 
+        }
+        function gDriveAuthResult_2(authResult) { 
+            if (authResult && !authResult.error) { 
+              loadDriveApi();  
+              try { logPopup.close(); } catch(e) {}
+            } else { 
+               $('#logError').bPopup(fontsize); 
+            }
+        }
+
+        function loadDriveApi() {
+            gapi.client.load('drive', 'v2', setup);
+        } 
+
+        function setup() { 
+           var request = gapi.client.drive.about.get();
+
+            request.execute(function(resp) {  
+                displayName = resp.user.displayName;
+                emailAddress = resp.user.emailAddress;
+                document.getElementById("userName").innerHTML = resp.user.displayName;
+                document.getElementById("userEmail").innerHTML = resp.user.emailAddress;
+                document.getElementById("userInfo").style.visibility = "visible";
+                document.getElementById("hostUrl").href = "https://drive.google.com/drive/my-drive";
+                document.getElementById("userAccount").onclick = function(){location.href="https://drive.google.com/drive/my-drive";}
+                document.getElementById("hostLogo").src = "data/images/google-drive-logo.png";
+                log.innerHTML = "LOGOUT";
+                try { loginP.close(); } catch(e) {}
+            });   
+          } 
+
+          function userLoging(){  
+            log = document.getElementById("log");
+            if(log.innerHTML == "LOGOUT") {   
+              log.innerHTML = "LOGIN";
+              document.getElementById("userInfo").style.visibility = "hidden";
+              logPopup = $('#login').bPopup(fontsize); 
+            }
+          } 
+
+          function boxLog() { 
+             $('#NotAvaillable').bPopup(fontsize);
+
+           }
+           
+           function oneDriveLog(){ 
+            $('#NotAvaillable').bPopup(fontsize);
+           }
+           
+           function dropBoxLog(){ 
+            $('#NotAvaillable').bPopup(fontsize);
+           }
+    </script>
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth "> </script>
+    <script src="https://vjs.zencdn.net/5.4.4/video.js"></script>
+    <script id="dsq-count-scr" src="//generiswebengine.disqus.com/count.js" async></script>
+</body>
+</html>

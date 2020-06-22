@@ -1,0 +1,28 @@
+# application: generisengine
+# version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /codebase
+  static_dir: codebase 
+- url: /private
+  static_dir: private
+- url: /js
+  static_dir: js
+- url: /css
+  static_dir: css
+- url: /data
+  static_dir: data
+
+- url: /.*
+  script: generisengine.application
+
+# [START libraries]
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
+# [END libraries]

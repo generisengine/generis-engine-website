@@ -1,0 +1,638 @@
+
+<!doctype html>
+<html lang=en>
+	<head >
+ 
+		<title>Generis-Game Engine</title>
+		<link rel="icon" type="image/gif" href="data/images/logo11Thumb.png" />
+		<link rel="stylesheet" href="css/style1.css" />
+		
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/jquery.bpopup.min.js"></script>  
+		<script src="js/jquery.fittext.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+		
+
+		<script src="js/core.js"></script> 
+		
+		<script src="js/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/src-noconflict/ext-themelist.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="codebase/webix.js" type="text/javascript"></script>
+		<script src="codebase/filemanager/filemanager.js" type="text/javascript"></script>  
+		<link rel="stylesheet" type="text/css" href="codebase/webix.css">
+		<link rel="stylesheet" type="text/css" href="codebase/filemanager/filemanager.css">  
+ 
+		<script src="https://apis.google.com/js/client.js?onload=checkAuth"> </script>
+		<script src="js/fso.min.js" type="text/javascript"></script>
+		<script src="js/upload.js"></script>
+
+		<script src="js/myCompApi.js"> </script>
+		<script src="private/ClientID.js"> </script>
+		<script src="js/gDriveApi.js"> </script>
+		<script src="js/oneDriveApi.js"> </script>
+		<script src="js/dropBoxApi.js"> </script>
+		
+		<script src="js/tab.js"></script> 
+		<script src="js/scriptEditor.js"></script> 
+		<script src="js/gameViewer.js"></script> 
+		<script src="js/projectBrowser.js"></script> 
+		<script src="js/DocClass.js"></script> 
+		<script src="js/window.js"></script> 
+		<script src="js/game.js"></script> 
+  
+		<script src="js/functions.js"> </script>
+		
+	</head>
+
+	<body id="body" class="moonB bg" >  
+ 		
+ 		<div id="gGEngine" style="display:none;" > 
+	 		</div> 
+		      <div id="menuBar" class="menuBar button transition" > 
+
+		      	  <div class="genLogo"> GENERIS </div>
+
+			      <div class="menus">
+			      	 
+					<div id="files" class="menutab" onclick="File()" > File </div> 
+					<div id="Settings" class="menutab" onclick="Preferences()" style="left: 22%;"> Preferences  </div>  
+					<div id="Settings" class="menutab" onclick="window.open('/assets', '_blank');" style="left: 44%;"> Assets  </div>  
+					<div id="Settings" class="menutab" onclick="window.open('/docs', '_blank'); " style="left: 66%;"> Documentation </div> 
+					<div id="Settings" class="menutab" onclick="window.open('/', '_blank'); " style="left: 88%;"> Home  </div> 
+
+			      </div>
+
+			      <div id="account" class="acc"  >  
+
+							<div id="log" class="log" onclick="userLoging()" >LOGIN</div>
+							  
+			      </div>
+
+		      </div> 
+	   
+
+		<div id="windows"> </div> 
+		
+		<div id="NotAvaillable" class="popUp" style="height: 30%; width: 40%;"> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Not yet available </div> 
+			</div>
+			<div class="blog2 niceDiv" style="top: 30%; height: 40%;">
+				<div id="NotAvaillablePopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Updates will be available very soon.
+				</div>	 
+			</div> 
+		</div> 
+  
+		<div id="login" class="popUp" > 
+
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1"> 
+		        WELCOME 
+			</div>
+			<div class="blog2 niceDiv">
+				<div style="width: 100%; height: 20%; position: absolute; top: 8%; "> Choose your prefered hosting service
+				</div>	
+				<div style="width: 100%; height: 70%; position: absolute; top: 30%; ">  
+						<div id="onedrive" class="onedrive" onclick="oneDriveLog()"> <div class="divNice niceDiv">   </div>
+
+						</div>
+						<div id="gDrive" class="gDrive" onclick="gDriveLog()">  <div class="divNice niceDiv">   </div>
+
+						</div>	 	
+						<div id="dropbox" class="dropbox" onclick="dropBoxLog()"> <div class="divNice niceDiv">   </div>
+
+						</div>	
+						<div id="box" class="box" onclick="boxLog()"> <div class="divNice niceDiv">   </div>
+
+						</div>	
+
+				</div>	
+			</div>
+
+		</div>
+
+		<div id="newGPopUp" class="popUp" style="height: 40%;"> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> New Game </div> 
+			</div>
+			<div class="blog2 niceDiv">
+				<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> game name
+				</div>	
+				<div style="width: 100%; height: 80%;  top: 20%;  "> 
+						
+												 
+						<input type="text" id="gameNText" class="gameNText" placeholder="Enter game name here" autofocus>  </input>
+						 
+						<div>
+						<div id="gameNClick" class="gameNClick" onclick="NewGame1()">  <div class="divNice niceDiv"> Create </div> </div>
+						</div>
+				</div>	
+			</div>
+
+		</div>
+		
+		<div id="FilesT" class="popUp" style="height: 70%;"> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> File </div> 
+			</div>
+			<div class="blog2 niceDiv" style=" top: 15%; height: 70%; ">   
+						<div id="NewGame" class="FilesT1" onclick="NewGame()"> <div class="divNice niceDiv">  New Game  </div>  </div>  
+						
+						<div id="NewWindow" class="FilesT2" onclick="openGameTT = $('#openGameT').bPopup(fontsize);"  > <div class="divNice niceDiv">  Open Game  </div>  </div>
+
+						<div id="NewWindow" class="FilesT3" onclick="NewWindow()"  > <div class="divNice niceDiv">  New Window  </div>  </div>
+
+						<div id="Export" class="FilesT4" onclick="publishPP = $('#publishP').bPopup(fontsize);"  > <div class="divNice niceDiv">  Publish Game </div>  </div> 
+
+						<div id="Export" class="FilesT5" onclick="tutorialsPP = $('#tutorialsP').bPopup(fontsize);"  > <div class="divNice niceDiv">  Publish Tutorial </div>  </div> 
+
+						<div id="Export" class="FilesT6" onclick="assetsPP = $('#assetsP').bPopup(fontsize);"  > <div class="divNice niceDiv">  Publish Asset </div>  </div> 
+
+						<div id="Publish" class="FilesT7" onclick="Save()"  > <div class="divNice niceDiv">  Save Game </div>  </div> 
+						
+						<div id="Delete" class="FilesT8" onclick="Delete()"  > <div class="divNice niceDiv">  Delete Game </div>  </div>
+						
+						<div id="Close" class="FilesT9" onclick="Close()"  > <div class="divNice niceDiv">  Close Game </div>  </div> 
+				 
+			</div>
+
+		</div>
+		
+		<div id="chooseTabT" class="popUp" style="height: 40%;"> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> New Tab </div> 
+			</div>
+			<div class="blog2 niceDiv" style=" top: 15%; height: 70%; overflow: hidden; overflow-y: scroll">   
+						<div id="JSEditor" class="FilesT1" onclick="JSEditor()" style="height: 15%;"> <div class="divNice niceDiv">  Javascript Editor  </div>  </div>  
+						
+						<div id="CSSEditor" class="FilesT2" onclick="CSSEditor()"  style="height: 15%; top: 25%;"> <div class="divNice niceDiv">  Style sheet Editor </div>  </div>
+
+						<div id="HTMLEditor" class="FilesT3" onclick="HTMLEditor()"  style="height: 15%; top: 42%;"> <div class="divNice niceDiv">  Html Markup Editor </div>  </div>
+
+						<div id="GameScreen" class="FilesT4" onclick="GameScreen()"  style="height: 15%; top: 59%;"> <div class="divNice niceDiv">  Game Screen </div>  </div> 
+
+						<div id="FileBrowser" class="FilesT5" onclick="FileBrowser()"  style="height: 15%; top: 76%;"> <div class="divNice niceDiv">  File Browser </div>  </div>  
+
+						<div id="Documentation" class="FilesT5" onclick="Documentation()"  style="height: 15%; top: 93%;"> <div class="divNice niceDiv">  API </div>  </div> 
+				 
+			</div>
+
+		</div>
+		
+		<div id="preferencesT" class="popUp" style="height: 40%;"> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Preferences </div> 
+			</div>
+			<div class="blog2 niceDiv" style=" top: 20%; height: 60%; ">   
+						<div  class="FilesT1" onclick="$('#appearanceT').bPopup(fontsize);" style="height: 15%;"> <div class="divNice niceDiv">  Appearance  </div>  </div>  
+						
+						<div class="FilesT2" style="height: 15%; top: 25%;"> <div class="divNice niceDiv">  ... </div>  </div>
+
+						<div class="FilesT3" style="height: 15%; top: 42%;"> <div class="divNice niceDiv">  ... </div>  </div>
+
+						<div class="FilesT4" style="height: 15%; top: 59%;"> <div class="divNice niceDiv">  ... </div>  </div> 
+
+						<div class="FilesT5" onclick="DefaultSettings()" style="height: 15%; top: 76%;"> <div class="divNice niceDiv">  Default Settings </div>  </div> 
+				 
+			</div>
+
+		</div>
+		
+		<div id="appearanceT" class="popUp" style="height: 35%;"> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Appearance </div> 
+			</div>
+			<div class="blog2 niceDiv" style=" top: 25%; height: 50%; ">   
+						<div class="FilesT1" onclick="themeTT = $('#themeT').bPopup(fontsize);" style="height: 35%;"> <div class="divNice niceDiv">  Themes  </div>  </div>  
+						
+						<div class="FilesT2" onclick="gBackgroundT = $('#gBackground').bPopup(fontsize);"  style="height: 35%; top: 50%;"> <div class="divNice niceDiv"> Generis Background </div>  </div> 
+				 
+			</div>
+
+		</div>
+		
+		<div id="themeT" class="popUp" style="height: 50%;"> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Themes </div> 
+			</div>
+			<div class="blog2 niceDiv" style=" top: 15%; height: 70%; ">   
+						<div class="FilesT1" onclick="chgThemes('moonB')" style="height: 15%;"> <div class="divNice niceDiv">  Moon Blue  </div>  </div>  
+						
+						<div class="FilesT2" onclick="chgThemes('clouds') "  style="height: 15%; top: 25%;"> <div class="divNice niceDiv">  Clouds </div>  </div>
+
+						<div  class="FilesT3" onclick="chgThemes('twilight') "  style="height: 15%; top: 42%;"> <div class="divNice niceDiv">  twilight </div>  </div>
+
+						<div class="FilesT4" onclick="chgThemes('doomNight')"  style="height: 15%; top: 59%;"> <div class="divNice niceDiv">  Doom Night </div>  </div> 
+
+						<div class="FilesT5" onclick="chgThemes('More') "  style="height: 15%; top: 76%;"> <div class="divNice niceDiv"> More  </div>  </div> 
+				 
+			</div>
+
+		</div>
+		
+		<div id="gBackground" class="popUp" style="height: 40%;"> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Generis Background </div> 
+			</div>
+			<div class="blog2 niceDiv">
+				<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> enter image URL / Path
+				</div>	
+				<div style="width: 100%; height: 80%;  top: 20%;  "> 
+						
+												 
+						<input type="text" id="backImgURL" class="gameNText" placeholder="Enter image url here" autofocus>  </input>
+						 
+						<div>
+						<div id="backImgChg" class="gameNClick" onclick="backImgChg()">  <div class="divNice niceDiv"> Change </div> </div>
+						</div>
+				</div>	
+			</div>
+
+		</div>
+		
+		<div id="windowProps" class="popUp" style="height: 45%;"> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Window Properties </div> 
+			</div>
+			<div class="blog2 niceDiv" style=" top: 20%; height: 60%;; ">   
+						
+				<div class="FilesT1" id="newTab" onclick="chooseTabT = $('#chooseTabT').bPopup(fontsize);  windowProps.close();"  style="height: 19%; "> <div class="divNice niceDiv"> New Tab </div>  </div> 
+				
+				<div class="FilesT2" id="saveFile" onclick="fileSaveA(); " style="height: 19%; top: 30%;"> <div class="divNice niceDiv">  Save  </div>  </div>  
+				
+				<div class="FilesT3" id="openFile" onclick="fileOpenTabT = $('#fileOpen').bPopup(fontsize); windowProps.close();"  style="height: 19%; top: 52%;"> <div class="divNice niceDiv"> Open </div>  </div> 
+				
+				<div class="FilesT4" id="closeTab" onclick="closeTabT();"  style="height: 19%; top: 74%;"> <div class="divNice niceDiv"> close Tab </div>  </div> 
+				 
+			</div>
+
+		</div>
+		
+		<div id="fileOpen" class="popUp" style="height: 40%;"> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> File Open </div> 
+			</div>
+			<div class="blog2 niceDiv">
+				<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> enter file Path
+				</div>	
+				<div style="width: 100%; height: 80%;  top: 20%;  "> 
+						
+												 
+						<input type="text" id="filePath" class="gameNText" placeholder="e.g Scrip/coolGame.js" autofocus> </input>
+						 
+						<div>
+						<div id="backImgChg" class="gameNClick" onclick="fileOpenT()">  <div class="divNice niceDiv"> Open </div> </div>
+						</div>
+				</div>	
+			</div>
+
+		</div>
+
+		<div id="newGStatusPopup" class="popUp" style="height: 30%;"> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Creating files </div> 
+			</div>
+			<div class="blog2 niceDiv" style="top: 35%; height: 40%;">
+				<div id="createdFile" style="width: 95%; height: 5%; top: 5%; position: absolute;"> ... files being created...
+				</div>	 
+			</div>
+
+		</div>
+		
+		<div id="saveFileT" class="popUp" style="height: 40%;"> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Save File </div> 
+			</div>
+			<div class="blog2 niceDiv">
+				<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> enter file Name and path
+				</div>	
+				<div style="width: 100%; height: 80%;  top: 20%;  "> 
+						
+												 
+						<input type="text" id="fileName" class="gameNText" placeholder="e.g Libraries/css/style.css" autofocus> </input>
+						 
+						<div>
+						<div id="fileSaveChg" class="gameNClick" onclick="saveFileT.close(); fileSaveT();">  <div class="divNice niceDiv"> Save </div> </div>
+						</div>
+				</div>	
+			</div>
+
+		</div> 
+		
+		<div id="openGameT" class="popUp" style="height: 40%;"> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Open Game </div> 
+			</div>
+			<div class="blog2 niceDiv">
+				<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> enter game Name
+				</div>	
+				<div style="width: 100%; height: 80%;  top: 20%;  "> 
+						
+												 
+						<input type="text" id="gameN" class="gameNText" placeholder="e.g coolGame " autofocus> </input>
+						 
+						<div>
+						<div id="fileSaveChg" class="gameNClick" onclick="openGame();">  <div class="divNice niceDiv"> Open </div> </div>
+						</div>
+				</div>	
+			</div>
+
+		</div> 
+
+		<div id="logError" class="popUp" style="height: 30%; "> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Error </div> 
+			</div>
+			<div class="blog2 niceDiv" style="top: 30%; height: 40%;">
+				<div id="errorPopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Sorry, an error has occurred. Please try again, or Reload the page.
+				</div>	 
+			</div> 
+		</div> 
+
+		<div id="saveGP" class="popUp" style="height: 30%; width: 30%;"> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Saving </div> 
+			</div>
+			<div class="blog2 niceDiv" style="top: 30%; height: 40%;">
+				<div id="saveGPPopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Please wait, game saving in progress.
+				</div>	 
+			</div> 
+		</div> 
+		
+		<div id="saveFP" class="popUp" style="height: 30%; width: 30%; "> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Saving </div> 
+			</div>
+			<div class="blog2 niceDiv" style="top: 30%; height: 40%;">
+				<div id="saveFPPopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Please wait, file saving in progress.
+				</div>	 
+			</div> 
+		</div> 
+
+		<div id="openGP" class="popUp" style="height: 30%; width: 30%; "> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Opening </div> 
+			</div>
+			<div class="blog2 niceDiv" style="top: 30%; height: 40%;">
+				<div id="openGPPopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Please wait, opening game.
+				</div>	 
+			</div> 
+		</div> 
+
+		<div id="openFP" class="popUp" style="height: 30%; width: 30%; "> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Opening </div> 
+			</div>
+			<div class="blog2 niceDiv" style="top: 30%; height: 40%;">
+				<div id="openFPPopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Please wait, opening files.
+				</div>	 
+			</div> 
+		</div> 
+
+		<div id="deleteGP" class="popUp" style="height: 30%; width: 30%; "> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Deleting </div> 
+			</div>
+			<div class="blog2 niceDiv" style="top: 30%; height: 40%;">
+				<div id="deleteGPPopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Please wait, deleting files.
+				</div>	 
+			</div> 
+		</div> 
+
+		<div id="loginP" class="popUp" style="height: 30%; width: 30%; "> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Login </div> 
+			</div>
+			<div class="blog2 niceDiv" style="top: 30%; height: 40%;">
+				<div id="loginPPopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Please wait, login in progress.
+				</div>	 
+			</div> 
+		</div> 
+
+		<div id="publishP" class="popUp" style="height: 70%; width: 60%; "> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Publish </div> 
+			</div>
+			<div class="blog2 niceDiv">
+				<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> Fill in all the relevant fields ( * are compulsory )
+				</div>	
+				<div style="width: 100%; height: 80%;  top: 20%;  position: absolute;"> 
+						
+						<div id="publishImg" style="background-image: url('https://www.iconhot.com/icon/png/android-style-icons-r1/512/gallery-2.png')">
+
+						</div>
+
+						<div id="publishProps" >   
+							<input type="text" style=" width: 100%; height: 13%; top: 0%;  position: absolute;" id="developer" placeholder="*  Developer" autofocus> </input>
+							<input type="text" style=" width: 100%; height: 13%;  top: 16%;  position: absolute;" id="genres" placeholder="*  Genre(s)" autofocus> </input>
+							<input type="text" style=" width: 100%; height: 13%; top: 32%;  position: absolute;" id="description" placeholder="   Description" autofocus> </input>
+							<input type="text" style=" width: 100%; height: 13%; top: 48%;  position: absolute;" id="screenshot" placeholder="*  Screenshot" onkeyup="publishImgUpd()" autofocus> </input>
+							<input type="text" style=" width: 100%; height: 13%; top: 64%;  position: absolute;" id="trailer" placeholder="   Trailer" autofocus> </input> 
+							<div style="  width: 50%; height: 18%;  top: 83%; left: 25%;  position: absolute; text-align: center;" id="publish" onclick="Publish();">  <div class="divNice niceDiv" style="width: 100%; height: 100%;"> Publish </div></div>  
+
+
+						</div>
+				</div>	
+			</div>
+		</div>
+
+		<div id="tutorialsP" class="popUp" style="height: 70%; width: 60%; "> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Publish </div> 
+			</div>
+			<div class="blog2 niceDiv">
+				<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> Fill in all the relevant fields ( * are compulsory )
+				</div>	
+				<div style="width: 100%; height: 80%;  top: 20%;  position: absolute;"> 
+						
+						<div id="tutorialsImg" style="background-image: url('https://www.iconhot.com/icon/png/android-style-icons-r1/512/gallery-2.png')">
+
+						</div>
+
+						<div id="tutorialsProps" >   
+							<input type="text" style=" width: 100%; height: 13%; top: 0%;  position: absolute;" id="titleT" placeholder="*  Tutorial Title" autofocus> </input>
+							<input type="text" style=" width: 100%; height: 13%;  top: 16%;  position: absolute;" id="topicsT" placeholder="*  Topics(s)" autofocus> </input>
+							<input type="text" style=" width: 100%; height: 13%; top: 32%;  position: absolute;" id="descriptionT" placeholder="*  Description" autofocus> </input>
+							<input type="text" style=" width: 100%; height: 13%; top: 48%;  position: absolute;" id="screenshotT" placeholder="*  Screenshot" onkeyup="tutorialsImgUpd()" autofocus> </input>
+							<input type="text" style=" width: 100%; height: 13%; top: 64%;  position: absolute;" id="tutorial" placeholder="*  Tutorial" autofocus> </input> 
+							<div style="  width: 50%; height: 18%;  top: 83%; left: 25%;  position: absolute; text-align: center;" id="tutorialspublish" onclick="PublishTutorial();">  <div class="divNice niceDiv" style="width: 100%; height: 100%;"> Publish </div></div>  
+
+
+						</div>
+				</div>	
+			</div>
+		</div>
+
+		<div id="assetsP" class="popUp" style="height: 70%; width: 60%; "> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Publish </div> 
+			</div>
+			<div class="blog2 niceDiv">
+				<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> Fill in all the relevant fields ( * are compulsory )
+				</div>	
+				<div style="width: 100%; height: 80%;  top: 20%;  position: absolute;"> 
+						
+						<div id="assetsImg" style="background-image: url('https://www.iconhot.com/icon/png/android-style-icons-r1/512/gallery-2.png')">
+
+						</div>
+
+						<div id="assetsProps" >   
+							<input type="text" style=" width: 100%; height: 13%; top: 0%;  position: absolute;" id="nameA" placeholder="*  Asset Name" autofocus> </input>
+							<input type="text" style=" width: 100%; height: 13%;  top: 16%;  position: absolute;" id="genresA" placeholder="*  Genre(s)" autofocus> </input>
+							<input type="text" style=" width: 100%; height: 13%; top: 32%;  position: absolute;" id="descriptionA" placeholder="*  Description" autofocus> </input>
+							<input type="text" style=" width: 100%; height: 13%; top: 48%;  position: absolute;" id="screenshotA" placeholder="*  Screenshot" onkeyup="assetsImgUpd()" autofocus> </input>
+							<input type="text" style=" width: 100%; height: 13%; top: 64%;  position: absolute;" id="asset" placeholder="*  Asset" autofocus> </input> 
+							<div style="  width: 50%; height: 18%;  top: 83%; left: 25%;  position: absolute; text-align: center;" id="assetspublish" onclick="PublishAsset();">  <div class="divNice niceDiv" style="width: 100%; height: 100%;"> Publish </div></div>  
+
+
+						</div>
+				</div>	
+			</div>
+		</div>
+
+		<div id="publishedPP" class="popUp" style="height: 35%;"> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Published </div> 
+			</div>
+			<div class="blog2 niceDiv" style=" top: 25%; height: 50%; ">   
+						<div class="FilesT1" onclick="playGame()" style="height: 35%;"> <div class="divNice niceDiv">  Play Game  </div>  </div>  
+						
+						<div class="FilesT2" onclick="openSource()"  style="height: 35%; top: 50%;"> <div class="divNice niceDiv"> View Source Code </div>  </div> 
+				 
+			</div>
+
+		</div>
+
+		<div id="tutorialsPP" class="popUp" style="height: 35%;"> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Tutorial Published </div> 
+			</div>  
+		</div>
+
+		<div id="assetsPP" class="popUp" style="height: 35%;"> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Asset Published </div> 
+			</div>  
+		</div>
+
+		<div id='busy'>
+		  <div class='s'></div>
+		</div>
+
+		<div class="toggleFull" onclick="toggleFull()">
+			<img src="data/images/fullcreenImg.png" />
+		</div>
+
+		<script>
+			 var game = null; 
+			 var toLoad = 0;
+			 var accLoaded = false;
+			 var Base64 = {_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",encode:function(e){var t="";var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f<e.length){n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n>>2;o=(n&3)<<4|r>>4;u=(r&15)<<2|i>>6;a=i&63;if(isNaN(r)){u=a=64}else if(isNaN(i)){a=64}t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)}return t},decode:function(e){var t="";var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9\+\/\=]/g,"");while(f<e.length){s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s<<2|o>>4;r=(o&15)<<4|u>>2;i=(u&3)<<6|a;t=t+String.fromCharCode(n);if(u!=64){t=t+String.fromCharCode(r)}if(a!=64){t=t+String.fromCharCode(i)}}t=Base64._utf8_decode(t);return t},_utf8_encode:function(e){e=e.replace(/\r\n/g,"\n");var t="";for(var n=0;n<e.length;n++){var r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r)}else if(r>127&&r<2048){t+=String.fromCharCode(r>>6|192);t+=String.fromCharCode(r&63|128)}else{t+=String.fromCharCode(r>>12|224);t+=String.fromCharCode(r>>6&63|128);t+=String.fromCharCode(r&63|128)}}return t},_utf8_decode:function(e){var t="";var n=0;var r=c1=c2=0;while(n<e.length){r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r);n++}else if(r>191&&r<224){c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&31)<<6|c2&63);n+=2}else{c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&15)<<12|(c2&63)<<6|c3&63);n+=3}}return t}};
+
+			 var generisAccFiles = {};
+			 var generisAcc = null;
+			 var gdriveAccFiles = {};
+			 var gdriveAcc = null;
+			 var gAccount = null;
+			 var chooseTabT; 
+			 var log = document.getElementById("log"); 
+			 var logPopup = $('#login').bPopup(fontsize);
+			 var publishPP; // = $('#publishP').bPopup(fontsize);
+			 var publishedP; // = $('#publishedPP').bPopup(fontsize);
+			 var tutorialsPP; // = $('#publishP').bPopup(fontsize);
+			 var tutorialsP; // = $('#publishedPP').bPopup(fontsize);
+			 var assetsPP; // = $('#publishP').bPopup(fontsize);
+			 var assetsP; // = $('#publishedPP').bPopup(fontsize);
+			 var newGPopup; 
+			 var newGStatusPopup;
+			 var FilesTPopup;
+			 var windowProps;
+			 var fileOpenTabT;
+			 var saveFileT;
+			 var openGameTT;
+			 var gBackgroundT;
+			 var themeTT;
+			 var saveFP;
+			 var saveGP;
+			 var openGP;
+			 var openFP;
+			 var deleteGP;
+			 var loginP;
+			 var generisBusy = false;
+			 
+			 function fontsize(){
+                jQuery(".menutab").fitText();
+                jQuery(".blog1").fitText(); 
+		jQuery(".genLogo").fitText();
+		jQuery(".acc").fitText();  
+		jQuery(".tabButton2").fitText(); 
+			 }  
+			var busyDiv = document.getElementById("busy");
+			busy = setInterval( function(){
+				if(!generisBusy) busyDiv.style.visibility='hidden';
+				if(generisBusy) busyDiv.style.visibility='visible';
+			}, 60/1000);
+             
+			 function toggleFull() {
+			       if (!document.fullscreenElement &&    // alternative standard method
+			        !document.mozFullScreenElement && !document.webkitFullscreenElement) {  // current working methods
+			         if (document.documentElement.requestFullscreen) {
+			           document.documentElement.requestFullscreen();
+			         } else if (document.documentElement.mozRequestFullScreen) {
+			           document.documentElement.mozRequestFullScreen();
+			         } else if (document.documentElement.webkitRequestFullscreen) {
+			           document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+			         }
+			       } else {
+			          if (document.cancelFullScreen) {
+			             document.cancelFullScreen();
+			          } else if (document.mozCancelFullScreen) {
+			             document.mozCancelFullScreen();
+			          } else if (document.webkitCancelFullScreen) {
+			            document.webkitCancelFullScreen();
+			          }
+			       }
+			     }
+			     
+             /*
+			document.getElementById('backImgURL').onkeypress=function(e){
+			    if(e.keyCode==13){
+			        document.getElementById('backImgChg').click();
+			    }
+			}
+			$('.cf-se-input[autofocus]').trigger('focus').focus(function(){});
+			*/ 
+		</script>
+
+	</body>
+
+</html>

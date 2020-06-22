@@ -1,0 +1,242 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Generis-Forum</title>
+  <link rel="icon" type="image/gif" href="data/images/logo11Thumb.png" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" href="css/style3.css" />
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+   
+      <div  class="container-fluid text-center bg-blue">  <br>  </div> 
+
+     <nav class="navbar navbar-default navbar-fixed-top"> 
+
+      <div >
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button> 
+        </div> 
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-left"> 
+            <li><a href="/" onclick="location.href='/'" ><h5>Home</h5></a></li> 
+            <li><a href="/engine" onclick="location.href='/engine' "><h5>Engine</h5></a></li> 
+            <li><a href="/showcase" onclick="location.href='/showcase' "><h5>Showcase</h5></a></li>   
+          </ul>   
+            <a href='/engine' ><img style="width:60px; height:80px; left:45%;top:5%; position:absolute" src="data/images/logoNav.png"/></a> 
+          
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/tutorials" onclick="location.href='/tutorials' "><h5>Tutorials</h5></a></li>
+            <li><a href="/assets" onclick="location.href='/assets' "><h5>Assets</h5></a></li>
+            <li><a href="/docs" onclick="location.href='/docs' "><h5>Documentation</h5></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="myCarousel2" class="carousel slide text-center bg-blue" data-ride="carousel">
+          
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox" style="background:#000">
+            <div class="item active">
+              <img src="data/images/generisForumWall.jpg" alt="Forum" > 
+              <div class="carousel-caption">
+                <h3><strong><a href="#">Forum</a></strong></h3>
+                <p>Generis Forum</p>
+              </div> 
+            </div> 
+          </div>  
+    </div>
+
+     <div  class="container-fluid text-center bg-blue">  
+    </div>
+     <div  class="container-fluid text-center bg-grey"> 
+         
+      <iframe id="forum_embed" src="javascript:void(0)" scrolling="yes" frameborder="0" style="width:90%; height: 500px" >
+      </iframe>
+
+      <script type="text/javascript">
+      var frame = document.getElementById("forum_embed");
+       frame.src =
+        "https://groups.google.com/forum/embed/?place=forum/generis-engine" +
+        "&showsearch=true&showpopout=true&parenturl=" +
+        encodeURIComponent(window.location.href); 
+
+        /*
+        var resizeF = true;
+
+          function rIframe() {
+            var sHeight = frame.contentDocument.body.scrollHeight;
+            if(!resizeF) return;
+            frame.height = sHeight ;  
+            console.log( sHeight );
+            if(sHeight < 1) rezieF = true;
+            else resizeF = false;
+          }
+
+          $(window).hover(rIframe);
+          */
+
+      </script>
+
+    </div>
+
+
+     <footer class="text-center" >
+      <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      </a><br><br>
+      <p> Copyright © Generis Engine 2016 ... </p>
+      <div class="row"> 
+            <div class="col-sm-4 text-center"> 
+                <h3> <strong> TOOLS </strong> </h3>  <br>
+                <div data-toggle="tooltip" title="Tiles Map Creator" class="row"> <a href="https://www.mapeditor.org/"> 
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/tiled.png" class="logo2" alt="Tiles Map Creator">    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Tiled</h3> 
+                </div>  
+                </a> </div>   
+                <div data-toggle="tooltip" title="Texture Packer" class="row"> <a href="https://www.codeandweb.com/texturepacker">
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/texturepacker.png" class="logo2" >    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>TexturePacker</h3> 
+                </div>  
+                </a> </div>  
+                <div data-toggle="tooltip" title="Physics Editor" class="row"> <a href="https://www.codeandweb.com/physicseditor">
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/phyeditor.png" class="logo2" >    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Physics Editor</h3> 
+                </div>  
+                </a> </div>  
+                <div data-toggle="tooltip" title="Image Editor" class="row"> <a href="https://www.gimp.org">
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/gimp.png" class="logo2" >    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Gimp</h3> 
+                </div>  
+                </a> </div>   
+         
+            </div>
+            <div class="col-sm-4 text-center">  
+                <h3> <strong> RESOURCES </strong> </h3> <br>
+                <div data-toggle="tooltip" title="Showcase" class="row"> <a href="/showcase" > 
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;"  src="data/images/showcase.png">    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Showcase</h3> 
+                </div>  
+                </a> </div>   
+                <div data-toggle="tooltip" title="Tutorials" class="row"> <a href="/tutorials" >
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/tutorials.png">    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Tutorials</h3> 
+                </div>  
+                </a> </div>  
+                <div data-toggle="tooltip" title="Assets" class="row"> <a href="/assets">
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;"  src="data/images/assets1.png" >    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Assets</h3> 
+                </div>  
+                </a> </div>  
+                <div data-toggle="tooltip" title="Documentation" class="row"> <a href="/docs">
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/docs1.png" >    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Documentation</h3> 
+                </div>  
+                </a> </div>   
+              </div>
+            <div class="col-sm-4 text-center">  
+              <h3> <strong> COMMUNITY </strong>  </h3> <br>
+               <div data-toggle="tooltip" title="Forum" class="row"> <a href="/forum" > 
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;"  src="data/images/forum.png">    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Forum</h3> 
+                </div>  
+                </a> </div>   
+                <div data-toggle="tooltip" title="Github Repository" class="row"> <a href="https://github.com/generisengine" >
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/github.png">    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Github Repository</h3> 
+                </div>  
+                </a> </div>  
+                <div data-toggle="tooltip" title="Facebook Page" class="row"> <a href="https://www.facebook.com/generisengine">
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;"  src="data/images/facebook.png" >    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Facebook Page</h3> 
+                </div>  
+                </a> </div>  
+                <div data-toggle="tooltip" title="Twitter" class="row"> <a href="https://twitter.com/generisengine">
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/twitter.png" >    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Twitter</h3> 
+                </div>  
+                </a> </div>   
+            </div> 
+
+        </div> 
+    </footer>
+
+    <script>
+    $(document).ready(function(){
+        // Initialize Tooltip
+        $('[data-toggle="tooltip"]').tooltip();
+    })
+
+    $(document).ready(function(){
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 900, function(){
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+            });
+        });
+    })
+
+    </script>
+    <script id="dsq-count-scr" src="///enginewebengine.disqus.com/count.js" async></script>
+</body>
+</html>

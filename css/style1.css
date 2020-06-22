@@ -1,0 +1,2408 @@
+			
+			html, body { 
+				height:100%; width:100%; margin:0; padding:0;overflow: hidden;
+			}
+			 			
+			img {
+				 top: 0; right: 0; bottom: 0; left: 0; width:100%; height:100%;
+			}  
+
+			.moonB div.container-fluid {
+			    background-color: #005682;
+			    color: #ffffff;
+			    background-image: -webkit-linear-gradient(top, #fff, #085e8b 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -moz-linear-gradient(top, #fff, #085e8b 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -o-linear-gradient(top, #fff, #085e8b 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: linear-gradient(to bottom, #fff, #085e8b 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset #515258 0px 0px 0 1px, inset #000 0 -3px 10px ;
+			}
+
+			.moonB .navbar {  
+			    color: #ffffff;
+				background: #3e5a67;
+				background: -webkit-linear-linear-gradient(to bottom, #3e5a67 0%, #183542 50%, #002333 51%, #124055 100%);
+			  	background: -moz-linear-gradient(to bottom, #3e5a67 0%, #183542 50%, #002333 51%, #124055 100%);
+			  	background: -ms-linear-gradient(to bottom, #3e5a67 0%, #183542 50%, #002333 51%, #124055 100%);
+			  	background: -o-linear-gradient(to bottom, #3e5a67 0%, #183542 50%, #002333 51%, #124055 100%);
+			  	background: linear-gradient(to bottom, #3e5a67 0%, #183542 50%, #002333 51%, #124055 100%);
+			}
+
+			.moonB .navbar-left {
+				height: 60px;
+		   		 padding-top: 0px; 
+				background: #002030 ;
+				box-shadow: 0 5px 8px #002851, 0 8px 0 #002851, -2px 1px 0 #003872, 2px 1px 0 #003872, 0px 8px 30px #000, 0 10px 30px #1b1b1b; 
+				
+			}
+
+			.moonB .navbar-right {
+				height: 60px;
+		   		 padding-top: 0px; 
+				padding-right: 10px;
+				background: #002030 ;
+				box-shadow: 0 5px 8px #002851, 0 8px 0 #002851, -2px 1px 0 #003872, 2px 1px 0 #003872, 0px 8px 30px #000, 0 10px 30px #1b1b1b; 
+				
+			}
+
+			.moonB .userInfo {  
+			    color: #000;
+			    background-color: #fff !important; 
+			    background-image: none !important; 
+			    letter-spacing: 0px; 
+			}
+
+			.moonB .userInfo img  {    
+			    background-color: #fff !important;  
+			}
+
+			.moonB #userAccount { 
+				padding: 10px 20px;
+				background: #ff0;
+				color: #000;
+			    background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3); 
+			} 
+
+			.moonB #userIcon:before {
+			    content: '';
+				position: absolute;
+				top: 0; right: 0; bottom: 0; left: 0; 
+				background: rgba(126,192,238, 0.20); 
+				border-color: rgba(126,192,238, 0.6) rgba(126,192,238, 0.7) rgba(126,192,238, 0.9); 
+			    background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);   
+			} 
+
+			.moonB .navbar li a, .navbar .navbar-brand {
+				cursor: pointer;  
+			    color: #fff !important;  
+			    background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			      
+			}
+
+			.moonB .navbar-nav li a:hover {  
+			    color: #fff !important;  
+			    background-color: #005682 !important;  
+			    background-image: -webkit-linear-gradient(top, #fff, #085e8b 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -moz-linear-gradient(top, #fff, #085e8b 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -o-linear-gradient(top, #fff, #085e8b 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: linear-gradient(to bottom, #fff, #085e8b 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			} 
+
+
+			.moonB .navbar-default .navbar-nav > .active > a, 
+			.moonB .navbar-default .navbar-nav > .active > a:hover, 
+			.moonB .navbar-default .navbar-nav > .active > a:focus,
+			.moonB .navbar-default .navbar-nav > .open > a, 
+			.moonB .navbar-default .navbar-nav > .open > a:hover, 
+			.moonB .navbar-default .navbar-nav li a:active, 
+			.moonB .navbar-default .navbar-nav > .open > a:focus {
+			    font:bold;
+			    color: #fff !important;  
+			    background-color: #4c7bc3 !important;
+			    border: 1px solid #002030;
+			    background-image: -webkit-linear-gradient(to top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(242, 242, 242, 0.5) 50%, rgba(242, 242, 242, 0.03));
+			    background-image: -moz-linear-gradient(to top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(242, 242, 242, 0.5) 50%, rgba(242, 242, 242, 0.03));
+			    background-image: -o-linear-gradient(to top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(242, 242, 242, 0.5) 50%, rgba(242, 242, 242, 0.03));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(242, 242, 242, 0.5) 50%, rgba(242, 242, 242, 0.03));
+			    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);  
+			} 
+
+			.moonB .navbar-nav .dropdown-menu {
+				width: 200px !important; 
+				min-height: 50px;
+				background: #002030;  /* #00121b; */   
+			 	background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);  
+				/* BUTTON STYLING */
+				border-top: 1px solid #fff;
+				box-shadow: 0 5px 8px #002851, 0 8px 0 #002851, -2px 1px 0 #003872, 2px 1px 0 #003872, 0px 8px 30px #000, 0 10px 30px #1b1b1b; 
+				/* FONT STYLING */
+				font: bold 'Trebuchet Ms', helvetica; 
+				text-decoration: none; 
+			    color: #fff !important;  
+			}
+
+			.moonB .navbar-nav .dropdown-menu li a{
+				padding: 10px;
+				border: 0;
+				color: #fff; /*#4c7bc3 */
+			    font-family: Helvetica, Arial, sans-serif;
+			    background-image: none;
+			    // border: 0px;
+			    box-shadow: none;
+			    letter-spacing: 0px;
+			    color: #fff !important;   
+			}
+
+			.moonB .navbar-nav .dropdown-menu li a:hover { 
+			    font:bold;
+			    background-color: #4c7bc3 !important; 
+			}
+
+			.moonB .navbar-nav .dropdown-menu > li > a:hover,
+			.moonB .navbar-nav .dropdown-menu > li > a:focus,
+			.moonB .navbar-nav .dropdown-submenu:hover > a,
+			.moonB .navbar-nav .dropdown-submenu:focus > a {
+			    font:bold;
+			    background-color: #4c7bc3 !important;
+			    border: 1px solid #002030;
+			    background-image: -webkit-linear-gradient(to top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(242, 242, 242, 0.5) 50%, rgba(242, 242, 242, 0.03));
+			    background-image: -moz-linear-gradient(to top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(242, 242, 242, 0.5) 50%, rgba(242, 242, 242, 0.03));
+			    background-image: -o-linear-gradient(to top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(242, 242, 242, 0.5) 50%, rgba(242, 242, 242, 0.03));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(242, 242, 242, 0.5) 50%, rgba(242, 242, 242, 0.03));
+			    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3); 
+			}
+
+			.moonB .navbar-default .navbar-toggle {
+			    border-color: transparent;
+			    color: #fff ;
+			}  
+ 
+			.moonB #workSpace {
+				background: url("/data/images/generisWall2.jpg");
+				background-size: 100% 100%; 
+			} 
+
+			.moonB #leftBar {      
+  background: #222 ;
+  color: #fff; 
+  background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+  background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+  background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+  background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+  -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);; 
+  box-shadow: 0 0 0 5px #222 inset; 
+			  		
+			} 
+
+			#leftBar .btn { 
+				transform: rotate(-90deg); 
+				width:70px;
+				height:25px; 
+				position: absolute;
+				right:-23px; 
+				text-align: center;   
+			    font-size: 10px;
+				font: 'Trebuchet Ms', helvetica; 
+				border-radius: 0px;
+					 
+				background: #085e8b ;
+			    color: #fff; 
+			    background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			}
+
+			.moonB #rightBar {     
+  background: #222 ;
+  color: #fff; 
+  background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+  background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+  background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+  background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+  -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);; 
+  box-shadow: 0 0 0 5px #222 inset; 
+			  			
+			} 
+
+			.moonB #rightBar .btn { 
+				width:70px;
+				height:25px; 
+				position: absolute;
+				left:-23px;
+				transform: rotate(-90deg); 
+				text-align: center;   
+			    font-size: 10px;
+				font: 'Trebuchet Ms', helvetica; 
+				border-radius: 0px;
+					 
+				background: #085e8b ;
+			    color: #fff; 
+			    background-image: -webkit-linear-gradient(bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -moz-linear-gradient(bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -o-linear-gradient(bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: linear-gradient(to top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			}
+
+			.moonB footer .perspective {   
+  				background: #222 ;
+				color: #fff;
+				background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.2) 80%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+				-webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+				box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+				box-shadow: inset #515258 0px 0px 0 1px, inset #000 0 -3px 10px ;  
+			  		
+			}
+			
+			.moonB #log {   
+			    color: #f5f5f5;
+			    background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    //-webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    //box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    //box-shadow: inset #515258 0px 0px 0 1px, inset #000 0 -3px 10px ; 
+			    background-color: #00273a;  /* #003753; */
+			}   
+
+			.moonB input{
+				color: #000;
+			}
+
+			.moonB .menuBar {
+				width:100%;
+				height:25px; 
+				border-radius: 5px 5px 0 0;
+				 background-color: #00273a;  /* #003753; */
+			    color: #ffffff;
+			    background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    
+			    font-family: Montserrat, sans-serif;
+			    font-size: 15px !important;
+			    line-height: 1.42857143 !important;
+			    letter-spacing: 4px;
+
+			    overflow: hidden;
+				white-space: nowrap;      /* CSS3 */   
+				white-space: -moz-nowrap; /* Firefox */    
+				white-space: -nowrap;     /* Opera <7 */   
+				white-space: -o-nowrap;   /* Opera 7 */  
+				text-overflow: ellipsis; 
+			}
+
+			.moonB .menuBar .btn.menuClose { 
+				width:25px;
+				height:25px;  
+				 background-color: #ffa500;  /* #ff0000; */
+			    color: #ffffff ;
+			    background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			   
+				 -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset #515258 0px 0px 0 1px, inset #000 0 -3px 10px ;
+				border: 0;
+				border-radius: 5px 0 0 0; 
+			}
+
+			.moonB .menuBar .btn.maxim {
+				width:25px;
+				height:25px;  
+				 background-color: #ff0;  /* #ff0000; */
+			    color: #ffffff ;
+			    background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			   
+				 -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset #515258 0px 0px 0 1px, inset #000 0 -3px 10px ;
+				border: 0;
+				border-radius: 5px 0 0 0; 
+			}
+
+			.moonB .menuBar .btn.newTab {
+				width:25px;
+				height:25px;  
+				 background-color: #d3d3d3;  /* #ff0000; */
+			    color: #ffffff ;
+			    background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			   
+				 -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset #515258 0px 0px 0 1px, inset #000 0 -3px 10px ;
+				border: 0;
+				border-radius: 5px 0 0 0; 
+			}
+
+			.moonB .btn:hover {
+			    color: #4c7bc3 !important;
+			    font:bold;
+			    background-color: #fff !important; 
+			}
+
+			.moonB .btn:active {
+			    color: #4c7bc3 !important;
+			    font:bold;
+			    background-color: #00ffff !important;
+			    border: 2px solid;
+			    box-shadow: 0 5px 55px rgba(145, 92, 182, .8);
+			}
+
+			.moonB .btn.active {
+			    color: #4c7bc3 !important;
+			    font:bold;
+			    background-color: #fff !important; 
+			}
+
+			.moonB .menuBar .params {
+				width:25px;
+				height:25px;   
+			    color: #ffffff ;
+			    float: right;
+			    font-size:large;
+			    padding-top: 2px;
+			    cursor: pointer;  
+			}
+
+			.moonB .tabsBar {
+				width:100%;
+				height:30px; 
+				background-color: #00273a;
+				 -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset #515258 0px 0px 0 1px, inset #000 0 -3px 10px ; 
+				position: absolute; 
+				padding-left: 12px;
+			} 
+
+			.moonB .tabsBar nav {
+				margin-bottom: 0;   
+			    border: 0; 
+			    border-radius: 0;   
+			    overflow: hidden;
+			}
+
+			.moonB .tabsBar .btn-group {
+				height:30px;
+				left:0;
+				top:0;
+				position: absolute; 
+				z-index: 100;
+				background-color: #00273a;
+				 -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset #515258 0px 0px 0 1px, inset #000 0 -3px 20px ;
+			}
+			.moonB .tabsBar .btn-group .btn {
+				width: 20px;
+				height:30px;
+				color: #d3d3d3;				
+				background-color: Transparent;
+			    background-repeat:no-repeat;
+			    border: none; 
+			    overflow: hidden;
+			    outline:none;
+			}
+			.moonB .tabsBar .btn-group .btn .glyphicon { 
+				right:7px
+			}
+
+			/* ROUNDED TABS BY Roko C.B. */
+			.moonB .tabsBar nav ul {
+			    display: table;
+			    table-layout: fixed; 
+			}
+			.moonB .tabsBar nav li {
+			    display: table-cell;
+			}
+
+			.moonB .tabsBar nav a{
+			  width: 150px;
+			  height: 25px;  
+	    	  top: 5px; 
+			  position:relative;
+			  display:inline-block;
+			  padding-left: 30px;
+			  padding-top: 2px;
+			  margin:0 3px; 
+			  text-shadow: 0 1px 0 rgba(0,2,0,0.4);
+			  text-decoration: none;
+			  border-radius:12px 12px 0 0; /* just to smooth the top edges */
+			  border-top: 1px solid #515258;
+			background-color: #00273a;  /* #003753; */
+			color: #ffffff;
+			background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			   
+			}
+
+			.moonB .tabsBar nav a .title {
+				width: 100px;
+				overflow: hidden;
+				white-space: nowrap;      /* CSS3 */   
+				white-space: -moz-nowrap; /* Firefox */    
+				white-space: -nowrap;     /* Opera <7 */   
+				white-space: -o-nowrap;   /* Opera 7 */  
+				text-overflow: ellipsis; 
+			}
+
+			.moonB .tabsBar nav a img {
+			    width: 17px;
+			    height: 17px;  
+			    position: absolute;
+			    top: 4px;
+			    left: 9px;
+			}
+
+			.moonB .tabsBar nav a .glyphicon {
+			    font-size: 13px;  
+			    float:right;
+			    right:8px;
+			    top:5px;
+			    position: absolute;
+			}
+
+			.moonB .tabsBar nav a .glyphicon:hover {
+				font-size: 16px; 
+			    color: #ff0000;
+			}
+
+			.moonB .tabsBar nav a:hover {
+				box-shadow: 2px 2px 20px rgba(145, 92, 182, .8);
+			}
+
+			.moonB .tabsBar nav a:before,
+			.moonB .tabsBar nav a:after{
+			  content:" ";
+			  position: absolute; 
+			  top:0;
+			  width: 8px;
+			  height: 100%;
+			  background-color: inherit; 
+			background-color: #00273a;  /* #003753; */
+			color: #ffffff;
+			background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			   
+			}
+			.moonB .tabsBar nav a:before{
+			  border-radius: 7px 0 0 0;
+			  transform: skew(-24deg);
+			  left: -2px; /* play with this one to give the LI border ~2px extrusion */
+			  border-left: 1px solid #515258;
+			}
+			.moonB .tabsBar nav a:after{
+			  border-radius: 0 7px 0 0;
+			  transform: skew(24deg);
+			  right: -2px; /* play with this one to give the LI border ~2px extrusion */
+			  border-right: 1px solid #515258;
+			  z-index: 99; /* overlap next element */
+			}
+ 
+
+			/* LI ACTIVE  */ 
+			.moonB .tabsBar nav li.active a{
+			 color:#000;
+			 background:#fff;
+			background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			   box-shadow: 2px 2px 20px rgba(145, 92, 182, .8);
+			}
+			.moonB .tabsBar nav li.active a:hover{
+			 color:#8BBF50;
+			}
+			.moonB .tabsBar nav li.active a:before,
+			.moonB .tabsBar nav li.active a:after{ 
+				background:#fff;
+				background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+				background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+				background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+				background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+				
+			} 
+			.moonB .tabsBar nav li.active a:before{
+			  z-index: 99; /* overlap prev element */
+			} 
+
+			.moonB .pane {
+				min-width: 360px;
+				min-height: 150px; 
+				position: absolute;  
+				margin: 0; 
+				box-shadow: 0px 8px 30px #000;
+				z-index: 99;   
+			}  
+
+			.moonB .pane.active {
+			  z-index: 100; /* overlap prev element */
+			} 
+
+			.moonB .pane.active .footer { 
+				 background-color: #ff0;   
+			} 
+
+			.moonB .tabsContainer{ 
+				width:100%;
+				height: 100%;
+				top: 55px;   
+				position: absolute;    
+				
+				background-color: #002030;    /*  #969696  */
+				background-size: 100%;  
+				background-image: -webkit-linear-gradient(top left, rgba(255, 255, 255, 0.15) 50%, transparent 50%);
+				background-image: -moz-linear-gradient(top left, rgba(255, 255, 255, 0.15) 50%, transparent 50%);
+				background-image: -o-linear-gradient(top left, rgba(255, 255, 255, 0.15) 50%, transparent 50%);
+				background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.15) 50%, transparent 50%);
+				-webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+			
+			}
+
+ 
+
+			.moonB .footer {
+				width: 100%;
+				height: 10px;   
+				position: absolute;
+	    		bottom:0; 
+				background-color: #d3d3d3; 
+				background-size: 100%;  
+			    background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3); 	
+			}  
+
+			.moonB .contextMenu {
+			    position: absolute;
+			    display:none; 
+			}
+
+			.moonB .contextMenu > ul {
+				width: 200px !important; 
+				display:block;
+				background: #002030;  /* #00121b; */   
+			 	background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);  
+				/* BUTTON STYLING */
+				border-top: 1px solid #fff;
+				box-shadow: 0 5px 8px #002851, 0 8px 0 #002851, -2px 1px 0 #003872, 2px 1px 0 #003872, 0px 8px 10px #000, 0 10px 30px #1b1b1b; 
+				/* FONT STYLING */
+				font: bold 'Trebuchet Ms', helvetica; 
+				text-decoration: none; 
+				color: #fff; /*color: #14467a; */
+			}
+
+			.moonB .contextMenu .dropdown-menu li a{
+				padding: 7px;
+				border: 0;
+				color: #fff; /*#4c7bc3 */
+			    font-family: Helvetica, Arial, sans-serif;
+			    letter-spacing: 0px; 
+			}
+
+			.moonB .contextMenu .dropdown-menu li a:hover { 
+			    font:bold;
+			    background-color: #4c7bc3 !important;
+			    border: 1px solid #002030;
+			    background-image: -webkit-linear-gradient(to top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(242, 242, 242, 0.5) 50%, rgba(242, 242, 242, 0.03));
+			    background-image: -moz-linear-gradient(to top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(242, 242, 242, 0.5) 50%, rgba(242, 242, 242, 0.03));
+			    background-image: -o-linear-gradient(to top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(242, 242, 242, 0.5) 50%, rgba(242, 242, 242, 0.03));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(242, 242, 242, 0.5) 50%, rgba(242, 242, 242, 0.03));
+			    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			}
+
+			.moonB .contextMenu .dropdown-submenu > ul { 
+				background: #002030;  /* #00121b; */   
+			 	background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);  
+				/* BUTTON STYLING */
+				border-top: 1px solid #fff;
+				box-shadow: 0 5px 8px #002851, 0 8px 0 #002851, -2px 1px 0 #003872, 2px 1px 0 #003872, 0px 8px 10px #000, 0 10px 30px #1b1b1b; 
+				/* FONT STYLING */
+				font: bold 'Trebuchet Ms', helvetica; 
+				text-decoration: none; 
+				color: #fff; /*color: #14467a; */ 
+			}
+
+			.moonB .contextMenu .dropdown-menu > li > a:hover,
+			.moonB .contextMenu .dropdown-menu > li > a:focus,
+			.moonB .contextMenu .dropdown-submenu:hover > a,
+			.moonB .contextMenu .dropdown-submenu:focus > a {
+			    font:bold;
+			    background-color: #4c7bc3 !important;
+			    border: 1px solid #002030;
+			    background-image: -webkit-linear-gradient(to top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(242, 242, 242, 0.5) 50%, rgba(242, 242, 242, 0.03));
+			    background-image: -moz-linear-gradient(to top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(242, 242, 242, 0.5) 50%, rgba(242, 242, 242, 0.03));
+			    background-image: -o-linear-gradient(to top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(242, 242, 242, 0.5) 50%, rgba(242, 242, 242, 0.03));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(242, 242, 242, 0.5) 50%, rgba(242, 242, 242, 0.03));
+			    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			}
+
+			.moonB .popUp { 
+				/* BUTTON STYLING */
+				border-top: 1px solid #fff;
+				box-shadow: 0 5px 8px #002851, 0 8px 0 #002851, -2px 1px 0 #003872, 2px 1px 0 #003872, 0px 8px 10px #000, 0 10px 30px #1b1b1b; 
+				/* FONT STYLING */
+				font: bold 'Trebuchet Ms', helvetica;
+				letter-spacing: 4px;
+				text-decoration: none;
+				text-shadow: -1px -1px 1px #00172e,1px 1px 1px #a1cfff;
+				color: #fff; /*color: #14467a; */
+			}
+
+			.moonB .blog1 {  
+				background: #002030;  /* #00121b; */  
+				border-radius: 5px 5px 0 0;  
+			 	background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			}
+
+			.moonB .blog2 {  
+				background-clip: padding-box; 
+				border: 1px solid;
+				border-color: rgba(17, 17, 17, 0.6) rgba(17, 17, 17, 0.7) rgba(17, 17, 17, 0.9);
+				border-radius: 0 0 5px 5px; 
+				color: #fff; /*color: #14467a; */
+				font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+
+				color: #292929;   
+	 			 box-shadow:
+				inset 8px 6px 5px -7px rgba(0,0,0,.3)
+				,inset -8px 6px 5px -7px rgba(0,0,0,0) 
+				,inset 0 220px 140px -200px rgba(0,0,0,.3);
+
+
+				background-color: #4c7bc3;
+				/* box-shadow */
+				-webkit-box-shadow: rgba(0,0,0,0.5) 0px 3px 10px, rgba(0,0,0,.75) 0 0 70px inset;
+				-moz-box-shadow: rgba(0,0,0,0.5) 0px 3px 10px, rgba(0,0,0,.75) 0 0 70px inset;
+				box-shadow: rgba(0,0,0,0.5) 0px 3px 10px, rgba(0,0,0,.75) 0 0 70px inset;
+				
+				border-top: 1px solid #666;
+			}   
+
+			.no {
+				background: red; 
+				display: block;
+				padding: 15px 35px;
+				float: right;
+				color: white;
+				text-decoration: none;
+				font-size: 20px;
+				border-top: 1px solid rgb(250,150,100);
+				font-weight: bold;
+				
+				-webkit-box-shadow: rgba(255,255,255,.3) 0 2px 1px,rgba(0,0,0,.3) 0 -2px 1px, rgba(0,0,0,0.5) 0px 3px 10px, rgba(100,0,0,.75) 0 0 40px inset;
+				-moz-box-shadow: rgba(255,255,255,.3) 0 2px 1px,rgba(0,0,0,.3) 0 -2px 1px, rgba(0,0,0,0.5) 0px 3px 10px, rgba(100,0,0,.75) 0 0 40px inset;
+				box-shadow: rgba(255,255,255,.3) 0 2px 1px,rgba(0,0,0,.3) 0 -2px 1px, rgba(0,0,0,0.5) 0px 3px 10px, rgba(100,0,0,.75) 0 0 40px inset;
+				
+				text-shadow: 0 0 10px #000;
+				border-radius: 12px;
+				
+				background: #f3c5bd;
+				background: -webkit-linear-gradient(top, #f3c5bd 0%, #e86c57 50%, #ea2803 51%, #ff6600 100%);
+				background: -moz-linear-gradient(top, #f3c5bd 0%, #e86c57 50%, #ea2803 51%, #ff6600 100%);
+				background: -ms-linear-gradient(top, #f3c5bd 0%, #e86c57 50%, #ea2803 51%, #ff6600 100%);
+				background: -o-linear-gradient(top, #f3c5bd 0%, #e86c57 50%, #ea2803 51%, #ff6600 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3c5bd', endColorstr='#ff6600',GradientType=0 );
+				background: linear-gradient(to bottom, #f3c5bd 0%, #e86c57 50%, #ea2803 51%, #ff6600 100%);
+			} 
+
+			.moonB .niceDiv{
+				padding: 5% 0px; 
+				color:white;
+				text-decoration:none;
+				
+				font-weight:bold;
+				text-shadow: 0 0 10px #000;
+				border-top: 1px solid rgb(200,250,100);
+				font-size:20px;
+				
+				-webkit-box-shadow: rgba(255,255,255,.3) 0 2px 1px,rgba(0,0,0,.3) 0 -2px 1px, rgba(0,0,0,0.5) 0px 3px 10px, rgba(0,50,0,.75) 0 0 40px;
+				-moz-box-shadow: rgba(255,255,255,.3) 0 2px 1px,rgba(0,0,0,.3) 0 -2px 1px, rgba(0,0,0,0.5) 0px 3px 10px, rgba(0,50,0,.75) 0 0 40px;
+				box-shadow: rgba(255,255,255,.3) 0 2px 1px,rgba(0,0,0,.3) 0 -2px 1px, rgba(0,0,0,0.5) 0px 3px 10px, rgba(0,50,0,.75) 0 0 40px;
+				 
+				border-radius: 12px;
+				
+				background: #3e5a67;
+				background: -webkit-linear-linear-gradient(to bottom, #3e5a67 0%, #183542 50%, #002333 51%, #124055 100%);
+			  	background: -moz-linear-gradient(to bottom, #3e5a67 0%, #183542 50%, #002333 51%, #124055 100%);
+			  	background: -ms-linear-gradient(to bottom, #3e5a67 0%, #183542 50%, #002333 51%, #124055 100%);
+			  	background: -o-linear-gradient(to bottom, #3e5a67 0%, #183542 50%, #002333 51%, #124055 100%);
+			  	background: linear-gradient(to bottom, #3e5a67 0%, #183542 50%, #002333 51%, #124055 100%);
+			  	
+			}
+
+			.moonB .niceDiv:hover{ 
+				color: rgba(255, 255, 255, 1); 
+				-webkit-box-shadow:  0 5px 55px rgba(145, 92, 182, .8), rgba(145, 92, 182, .8)  0 5px 55px, rgba(255,255,255,.3) 0 2px 1px,rgba(0,0,0,.3) 0 -2px 1px, rgba(0,0,0,0.5) 0px 3px 10px, rgba(0,50,0,.75) 0 0 40px ;
+				-moz-box-shadow:  0 5px 55px rgba(145, 92, 182, .8), rgba(145, 92, 182, .8)  0 5px 55px, rgba(255,255,255,.3) 0 2px 1px,rgba(0,0,0,.3) 0 -2px 1px, rgba(0,0,0,0.5) 0px 3px 10px, rgba(0,50,0,.75) 0 0 40px ;
+				box-shadow:  0 5px 55px rgba(145, 92, 182, .8), rgba(145, 92, 182, .8)  0 5px 55px, rgba(255,255,255,.3) 0 2px 1px,rgba(0,0,0,.3) 0 -2px 1px, rgba(0,0,0,0.5) 0px 3px 10px, rgba(0,50,0,.75) 0 0 40px ;
+				 
+				 background: -webkit-linear-linear-gradient(to bottom, #7b919b 0%, #183542 50%, #15506b 51%, #124055 100%);
+			  	background: -moz-linear-gradient(to bottom, #7b919b 0%, #183542 50%, #15506b 51%, #124055 100%);
+			  	background: -ms-linear-gradient(to bottom, #7b919b 0%, #183542 50%, #15506b 51%, #124055 100%);
+			  	background: -o-linear-gradient(to bottom, #7b919b 0%, #183542 50%, #15506b 51%, #124055 100%);
+			  	background: linear-gradient(to bottom, #0a808a 0%, #183542 50%, #15506b 51%, #124055 100%);
+			  	
+				cursor: pointer;
+			}
+
+			.moonB .niceDiv:active{ 
+				color: rgba(255, 255, 255, 1); 
+				box-shadow: 0 5px 55px rgba(145, 92, 182, .8); 
+				border: 2px solid;
+				cursor: pointer;
+			} 
+
+			.moonB input[type=text] ,
+			.moonB input[type=number] ,
+			.moonB textarea { 
+				color: #000;
+			    background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3); 
+			}  
+
+			.moonB .genres .btn {
+			    width: 100%;
+			    height: 18%;
+			    border-radius: 0;
+			    margin: 0;
+			    text-align: center;
+			    // background: #3e5a67;
+			    background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3); 
+			}   
+
+			.moonB .genres .dropdown-menu {
+			    width: 200px !important; 
+			    height: 300px !important;
+			    overflow: auto;
+			    background: #002030;  /* #00121b; */   
+			    background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);  
+			    /* BUTTON STYLING */
+			    border-top: 1px solid #fff;
+			    box-shadow: 0 5px 8px #002851, 0 8px 0 #002851, -2px 1px 0 #003872, 2px 1px 0 #003872, 0px 8px 30px #000, 0 10px 30px #1b1b1b; 
+			    /* FONT STYLING */
+			    font: bold 'Trebuchet Ms', helvetica; 
+			    text-decoration: none; 
+			    color: #fff; /*color: #14467a; */
+			}
+
+			.moonB .genres .dropdown-menu li label {
+			    padding: 10px;
+			    border: 0; 
+			    font-family: Helvetica, Arial, sans-serif;
+			    background-image: none;
+			    // border: 0px;
+			    box-shadow: none;
+			    letter-spacing: 0px; 
+			    color: #fff; /*color: #14467a; */
+			}
+
+			.moonB .genres  .dropdown-menu li label:hover { 
+			    font:bold;
+			    background-color: #4c7bc3 !important; 
+			    color: #fff; /*color: #14467a; */
+			}
+
+			.moonB .genres  .dropdown-menu > li > label:hover,
+			.moonB .genres  .dropdown-menu > li > label:focus,
+			.moonB .genres .dropdown-menu > li > input[type="checkbox"]:checked + label {
+			    font:bold;
+			    background-color: #4c7bc3 !important;
+			    border: 1px solid #002030;
+			    background-image: -webkit-linear-gradient(to top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(242, 242, 242, 0.5) 50%, rgba(242, 242, 242, 0.03));
+			    background-image: -moz-linear-gradient(to top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(242, 242, 242, 0.5) 50%, rgba(242, 242, 242, 0.03));
+			    background-image: -o-linear-gradient(to top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(242, 242, 242, 0.5) 50%, rgba(242, 242, 242, 0.03));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(242, 242, 242, 0.5) 50%, rgba(242, 242, 242, 0.03));
+			    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3); 
+			} 
+
+			.moonB .publishImg {  
+			    // background: #3e5a67;
+				border: 1px solid #666;
+			    background-image: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -moz-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: -o-linear-gradient(top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    background-image: linear-gradient(to bottom, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+			    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3); 
+			}
+
+			.moonB .publishImg ul {  
+				background-clip: padding-box; 
+				border: 2px solid;
+				border-color: rgba(17, 17, 17, 0.6) rgba(17, 17, 17, 0.7) rgba(17, 17, 17, 0.9);
+				color: #fff; /*color: #14467a; */
+				font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+
+				background-color: #4c7bc3;
+				/* box-shadow */
+				-webkit-box-shadow: rgba(0,0,0,0.5) 0px 3px 10px, rgba(0,0,0,.75) 0 0 70px inset;
+				-moz-box-shadow: rgba(0,0,0,0.5) 0px 3px 10px, rgba(0,0,0,.75) 0 0 70px inset;
+				box-shadow: rgba(0,0,0,0.5) 0px 3px 10px, rgba(0,0,0,.75) 0 0 70px inset; 
+				border-top: 1px solid #666;
+
+				background: url(/data/images/bg-showcase-content.png) repeat;
+			}
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           .twilight div.container-fluid {
+                background-color: #005682;
+                color: #ffffff; 
+            }
+
+            .twilight .navbar {  
+                color: #fff;
+                background-color: #222;
+                border-bottom: 4px solid #333;  
+            }
+
+            .twilight .navbar-left {
+                height: 60px;
+                 padding-top: 0px; 
+                background: #222 ; 
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+            }
+
+            .twilight .navbar-right {
+                height: 60px;
+                 padding-top: 0px; 
+                padding-right: 10px;
+                background: #222 ; 
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+            }
+
+            .twilight .userInfo {  
+                color: #000;
+                background-color: #fff !important; 
+                background-image: none !important; 
+                letter-spacing: 0px; 
+            }
+
+            .twilight .userInfo img  {    
+                background-color: #fff !important;  
+            }
+
+            .twilight #userAccount { 
+                padding: 10px 20px;
+                background: #ff0;
+                color: #000; 
+            } 
+
+            .twilight #userIcon:before {
+                content: '';
+                position: absolute;
+                top: 0; right: 0; bottom: 0; left: 0; 
+                background: rgba(126,192,238, 0.20); 
+                border-color: rgba(126,192,238, 0.6) rgba(126,192,238, 0.7) rgba(126,192,238, 0.9);  
+            } 
+
+            .twilight .navbar li a, .navbar .navbar-brand {
+                cursor: pointer;  
+                color: #fff !important;
+                background-color: #333;
+                border: 0px;
+                  
+            }
+
+            .twilight .navbar-nav li a:hover {  
+                color: #323232 !important;
+                background-color: #fff !important;  
+            } 
+
+
+            .twilight .navbar-default .navbar-nav > .active > a, 
+            .twilight .navbar-default .navbar-nav > .active > a:hover, 
+            .twilight .navbar-default .navbar-nav > .active > a:focus,
+            .twilight .navbar-default .navbar-nav > .open > a, 
+            .twilight .navbar-default .navbar-nav > .open > a:hover, 
+            .twilight .navbar-default .navbar-nav li a:active, 
+            .twilight .navbar-default .navbar-nav > .open > a:focus {
+                font:bold;
+                color: #323232 !important;
+                background-color: #fff !important;  
+            } 
+
+            .twilight .navbar-nav .dropdown-menu {
+                width: 200px !important; 
+                min-height: 50px; 
+                font: bold 'Trebuchet Ms', helvetica; 
+                text-decoration: none; 
+                color: #fff;
+                background-color: #333;
+                border: 0px; 
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+            }
+
+            .twilight .navbar-nav .dropdown-menu li a{
+                padding: 10px;
+                border: 0;
+                color: #fff; /*#4c7bc3 */
+                font-family: Helvetica, Arial, sans-serif;
+                background-image: none;
+                // border: 0px;
+                box-shadow: none;
+                letter-spacing: 0px;
+                color: #fff !important;   
+            }
+
+            .twilight .navbar-nav .dropdown-menu li a:hover { 
+                font:bold;
+                color: #323232 !important;
+                background-color: #fff !important;
+                border: 0px; 
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+            }
+
+            .twilight .navbar-nav .dropdown-menu > li > a:hover,
+            .twilight .navbar-nav .dropdown-menu > li > a:focus,
+            .twilight .navbar-nav .dropdown-submenu:hover > a,
+            .twilight .navbar-nav .dropdown-submenu:focus > a {
+                font:bold;
+                color: #323232 !important;
+                background-color: #FFF !important;
+                border: 0px; 
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+            }
+
+            .twilight .navbar-default .navbar-toggle {
+                border-color: transparent;
+                color: #fff ;
+            }  
+ 
+            .twilight #workSpace {
+                background: url("/data/images/generisWall1.jpg");
+                background-size: 100% 100%; 
+            } 
+
+            .twilight #leftBar {      
+  background: #222 ;  
+  border-right: 2px solid #fff;
+                    
+            } 
+
+           .twilight #leftBar .btn { 
+                transform: rotate(-90deg); 
+                width:70px;
+                height:25px; 
+                position: absolute;
+                right:-23px; 
+                text-align: center;   
+                font-size: 10px;
+                font: 'Trebuchet Ms', helvetica; 
+                font:bold;
+                border-radius: 0px; 
+  				color: #222;  
+                background-color: #fff;
+                border: 0px;
+  				background-image: linear-gradient(to top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    
+            }
+
+            .twilight #rightBar {     
+  background: #222 ;
+  border-left: 2px solid #fff;
+                        
+            } 
+
+            .twilight #rightBar .btn { 
+                width:70px;
+                height:25px; 
+                position: absolute;
+                left:-23px;
+                transform: rotate(-90deg); 
+                text-align: center;   
+                font-size: 10px;
+                font: 'Trebuchet Ms', helvetica; 
+                border-radius: 0px;
+ 				color: #222;  
+  				background-image: linear-gradient(to top, rgba(242, 242, 242, 0.3), rgba(221, 221, 221, 0.01) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3));
+			    
+                font:bold;
+                background-color: #fff;
+                border: 0px; 
+            }
+
+            .twilight #leftBar .btn:hover,
+            .twilight #leftBar .btn:active,
+            .twilight #rightBar .btn:hover,
+            .twilight #rightBar .btn:active {  
+                color: #fff !important;  
+            }
+
+            .twilight footer .perspective {   
+                background: #222 ;
+                color: #fff; 
+                    
+            }
+            
+            .twilight #log {   
+                color: #f5f5f5; 
+                background-color: #00273a;  /* #003753; */
+            }   
+
+            .twilight input{
+                color: #000;
+            }
+
+            .twilight .menuBar {
+                width:100%;
+                height:25px; 
+                border-radius: 5px 5px 0 0;
+                 background-color: #222;  /* #003753; */
+                color: #ffffff; 
+                font-family: Montserrat, sans-serif;
+                font-size: 15px !important;
+                line-height: 1.42857143 !important;
+                letter-spacing: 4px;
+
+                overflow: hidden;
+                white-space: nowrap;      /* CSS3 */   
+                white-space: -moz-nowrap; /* Firefox */    
+                white-space: -nowrap;     /* Opera <7 */   
+                white-space: -o-nowrap;   /* Opera 7 */  
+                text-overflow: ellipsis; 
+            }
+
+            .twilight .menuBar .btn.menuClose { 
+                width:25px;
+                height:25px;  
+                 background-color: #ffa500;  /* #ff0000; */
+                color: #ffffff ; 
+                border: 0;
+                border-radius: 5px 0 0 0; 
+            }
+
+            .twilight .menuBar .btn.maxim {
+                width:25px;
+                height:25px;  
+                 background-color: #ff0;  /* #ff0000; */
+                color: #ffffff ; 
+                border: 0;
+                border-radius: 5px 0 0 0; 
+            }
+
+            .twilight .menuBar .btn.newTab {
+                width:25px;
+                height:25px;  
+                 background-color: #d3d3d3;  /* #ff0000; */
+                color: #ffffff ; 
+                border: 0;
+                border-radius: 5px 0 0 0; 
+            }
+
+            .twilight .btn:hover {
+                color: #fff !important;
+                font:bold;
+                background-color: #333 !important; 
+            }
+
+            .twilight .btn:active {
+                color: #fff !important;
+                font:bold;
+                background-color: #333 !important;
+                border: 2px solid;
+            }
+
+            .twilight .btn.active {
+                color: #fff !important;
+                font:bold;
+                background-color: #333 !important; 
+            }
+
+            .twilight .menuBar .params {
+                width:25px;
+                height:25px;   
+                color: #ffffff ;
+                float: right;
+                font-size:large;
+                padding-top: 2px;
+                cursor: pointer;  
+            }
+
+            .twilight .tabsBar {
+                width:100%;
+                height:30px; 
+                background-color: #333; 
+                position: absolute; 
+                padding-left: 12px;
+            } 
+
+            .twilight .tabsBar nav {
+                margin-bottom: 0;   
+                border: 0; 
+                border-radius: 0;   
+                overflow: hidden;
+            }
+
+            .twilight .tabsBar .btn-group {
+                height:30px;
+                left:0;
+                top:0;
+                position: absolute; 
+                z-index: 100;
+                background-color: #333; 
+            }
+            .twilight .tabsBar .btn-group .btn {
+                width: 20px;
+                height:30px;
+                color: #d3d3d3;             
+                background-color: Transparent;
+                background-repeat:no-repeat;
+                border: none; 
+                overflow: hidden;
+                outline:none;
+            }
+            .twilight .tabsBar .btn-group .btn .glyphicon { 
+                right:7px
+            }
+
+            /* ROUNDED TABS BY Roko C.B. */
+            .twilight .tabsBar nav ul {
+                display: table;
+                table-layout: fixed; 
+            }
+            .twilight .tabsBar nav li {
+                display: table-cell;
+            }
+
+            .twilight .tabsBar nav a{
+              width: 150px;
+              height: 25px;  
+              top: 5px; 
+              position:relative;
+              display:inline-block;
+              padding-left: 30px;
+              padding-top: 2px;
+              margin:0 3px; 
+              text-shadow: 0 1px 0 rgba(0,2,0,0.4);
+              text-decoration: none;
+              border-radius:12px 12px 0 0; /* just to smooth the top edges */
+              border-top: 1px solid #d3d3d3;
+            background-color: #222;  /* #003753; */
+            color: #ffffff; 
+            }
+
+            .twilight .tabsBar nav a .title {
+                width: 100px;
+                overflow: hidden;
+                white-space: nowrap;      /* CSS3 */   
+                white-space: -moz-nowrap; /* Firefox */    
+                white-space: -nowrap;     /* Opera <7 */   
+                white-space: -o-nowrap;   /* Opera 7 */  
+                text-overflow: ellipsis; 
+            }
+
+            .twilight .tabsBar nav a img {
+                width: 17px;
+                height: 17px;  
+                position: absolute;
+                top: 4px;
+                left: 9px;
+            }
+
+            .twilight .tabsBar nav a .glyphicon {
+                font-size: 13px;  
+                float:right;
+                right:8px;
+                top:5px;
+                position: absolute;
+            }
+
+            .twilight .tabsBar nav a .glyphicon:hover {
+                font-size: 16px; 
+                color: #ff0000;
+            }
+
+            .twilight .tabsBar nav a:hover {
+                box-shadow: 2px 2px 20px rgba(145, 92, 182, .8);
+            }
+
+            .twilight .tabsBar nav a:before,
+            .twilight .tabsBar nav a:after{
+              content:" ";
+              position: absolute; 
+              top:0;
+              width: 8px;
+              height: 100%;
+              background-color: inherit; 
+            background-color: #00273a;  /* #003753; */
+            color: #ffffff; 
+            }
+            .twilight .tabsBar nav a:before{
+              border-radius: 7px 0 0 0;
+              transform: skew(-24deg);
+              left: -2px; /* play with this one to give the LI border ~2px extrusion */
+              border-left: 1px solid #515258;
+            }
+            .twilight .tabsBar nav a:after{
+              border-radius: 0 7px 0 0;
+              transform: skew(24deg);
+              right: -2px; /* play with this one to give the LI border ~2px extrusion */
+              border-right: 1px solid #515258;
+              z-index: 99; /* overlap next element */
+            }
+ 
+
+            /* LI ACTIVE  */ 
+            .twilight .tabsBar nav li.active a{
+             color:#000;
+             background:#fff;
+             box-shadow: 2px 2px 20px rgba(145, 92, 182, .8);
+            }
+            .twilight .tabsBar nav li.active a:hover{
+             color:#8BBF50;
+            }
+            .twilight .tabsBar nav li.active a:before,
+            .twilight .tabsBar nav li.active a:after{ 
+                background:#fff; 
+            } 
+            .twilight .tabsBar nav li.active a:before{
+              z-index: 99; /* overlap prev element */
+            } 
+
+            .twilight .pane {
+                min-width: 360px;
+                min-height: 150px; 
+                position: absolute;  
+                margin: 0; 
+                box-shadow: 0px 8px 30px #000;
+                z-index: 99;   
+            }  
+
+            .twilight .pane.active {
+              z-index: 100; /* overlap prev element */
+            } 
+
+            .twilight .pane.active .footer { 
+                 background-color: #ff0;   
+            } 
+
+            .twilight .tabsContainer{ 
+                width:100%;
+                height: 100%;
+                top: 55px;   
+                position: absolute;    
+                
+                background-color: #d3d3d3;    /*  #969696  */ 
+            
+            }
+
+ 
+
+            .twilight .footer {
+                width: 100%;
+                height: 10px;   
+                position: absolute;
+                bottom:0; 
+                background-color: #d3d3d3;  
+            }  
+
+            .twilight .contextMenu {
+                position: absolute;
+                display:none; 
+            }
+
+            .twilight .contextMenu > ul {
+                width: 200px !important; 
+                display:block;
+                background-color: #333 !important;
+                border: 0px; 
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);  
+                /* BUTTON STYLING */
+                border-top: 1px solid #fff; 
+                /* FONT STYLING */
+                font: bold 'Trebuchet Ms', helvetica; 
+                text-decoration: none; 
+                color: #fff; /*color: #14467a; */
+            }
+
+            .twilight .contextMenu .dropdown-menu li a{
+                padding: 7px;
+                border: 0;
+                color: #fff; /*#4c7bc3 */
+                font-family: Helvetica, Arial, sans-serif;
+                letter-spacing: 0px; 
+            }
+
+            .twilight .contextMenu .dropdown-menu li a:hover { 
+                font:bold;
+                color: #323232 !important;
+                background-color: #fff !important;
+                border: 0px; 
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+            }
+
+            .twilight .contextMenu .dropdown-submenu > ul { 
+                background: #005682;  /* #00121b; */    
+                border-top: 1px solid #fff; 
+                /* FONT STYLING */
+                font: bold 'Trebuchet Ms', helvetica; 
+                text-decoration: none; 
+                color: #fff; /*color: #14467a; */ 
+            }
+
+            .twilight .contextMenu .dropdown-menu > li > a:hover,
+            .twilight .contextMenu .dropdown-menu > li > a:focus,
+            .twilight .contextMenu .dropdown-submenu:hover > a,
+            .twilight .contextMenu .dropdown-submenu:focus > a {
+                font:bold;
+                color: #323232 !important;
+                background-color: #fff !important;
+                border: 0px; 
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+            }
+
+            .twilight .popUp {   
+                font: bold 'Trebuchet Ms', helvetica;
+                letter-spacing: 4px;
+                text-decoration: none;
+                text-shadow: -1px -1px 1px #00172e,1px 1px 1px #a1cfff;
+                color: #fff; /*color: #14467a; */
+            }
+
+            .twilight .blog1 {   
+                background-color: #005682;
+                border-bottom: 1px solid #fff
+            }
+
+            .twilight .blog2 {  
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;  
+                border: 0px;  
+                color: #d3d3d3;
+                background-color: #333; 
+            }   
+
+            .no {
+                background: red; 
+                display: block;
+                padding: 15px 35px;
+                float: right;
+                color: white;
+                text-decoration: none;
+                font-size: 20px;
+                border-top: 1px solid rgb(250,150,100);
+                font-weight: bold;
+                 
+                text-shadow: 0 0 10px #000;
+                border-radius: 12px;
+                
+                background: #f3c5bd; 
+            } 
+
+            .twilight .niceDiv{
+                padding: 5% 0px; 
+                color:white;
+                text-decoration:none;
+                
+                font-weight:bold;
+                text-shadow: 0 0 10px #000;
+                border-top: 1px solid rgb(200,250,100);
+                font-size:20px; 
+                border-radius: 0;
+                
+                color: #fff;
+                background-color: #333;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);                
+                cursor: pointer;
+            }
+
+            .twilight .niceDiv:hover{  
+                color: #323232;
+                background-color: #d3d3d3;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+            } 
+
+            .twilight input[type=text] ,
+            .twilight input[type=number] ,
+            .twilight textarea { 
+                color: #000; 
+            }  
+
+            .twilight .genres .btn {
+                width: 100%;
+                height: 18%;
+                border-radius: 0;
+                margin: 0;
+                text-align: center;
+                color: #fff;
+                background-color: #333;
+                border: 0px; 
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+            }   
+
+            .twilight .genres .btn:hover,
+            .twilight .genres .btn.active {
+                color: #333 !important;
+                background-color: #fff !important; 
+            }   
+
+            .twilight .genres .dropdown-menu {
+                width: 200px !important; 
+                height: 300px !important;
+                overflow: auto;
+                background-color: #333;
+                border: 0px; 
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+                border-top: 1px solid #fff;
+                font: bold 'Trebuchet Ms', helvetica; 
+                text-decoration: none; 
+                color: #fff; /*color: #14467a; */
+            }
+
+            .twilight .genres .dropdown-menu li label {
+                padding: 10px;
+                border: 0; 
+                font-family: Helvetica, Arial, sans-serif;
+                background-image: none;
+                // border: 0px;
+                box-shadow: none;
+                letter-spacing: 0px; 
+                color: #fff; /*color: #14467a; */
+            }
+
+            .twilight .genres  .dropdown-menu li label:hover { 
+                font:bold;
+                color: #323232 !important;
+                background-color: #fff !important;
+                border: 0px; 
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+            }
+
+            .twilight .genres  .dropdown-menu > li > label:hover,
+            .twilight .genres  .dropdown-menu > li > label:focus,
+            .twilight .genres .dropdown-menu > li > input[type="checkbox"]:checked + label {
+                font:bold;
+                color: #323232 !important;
+                background-color: #fff !important;
+                border: 0px; 
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+            } 
+
+            .twilight .publishImg {  
+                background: #3e5a67;
+                border: 1px solid #666; 
+            }
+
+            .twilight .publishImg ul {  
+                background-clip: padding-box; 
+                border: 2px solid;
+                border-color: rgba(17, 17, 17, 0.6) rgba(17, 17, 17, 0.7) rgba(17, 17, 17, 0.9);
+                color: #fff; /*color: #14467a; */
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+
+                background-color: #4c7bc3; 
+                background: url(/data/images/bg-showcase-content.png) repeat;
+            }
+  
+
+        .twilight .footerQuery{
+            width: 60%;
+            height: 70%;  
+            position: absolute;    
+            right:  0%; left: 20%; top: 15%; bottom: 0%; 
+            text-align: center;  
+            border: 0px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+       .twilight .footerQueryBtn{
+            width: 50px;
+            height: 67%;  
+            position: absolute;     
+            right:  0%; left: 80%; top: 15%; bottom: 0%;  
+            text-align: center; 
+            padding-top: 5px;
+            font:bold;
+            font-size: 20px;
+            font: bold 'Trebuchet Ms', helvetica;  ;
+            color: #fff;
+            background-color: #333;
+            border: 0px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .twilight .footerQueryBtn:hover{ 
+            color: #323232;
+            background-color: #d3d3d3;
+            cursor: pointer;
+        }
+
+        .twilight .footerQueryBtn:active{ 
+            color: rgba(255, 255, 255, 1); 
+            background: rgba(145, 92, 182, .8);
+            border: 2px solid;
+            cursor: pointer;
+        } 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+		.navbar {
+			margin-bottom: 0;  
+		    z-index: 9999;
+		    border: 0;
+		    font-family: Montserrat, sans-serif;
+		    font-size: 15px !important;
+		    line-height: 1.42857143 !important;
+		    letter-spacing: 4px;
+		    border-radius: 0; 
+		    padding: 0px 15px; 
+		    padding-top: 10px;  
+   		    padding-bottom: 10px; 
+		}   
+		.twilight .navbar {
+		    padding-top: 15px;  
+			padding-bottom: 5px; 
+		}   
+		
+		@media screen and (max-width: 768px) {
+		    .navbar-left {
+		        height: inherit;
+		        padding-top: 0; 
+		        padding-right: 0;
+		        background: none ;
+		        box-shadow: none;
+		    } 
+		    .navbar-right { 
+		        height: inherit;
+		        padding-top: 0; 
+		        padding-right: 0;
+		        background: none ;
+		        box-shadow: none;
+		    }
+		}
+
+		.navbar-toggle {
+		   padding: 14px;
+		}
+
+		#workSpace {
+			width: 96%; 
+			min-width: 300px;
+			left: 2%;
+			height:100%;	
+			position: absolute;
+			top:81px;
+		    border: 0;
+		}
+
+		#leftBar { 
+			width: 2%;  
+			left: 0;
+			height:100%;
+			top:81px;	
+			position: absolute;  
+		    border: 0;  
+		    z-index: 101;  
+		}
+
+		#rightBar { 
+			width: 2%;  
+			right: 0;
+			height:100%;	
+			position: absolute;
+			top:81px;
+		    border: 0; 
+		    z-index: 101; 
+		} 
+
+		footer img:hover {
+		    border: 2px solid;
+		    box-shadow: 0 5px 55px rgba(145, 92, 182, .8);
+		}
+
+		/* Add a dark background color to the footer */
+		.moonB footer {   
+			width: 98.8%; 
+			min-width: 300px;
+			left: 0.6%;
+			position: absolute;
+	    	bottom:0;  
+		    z-index: 5000; 
+		    -webkit-perspective: 150px; /* Chrome, Safari, Opera  */
+		    perspective: 150px;
+		}
+
+		.moonB footer .perspective {  
+			padding: 25px;  
+		    -webkit-transform: rotateX(10deg); /* Chrome, Safari, Opera  */
+		    transform: rotateX(10deg);
+		}
+
+		/* Add a dark background color to the footer */
+		.twilight footer {   
+			width: 100%; 
+			min-width: 300px; 
+			position: absolute;
+	    	bottom:0;  
+		    z-index: 5000;  
+  			border-top: 4px solid #333;
+		}
+
+		.twilight footer .perspective {  
+			padding: 25px;   
+		}
+
+		footer-images img{
+		    vertical-align:bottom;
+		    border:0;
+		}
+
+		footer a {
+		    color: #f5f5f5;
+		}
+
+		footer a:hover {
+		    color: #777;
+		    text-decoration: none;
+		}
+
+			.ghostpane {   
+			    position: absolute;
+			    margin: 0;
+			    padding: 0;
+			    z-index: 98;  
+				background-color: #ffa500; 
+			    -moz-border-radius: 3px;
+				-webkit-border-radius: 3px;
+				border-radius: 1px;
+				border: 2px solid #ffff00;   
+			    opacity: 0; 
+
+			    -webkit-transition: all 0.25s ease-in-out;
+			    -moz-transition: all 0.25s ease-in-out;
+			    -ms-transition: all 0.25s ease-in-out;
+			    -o-transition: all 0.25s ease-in-out;
+			    transition: all 0.25s ease-in-out;
+			} 
+
+		.tab-content{
+			display: none;  
+			width: 100%;
+			height: 100%;     
+			position: absolute;
+			top:0;
+			bottom: 0;
+			left:  0;
+			right: 0 ; 
+			margin: auto;
+		}
+
+		.tab-content.active{
+			display: inherit; 
+	        position: absolute; 
+		}  
+
+		.editor{
+
+			width: 100%;
+			height: 100%; 
+			position: absolute;
+	        top: 0;
+	        right: 0;
+	        bottom: 0;
+	        left: 0; 
+		}   
+
+		.game{
+
+			width: 100%;
+			height: 100%; 
+			position: absolute;
+	        top: 0;
+	        right: 0;
+	        bottom: 0;
+	        left: 0;
+
+	        background-color: #000000; 
+
+	        // border-radius: 25px;
+			// border: 2px solid #0A5007;   
+		}  
+
+		.browser{
+
+			width: 100%;
+			height: 100%; 
+			position: absolute;
+	        top: 0;
+	        right: 0;
+	        bottom: 0;
+	        left: 0; 
+		} 
+	 
+		.button {  
+
+		  /* FONT STYLING */
+		  font: bold 'Trebuchet Ms', helvetica;
+		  letter-spacing: 4px;
+		  text-decoration: none; 
+		}
+
+		.button:hover {   
+		} 
+
+		/* ANIMATE THE BUTTON */
+		.transition,
+		.transition:hover,
+		.transition:active{
+		  -webkit-transition: all 0.3s ease-in-out;
+		    -moz-transition: all 0.3s ease-in-out;
+		    -o-transition: all 0.3s ease-in-out;
+		    transition: all 0.3s ease-in-out;
+		}
+  
+		.popUp {  
+		    border-radius: 5px; 
+		    display:none;  
+		    width:35%;
+			min-width: 270px; 
+		    height: 50%;   
+		}
+		.twilight .popUp {  
+		    border-radius: 0; 
+			border: 6px solid #222;    
+		}
+		.b-close{
+		    cursor:pointer;
+		    position:absolute;
+		    right:-20px;
+		    top:-20px;
+		    width: 40px;
+			height: 40px;
+		} 
+
+		.b-close:hover { 
+		    border: 2px solid;
+		    box-shadow: 0 5px 55px rgba(145, 92, 182, .8);
+		    cursor: pointer;
+		} 
+
+		.blog1{
+		    width: 100%;
+			height: 80px;      
+			position: absolute; 
+			
+			right: 0; left: 0%; top: 0%; bottom: 0;     
+			text-align: center; 
+			/* FONT STYLING */
+			font: bold 'Trebuchet Ms', helvetica; 
+			letter-spacing: 4px;
+			text-decoration: none;
+			text-shadow: -1px -1px 1px #00172e,1px 1px 1px #a1cfff; 
+		}
+
+		.blog2{
+		    width: 100%;
+			height: 100px;      
+			position: absolute; 
+			right: 0; left: 0%; top: 80px; bottom: 0;   
+ 			 text-align: center;
+			font-weight: normal;
+			 font-family: Calibri;
+			text-shadow: 0 -1px black; 
+		}
+		
+ 		.niceDiv.onedrive{
+		    width: 20%;
+			height: 75%;  
+			position: absolute;       
+			right: 0; left: 28%; top: 0%; bottom: 0%; padding: 0;
+		}
+		.niceDiv.onedrive img{
+		    padding-top: 25%; right: 0; bottom: 0; left: 0; width:80%; height:80%;
+		}
+
+		.niceDiv.gDrive{
+		    width: 20%;
+			height: 75%;  
+			position: absolute;         
+			right: 0; left: 6%; top: 0%; bottom: 0%; padding: 0;
+ 		} 
+		.niceDiv.gDrive img{ 
+		    padding-top: 25%; right: 0; bottom: 0; left: 0; width:80%; height:80%;
+		}
+
+		.niceDiv.dropbox{
+		    width: 20%;
+			height: 75%;    
+			position: absolute;  
+			right: 0; left: 50%; top: 0%; bottom: 0%; padding: 0; 
+ 		}
+		.niceDiv.dropbox img{
+		    padding-top: 25%; right: 0; bottom: 0; left: 0; width:80%; height:80%; 
+		}
+
+		.niceDiv.box{
+		    width: 20%;
+			height: 75%;   
+			position: absolute;          
+			right: 0; left: 72%; top: 0%; bottom: 0%; padding: 0;  
+ 		}
+		.niceDiv.niceDiv.box img{
+		    padding-top: 25%; right: 0; bottom: 0; left: 0; width:80%; height:80%;
+		}
+
+		.gameNText{
+		    width: 85%;
+			height: 22%;  
+			position: absolute;    
+			right:  0%; left: 7%; top: 35%; bottom: 0%; 
+			text-align: center;
+			  
+		}
+
+		.gameNClick{
+		    width: 40%;
+			height: 20%;    
+			position: absolute;
+			right: 0; left: 30%; top: 67%; bottom: 0%;     
+			 
+			cursor: pointer;  
+		}  
+
+		#logError { 
+	    /*
+	    min-width:400px;
+	    min-height: 180px;
+	    */  
+	    text-align: center;
+
+		} 
+
+		#publishP{
+
+		}
+
+		.publishImg{ 
+			width: 35%;
+			height: 95%;   
+			position: absolute;    
+			left: 1%;
+			text-align: center;  
+		}  
+
+		.publishImg ul { 
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 45%;  
+  			overflow: auto; 
+		}
+
+		.publishImg ul img { 
+  			  float: left;
+			  width: 70px;
+			  height: 40px;
+			  border: 3px solid #d3d3d3;
+			  border-radius: 3px;
+		}
+
+		.publishProps{
+			width: 60%;
+			height: 95%;  
+			position: absolute;    
+			left: 38%; 
+			text-align: left; 
+		} 
+		
+		.tabOptG{
+			content: "\f000";
+		}
+		
+		.addTabG{
+			content: "\f000";
+		} 
+		
+		.closeWindow{
+			content: "\f000";
+		} 
+
+		.pane.toggle{
+		    z-index: 9999; 
+		    width: 100%; 
+		    height: 100%; 
+		    position: fixed; 
+		    top: 0; 
+		    left: 0; 
+		 }
+
+		 .winPane.fullscreen{
+		    z-index: 9999; 
+		    width: 100%; 
+		    height: 100%; 
+		    position: absolute; 
+		    top: 0; 
+		    left: 0; 
+		 }
+		
+		.documentation{
+			width: 100%;
+			height: 100%;
+		}
+
+
+		#busyP {  
+		    display:none; 
+		    padding:20px;  
+		}
+
+		#busyP #busyImg2 { 
+		      -webkit-animation: rotate 1s infinite; /* Chrome, Safari, Opera */
+		    animation: rotate 1s infinite;
+		}
+
+		@-webkit-keyframes rotate {
+		  from {
+		    -webkit-transform: scale(1, 1);
+		    opacity: 0.75;
+		  } 
+		  50% {
+		    -webkit-transform: scale(0, 1);
+		    opacity: 1.0;
+		  } 
+		  to { 
+		    -webkit-transform: scale(1, 1);
+		    opacity: 0.75;
+		  }
+		} 
+
+
+		.wTabType{
+			width: 35px;
+			height: 35px;
+			position: absolute;
+			right: 10px;
+			bottom: 10px;
+			z-index: 10000;
+			opacity: 0.65; 
+		}
+
+		.wTabType:hover{
+			cursor: pointer;
+
+			opacity: 0.75; 
+		  -webkit-animation-name: pulse; 
+		  -webkit-animation-duration: 0.5s; 
+		  -webkit-animation-iteration-count: 10; 
+		} 
+
+		.toggleFront{
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			right: -15px;
+			top: -15px;
+			z-index: 10000;
+		}
+
+		.toggleFront:hover{
+			cursor: pointer;
+
+			opacity: 0.75; 
+		  -webkit-animation-name: pulse; 
+		  -webkit-animation-duration: 0.5s; 
+		  -webkit-animation-iteration-count: 10; 
+		} 
+		#userName { 
+			float:left;
+			font-style: bold;
+		    color: #000;
+		}
+		#userEmail { 
+			float:left;
+			font-style: italic;
+			color: #25383C;
+		}
+
+		.dropdown .dropdown-menu.userInfo { 
+			width: 350px !important;
+			height: 170px; 
+			text-align: center;  
+		}
+  
+		#hostLogo {   
+			//float:left;
+			width: 100px;
+			height: 100px;
+			max-width: 100px;  
+		}
+
+		#hostLogo:hover {  
+		    border: 2px solid rgba(145, 92, 182, .8);
+		    box-shadow: 0 5px 55px rgba(145, 92, 182, .8);
+		}
+
+		#log {
+			width: 350px !important; 
+			border:0px !important;
+			position: absolute;
+	    	bottom:0; 
+		    padding: 16px;
+			text-align: center;  
+		}
+
+		#log:hover {
+		    color: #777;
+		    cursor: pointer;
+		    border: 2px solid;
+		    box-shadow: 0 5px 55px rgba(145, 92, 182, .8);
+		} 
+
+		#userIcon {
+		  width: 65px;
+		  height: 65px; 
+		  background: url("../data/images/userIcon2.png") center center no-repeat;
+		  background-size: cover;
+		}  
+
+		.moonB .footerQuery{
+		    width: 60%;
+			height: 70%;  
+			position: absolute;    
+			right:  0%; left: 20%; top: 5%; bottom: 0%; 
+			text-align: center; 
+		}
+		.moonB .footerQueryBtn{
+		    width: 50px;
+			height: 67%;  
+			position: absolute;     
+			right:  0%; left: 80%; top: 5%; bottom: 0%;  
+			text-align: center; 
+			padding-top: 5px;
+			font:bold;
+		    font-size: 20px;
+			font: bold 'Trebuchet Ms', helvetica; 
+				
+			-webkit-box-shadow: rgba(255,255,255,.3) 0 2px 1px,rgba(0,0,0,.3) 0 -2px 1px, rgba(0,0,0,0.5) 0px 3px 10px, rgba(0,50,0,.75) 0 0 40px;
+			-moz-box-shadow: rgba(255,255,255,.3) 0 2px 1px,rgba(0,0,0,.3) 0 -2px 1px, rgba(0,0,0,0.5) 0px 3px 10px, rgba(0,50,0,.75) 0 0 40px;
+			box-shadow: rgba(255,255,255,.3) 0 2px 1px,rgba(0,0,0,.3) 0 -2px 1px, rgba(0,0,0,0.5) 0px 3px 10px, rgba(0,50,0,.75) 0 0 40px;
+			  
+			background: #3e5a67;
+			background: -webkit-linear-linear-gradient(to bottom, #3e5a67 0%, #183542 50%, #002333 51%, #124055 100%);
+		  	background: -moz-linear-gradient(to bottom, #3e5a67 0%, #183542 50%, #002333 51%, #124055 100%);
+		  	background: -ms-linear-gradient(to bottom, #3e5a67 0%, #183542 50%, #002333 51%, #124055 100%);
+		  	background: -o-linear-gradient(to bottom, #3e5a67 0%, #183542 50%, #002333 51%, #124055 100%);
+		  	background: linear-gradient(to bottom, #3e5a67 0%, #183542 50%, #002333 51%, #124055 100%);
+		}
+
+		.moonB .footerQueryBtn:hover{ 
+			color: #ff0;
+			 background: -webkit-linear-linear-gradient(to bottom, #7b919b 0%, #183542 50%, #15506b 51%, #124055 100%);
+		  	background: -moz-linear-gradient(to bottom, #7b919b 0%, #183542 50%, #15506b 51%, #124055 100%);
+		  	background: -ms-linear-gradient(to bottom, #7b919b 0%, #183542 50%, #15506b 51%, #124055 100%);
+		  	background: -o-linear-gradient(to bottom, #7b919b 0%, #183542 50%, #15506b 51%, #124055 100%);
+		  	background: linear-gradient(to bottom, #0a808a 0%, #183542 50%, #15506b 51%, #124055 100%);
+		  	
+			cursor: pointer;
+		}
+
+		.moonB .footerQueryBtn:active{ 
+			color: rgba(255, 255, 255, 1); 
+			box-shadow: 0 5px 55px rgba(145, 92, 182, .8); 
+			border: 2px solid;
+			cursor: pointer;
+		} 
+
+
+		.toggleFull{
+			width: 35px;
+			height: 35px;
+			position: absolute;
+			right: 10px;
+			bottom: 15px; 
+			z-index: 5000;
+		}
+		.twilight .toggleFull{ 
+			top:15%;
+		}
+
+		.toggleFull :hover{ 
+			cursor: pointer;
+
+			opacity: 0.75; 
+		  -webkit-animation-name: pulse; 
+		  -webkit-animation-duration: 0.5s; 
+		  -webkit-animation-iteration-count: 10; 
+		}
+
+		@-webkit-keyframes pulse {
+	  from {
+	    -webkit-transform: scale(1.0);
+	    opacity: 0.75;
+	  }
+	  50% {
+	    -webkit-transform: scale(1.2);
+	    opacity: 1.0;
+	  }
+	  to { 
+	    -webkit-transform: scale(1.0);
+	    opacity: 0.75;
+	  }
+	} 
+
+	 
+
+
+
+
+
+
+#busy {
+	visibility: hidden;
+    width: 10px;
+	height: 10px;
+	position: absolute;
+	bottom:75px; 
+    left:10px;
+	z-index: 10000;
+}
+
+#busy img { 
+  width:60px; height:65px;  
+  border-radius: 50%;
+  cursor: pointer;
+  float: left;
+      -webkit-animation: rotate 1s infinite; /* Chrome, Safari, Opera */
+    animation: rotate 1s infinite;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: scale(1, 1);
+    opacity: 0.75;
+  } 
+  50% {
+    -webkit-transform: scale(0, 1);
+    opacity: 1.0;
+  } 
+  to { 
+    -webkit-transform: scale(1, 1);
+    opacity: 0.75;
+  }
+} 
+
+
+
+
+
+
+#busy1 {
+	visibility: hidden;
+    width: 10px;
+	height: 10px;
+	position: absolute;
+	bottom:0%; 
+    left:50%;
+	z-index: 10000;
+}
+
+.s {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  float: left;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.s:nth-child(n+2) {
+  margin-left: 80px;
+}
+
+.s:nth-child(1) {
+  background: #0ff;
+  -webkit-animation: r0 2s 0s ease-out infinite;
+  -moz-animation: r0 2s 0s ease-out infinite;
+  animation: r0 2s 0s ease-out infinite;
+}
+.s:nth-child(1):hover {
+  background: #0ff;
+  -webkit-animation: r20 0.5s 0.4s ease-out infinite;
+  -moz-animation: r20 0.5s 0.4s ease-out infinite;
+  animation: r20 0.5s 0.4s ease-out infinite;
+}
+
+@-webkit-keyframes r0 {
+  0% {
+    box-shadow: 0 0 8px 6px rgba(26, 255, 179, 0), 0 0 0px 0px rgba(255, 26, 26, 0), 0 0 0px 0px rgba(26, 255, 179, 0);
+  }
+  10% {
+    box-shadow: 0 0 8px 6px #3cb5b3, 0 0 12px 10px rgba(255, 26, 26, 0), 0 0 12px 14px #3cb5b3;
+  }
+  100% {
+    box-shadow: 0 0 8px 6px rgba(26, 255, 179, 0), 0 0 0px 40px rgba(255, 26, 26, 0), 0 0 0px 40px rgba(26, 255, 179, 0);
+  }
+}
+@-moz-keyframes r0 {
+  0% {
+    box-shadow: 0 0 8px 6px rgba(26, 255, 179, 0), 0 0 0px 0px rgba(255, 26, 26, 0), 0 0 0px 0px rgba(26, 255, 179, 0);
+  }
+  10% {
+    box-shadow: 0 0 8px 6px #3cb5b3, 0 0 12px 10px rgba(255, 26, 26, 0), 0 0 12px 14px #3cb5b3;
+  }
+  100% {
+    box-shadow: 0 0 8px 6px rgba(26, 255, 179, 0), 0 0 0px 40px rgba(255, 26, 26, 0), 0 0 0px 40px rgba(26, 255, 179, 0);
+  }
+}
+@keyframes r0 {
+  0% {
+    box-shadow: 0 0 8px 6px rgba(26, 255, 179, 0), 0 0 0px 0px rgba(255, 26, 26, 0), 0 0 0px 0px rgba(26, 255, 179, 0);
+  }
+  10% {
+    box-shadow: 0 0 8px 6px #3cb5b3, 0 0 12px 10px rgba(255, 26, 26, 0), 0 0 12px 14px #3cb5b3;
+  }
+  100% {
+    box-shadow: 0 0 8px 6px rgba(26, 255, 179, 0), 0 0 0px 40px rgba(255, 26, 26, 0), 0 0 0px 40px rgba(26, 255, 179, 0);
+  }
+}
+@-webkit-keyframes r20 {
+  from {
+    box-shadow: 0 0 8px 6px #3cb5b3, 0 0 12px 10px rgba(255, 26, 26, 0), 0 0 12px 14px #3cb5b3;
+  }
+  to {
+    box-shadow: 0 0 8px 6px rgba(255, 26, 26, 0), 0 0 4px 40px rgba(255, 26, 26, 0), 0 0 4px 41px rgba(255, 26, 26, 0);
+  }
+}
+@-moz-keyframes r20 {
+  from {
+    box-shadow: 0 0 8px 6px #3cb5b3, 0 0 12px 10px rgba(255, 26, 26, 0), 0 0 12px 14px #3cb5b3;
+  }
+  to {
+    box-shadow: 0 0 8px 6px rgba(255, 26, 26, 0), 0 0 4px 40px rgba(255, 26, 26, 0), 0 0 4px 41px rgba(255, 26, 26, 0);
+  }
+}
+@keyframes r20 {
+  from {
+    box-shadow: 0 0 8px 6px #3cb5b3, 0 0 12px 10px rgba(255, 26, 26, 0), 0 0 12px 14px #3cb5b3;
+  }
+  to {
+    box-shadow: 0 0 8px 6px rgba(255, 26, 26, 0), 0 0 4px 40px rgba(255, 26, 26, 0), 0 0 4px 41px rgba(255, 26, 26, 0);
+  }
+} 

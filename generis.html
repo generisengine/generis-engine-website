@@ -1,0 +1,2222 @@
+
+<!doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang=en  xmlns="https://www.w3.org/1999/xhtml">
+	<head >
+ 
+		<title>Generis-Game Engine</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="Online Html Game Engine">
+		<meta name="keywords" content="Generis,2D,Game,Engine,Web,Online,HTML,CSS,JavaScript">
+		<meta name="author" content="Geraud NT">
+
+		<link rel="icon" type="image/gif" href="data/images/logo11Thumb.png" /> 
+		<link rel="stylesheet" href="css/style1.css" />
+		
+		<link href="css/css_Lato.css" rel="stylesheet" type="text/css">
+		<link href="css/css_Montserrat.css" rel="stylesheet" type="text/css"> 
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script> 
+		<script src="js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
+		<script src="js/dropdowns-enhancement.js"></script> 
+		  <link href="js/bootstrap.css" rel="stylesheet"> <!-- -->
+		<link href="js/dropdowns-enhancement.css" rel="stylesheet"> 
+    	<link rel="stylesheet" href="css/jquery.sidr.dark.css"> 
+    	
+    	<script src="js/jquery.sidr.js"></script> 
+		<script src="js/jquery.bpopup.min.js"></script>  
+		<script src="js/jquery.fittext.js"></script>
+        <script src="js/fabric.js"></script>  
+
+		<script src="js/core.js"></script> 
+		
+		<script src="js/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/beautify.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/src-noconflict/ext-themelist.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="codebase/webix.js" type="text/javascript"></script>
+		<script src="codebase/filemanager.js" type="text/javascript"></script>  
+		<link rel="stylesheet" type="text/css" href="codebase/webix.css">
+		<link rel="stylesheet" type="text/css" href="codebase/filemanager.css">  
+
+		<!--
+
+		<script src="//cdn.webix.com/site/webix.js?v=4.1.0" type="text/javascript"></script>
+		<script src="//cdn.webix.com/site/filemanager/filemanager.js?v=4.1.0" type="text/javascript"></script>
+
+		<link rel="stylesheet" type="text/css" href="//cdn.webix.com/site/webix.css?v=4.1.0">
+		<link rel="stylesheet" type="text/css" href="//cdn.webix.com/site/filemanager/filemanager.css?v=4.1.0">
+
+		-->
+ 
+		<script src="js/fso.min.js" type="text/javascript"></script>
+		<script src="js/upload.js"></script>
+
+		<script src="js/boxApi.js"> </script>
+		<script src="private/ClientID.js"> </script>
+		<script src="js/gDriveApi.js"> </script>
+		<script src="js/oneDriveApi.js"> </script>
+		<script src="js/dropBoxApi.js"> </script>
+		
+		<script src="js/tab.js"></script> 
+		<script src="js/scriptEditor.js"></script> 
+		<script src="js/sceneEditor.js"></script> 
+		<script src="js/sceneViewer.js"></script> 
+		<script src="js/projectBrowser.js"></script> 
+		<script src="js/DocClass.js"></script> 
+		<script src="js/window.js"></script> 
+		<script src="js/game.js"></script> 
+  
+		<script src="js/functions.js"> </script>
+		
+	</head>
+
+	<body id="body" class="moonB bg" >  
+ 		
+ 		<div id="gGEngine"  style="display:none;" > 
+ 		</div>
+ 		<div class="container-fluid" style="height: 80px;" ></div>
+
+		<nav id="menubar" class="navbar navbar-default navbar-fixed-top"> 
+
+	        <a href='/' data-tag="tooltip" title="Home" ><img style="width:60px; height:65px; left:45%;top:10px; position:absolute" src="data/images/logoNav.png"/></a> 
+	      <div >
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button> 
+	        </div> 
+	        <div class="collapse navbar-collapse" id="myNavbar">
+	          <ul class="nav navbar-nav navbar-left"> 
+	            <li class="dropdown"><a data-toggle="dropdown"><h5>Game</h5></a>
+	            	<ul class="dropdown-menu">
+                      <li><a href="#" tabindex="-1" onclick="NewGame()">New Game<span style="float:right">Alt+N</span></a></li> 
+                      <li><a href="#" tabindex="-1" onclick="if(generisBusy || log.innerHTML=='LOGIN') return; openGameTT = $('#openGameT').bPopup(fontsize);">Open Game<span style="float:right">Alt+O</span></a></li> 
+                      <li><a href="#" tabindex="-1" onclick="saveGame()">Save Game<span style="float:right">Alt+S</span></a></li> 
+                      <li><a href="#" tabindex="-1" onclick="$('#deleteGameP').bPopup(fontsize);">Delete Game<span style="float:right">Alt+D</span></a></li>
+                      <li class="divider"></li>
+                      <li><a href="#" tabindex="-1" onclick="publishG()" >Publish Game</a></li>
+                      <li><a href="#" tabindex="-1" onclick="tutorialsPP = $('#tutorialsP').bPopup(fontsize);" >Publish Tutorial</a></li>
+                      <li><a href="#" tabindex="-1" onclick="assetsPP = $('#assetsP').bPopup(fontsize);">Publish Asset</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#" tabindex="-1" onclick="closeGamePP = $('#closeGameP').bPopup(fontsize);">Close Game<span style="float:right">Alt+W</span></a></li>
+                    </ul>
+	            </li> 
+	            <li class="dropdown"><a data-toggle="dropdown"><h5>Edit</h5></a>
+	            	<ul class="dropdown-menu">
+                      <li  ><a href="#" tabindex="-1" onclick="trigger('undo');">Undo <span style="float:right">Ctrl+Z</span></a></li>
+                      <li ><a href="#" tabindex="-1" onclick="trigger('redo');">Redo <span style="float:right">Ctrl+Shift+Z</span></a></li>
+                      <li class="divider"></li>
+                      <li class="disabled"><a href="#" tabindex="-1">Cut  <span style="float:right">Ctrl+X</span></a></li>
+                      <li ><a href="#" tabindex="-1" onclick="trigger('copy');">Copy  <span style="float:right">Ctrl+C</span></a></li>
+                      <li ><a href="#" tabindex="-1" onclick="trigger('paste');">Paste <span style="float:right">Ctrl+V</span></a></li>
+                      <li ><a href="#" tabindex="-1" onclick="trigger('del');">Delete <span style="float:right">Del</span></a></li>
+                      <li class="divider"></li>
+                      <li ><a href="#" tabindex="-1" onclick="trigger('selectAll');">Select All <span style="float:right">Ctrl+A</span></a></li> 
+                    </ul>
+	            </li> 
+	            <li class="dropdown"><a data-toggle="dropdown"><h5>Windows</h5></a>
+	            	<ul class="dropdown-menu">  
+                       <li><a href="#" tabindex="-1" onclick="newWindow()">New Window<span style="float:right">Shift+Alt+N</span></a></li>  
+                       <li class="dropdown-submenu"><a href="#" tabindex="-1" data-toggle="dropdown">New Tab</a>
+                        <ul class="dropdown-menu"> 
+                          <li class="dropdown-submenu"><a href="#" tabindex="-1">Script Editor</a>
+                          	<ul id="scripts" class="dropdown-menu"> 
+	                        </ul>
+                          </li>
+                          <li class="dropdown-submenu"><a href="#" tabindex="-1">Scene Editor</a>
+                          	<ul id="scenes1" class="dropdown-menu" style="overflow: auto;max-height: 400px;"> 
+	                        </ul>
+                          </li>
+                          <li class="dropdown-submenu"><a href="#" tabindex="-1">Scene Viewer</a>
+                          	<ul id="scenes2" class="dropdown-menu" style="overflow: auto;max-height: 400px;"> 
+	                        </ul>
+                          </li>
+                          <li><a href="#" tabindex="-1" onclick="FileBrowser()">File Browser</a></li>
+                          <li><a href="#" tabindex="-1" onclick="Documentation()">API</a></li>
+                        </ul>
+                      </li> 
+                      <li><a href="#" tabindex="-1" onclick="if(generisBusy || !game) return; newFileT = $('#newFileT').bPopup(fontsize);">New File<span style="float:right">Ctrl+Alt+N</span></a></li> 
+                      <li><a href="#" tabindex="-1" onclick="if(generisBusy || !game) return; fileOpenTabT = $('#fileOpen').bPopup(fontsize);">Open File<span style="float:right">Ctrl+Alt+O</span></a></li>
+                      <li><a href="#" tabindex="-1" onclick="saveFile()">Save File<span style="float:right">Ctrl+Alt+S</span></a></li>
+                      
+                      <li><a href="#" tabindex="-1" onclick="closeWindow()">Close Window<span style="float:right">Ctrl+Alt+W</span></a></li>
+                      <li class="divider"></li>
+                      <li><a href="#" tabindex="-1">Settings</a></li>
+                    </ul>
+	            </li>   
+	          </ul>    	          
+	          <ul class="nav navbar-nav navbar-right">
+	            <li class="dropdown"><a data-toggle="dropdown"><h5>Tools</h5></a>
+	            	<ul class="dropdown-menu"> 
+	            	  <li class="dropdown-header">Internal Tools</li> 
+                      <li><a href="#" tabindex="-1" onclick="trigger('debug')">Debugger<span style="float:right">F12</span></a></li> 
+                      <li class="divider"></li>
+                      <li class="dropdown-header">External tools</li>
+                      <li><a href="#" tabindex="-1" onclick="window.open('https://www.mapeditor.org/', '_blank'); ">Tile Map Editor</a></li>
+                      <li><a href="#" tabindex="-1" onclick="window.open('https://www.codeandweb.com/texturepacker', '_blank'); ">Texture Packer</a></li>
+                      <li><a href="#" tabindex="-1" onclick="window.open('https://www.codeandweb.com/physicseditor', '_blank'); ">Physics Editor</a></li>
+                      <li><a href="#" tabindex="-1" onclick="window.open('https://www.gimp.org/', '_blank'); ">Image Editor</a></li> 
+                    </ul>
+	            </li> 
+	            <li class="dropdown"><a data-toggle="dropdown"><h5>Preferences</h5></a>
+	            	<ul class="dropdown-menu">  
+                       <li class="dropdown-submenu"><a href="#" tabindex="-1" data-toggle="dropdown">Appearance</a>
+                        <ul class="dropdown-menu pull-right">
+                          <li class="dropdown-submenu"><a href="#" tabindex="-1" data-toggle="dropdown">Themes</a>
+	                        <ul class="dropdown-menu">
+	                          <li><a href="#" tabindex="-1" onclick="chgThemes('moonB')">Moon Blue</a></li>
+	                          <li><a href="#" tabindex="-1" onclick="chgThemes('twilight')" >Twilight</a></li>
+	                          <li class="disabled"><a href="#" tabindex="-1" >Clouds</a></li>
+	                          <li class="disabled"><a href="#" tabindex="-1" >Doom Night</a></li>
+	                        </ul>
+	                      </li>
+                          <li><a href="#" tabindex="-1" onclick="gBackgroundT = $('#gBackground').bPopup(fontsize);">Background</a></li>
+                        </ul>
+                      </li> 
+                    </ul>
+	            </li> 
+	            <li class="dropdown"><a data-toggle="dropdown"><h5>Help</h5></a>
+	            	<ul class="dropdown-menu">
+                      <li><a href="#" tabindex="-1" onclick="window.open('/docs', '_blank'); ">Manual</a></li>
+                      <li><a href="#" tabindex="-1" onclick="window.open('/tutorials', '_blank'); ">Tutorials</a></li>
+                      <li><a href="#" tabindex="-1" onclick="window.open('/assets', '_blank'); ">Assets</a></li> 
+                      <li class="divider"></li>
+                      <li><a href="#" tabindex="-1" onclick="window.open('/forum', '_blank'); ">Forum</a></li>  
+                    </ul>
+	            </li>  
+	            <li class="dropdown"> 
+					<a id="userIcon" class="dropdown-toggle" data-toggle="dropdown" title="User" onclick="if(log.innerHTML == 'LOGIN') logPopup = $('#login').bPopup(fontsize);  " > 
+					</a>
+					<div  id="userInfo" class="dropdown-menu dropdown-menu-right userInfo" style="visibility:hidden">  
+						<div>
+				          <div class="row">
+				            <div class="col-sm-4">
+				              <a id="hostUrl" href="/" target="_blank">
+				                <img id="hostLogo" src="data/images/logoNav.png" class="logo1" data-toggle="tooltip" title="Host">
+				              </a>
+				            </div>
+				            <div class="col-sm-8">
+				              <div id="userName"> User Name </div>
+							  <div id="userEmail"> username@email.com </div>
+							  <button id="userAccount" data-toggle="tooltip" title="Account Settings" onclick="userAccount()"> My Account </button>
+				            </div>
+				          </div>
+				        </div>
+						<div id="log" onclick="userLoging()">LOGIN</div>
+					</div> 
+			    </li>
+		    
+	          </ul>
+	        </div> 
+	      </div>
+	    </nav> 
+	    
+	    <div id="workSpace">
+			<div id="windows"> </div> 
+		</div>
+
+		<div id="leftBar"> 
+			<a id="NewBtn" class="btn" style="top:25px"  href="#New">  New </a>
+			<a id="MouseBtn" class="btn" style="top:95px"  href="#Mouse">  Mouse </a> 
+			<a id="ImagesBtn" class="btn" style="top:165px"  href="#">  Animations </a>
+			<a id="1ExtraBtn" class="btn" style="top:235px"  href="#">  <span class="glyphicon glyphicon-menu-left"></span>  </a> 
+		</div>
+		<div id="rightBar">
+			<a id="PropsBtn" class="btn" style="top:25px"  href="#Props">  Properties </a>
+			<a id="SceneBtn" class="btn" style="top:95px"  href="#Scene">  Scene </a>
+			<a id="CameraBtn" class="btn" style="top:165px"  href="#Camera">  Camera </a> 
+			<a id="EntityBtn" class="btn" style="top:235px"  href="#Entity">  Entity </a> 
+			<a id="1HistoryBtn" class="btn" style="top:305px"  href="#">  <span class="glyphicon glyphicon-menu-left"></span>  </a> 
+		</div> 
+	    <div id="Menu" class="Hide">
+        	<h4>Menu</h4>
+	    </div>
+	    <div id="New" class="Hide">
+        	<h4>New</h4>
+			<ul>
+				<li name="click" style="padding-left: 15px;" onclick="newScene()"> Scene </li>
+				<li name="click" style="padding-left: 15px;" onclick="newCamera()"> Camera </li>
+				<li>
+				  <a href="#">Entities</a>
+				  <ul>
+			          <li name="Rectangle" class="active" data-sel="true"><a href="#">Rectangle</a></li> 
+			          <li name="Circle" data-sel="true"><a href="#">Circle</a></li>  
+				  </ul>
+				</li>
+	        </ul> 
+	    </div>
+	    <div id="Extra" class="Hide">
+        	<h4>Extra</h4>
+	    </div>
+	    <div id="Mouse" class="Hide">
+        	<h4>Mouse</h4>
+			<ul>
+				<li  name="edit" class="active" data-sel="true"><a href="#">Edit</a></li>
+				<li  name="create" data-sel="true"><a href="#">Add</a></li>
+			</ul>
+	    </div>
+	    <div id="Images" class="Hide">
+        	<h4> Body Animations </h4> 
+			<ul>  
+				<li  name="click" onclick="newAnim()" data-sel="true">New</li>
+			</ul>   
+			<ul name="main">   
+				<li class="active" data-sel="true">
+				<span> <img src="data/images/close.png" name="close"> Edit  <img src="data/images/delete.png" name="delete"> </span>
+				<div draggable='true'> <a>  
+					<img src='/data/images/square.png'/>  
+					  
+				</a> </div> 
+				</li>   
+				<li data-sel="true">
+				<span> <img src="data/images/close.png" name="close"> Edit  <img src="data/images/delete.png" name="delete"> </span>    
+				<div draggable='true'> <a> 
+					<img src='/data/images/circle.png'/>  
+				</a> </div>  
+				</li>       
+			</ul>
+	    </div>
+	    <div id="Props" class="Hide">
+        	<h4>Props</h4>
+        	<!--
+			<ul><li style="text-align: center; "> GAME </li></ul>
+			<ul> 
+				<li style="padding: 0 10px;"> Game WtoH: <input  style="width:40%;" type="number" /> </li>
+				<li style="padding: 0 10px;"> Canvas Width: <input style="width:40%;" type="number" /> </li>
+				<li style="padding: 0 10px;"> Canvas Height: <input style="width:40%;" type="number" /> </li>
+			</ul>
+			-->
+			<ul><li style="text-align: center; "> DEFAULT </li></ul>
+			<ul><li style="text-align: center; "> SCENE </li></ul>
+			<ul id="dScene">
+				<li> 
+					<li name="width" style="padding: 0 10px;"> Width: <input type="number" value="1000" /> </li>
+					<li name="height" style="padding: 0 10px;"> Height: <input type="number" value="1000" /> </li>
+					<li name="WtoH" style="padding: 0 10px;"> WtoH: <input type="number" step="0.1"/> </li>
+					<li name="gravityX" style="padding: 0 10px;"> gravity X: <input type="number" step="10" /> </li>
+					<li name="gravityY" style="padding: 0 10px;"> gravity Y: <input type="number" step="10"/> </li>
+	            </li>  
+			</ul>
+			<ul><li style="text-align: center; "> CAMERA </li></ul>
+			<ul id="dCamera">
+				<li>   
+					<li name="x" style="padding: 0 10px;"> X: <input type="number" value="0"/> </li>
+					<li name="y" style="padding: 0 10px;"> Y: <input type="number" value="0" /> </li>
+					<li name="z" style="padding: 0 10px;"> Z: <input type="number" value="0" /> </li> 
+					<li name="width" style="padding: 0 10px;"> Width: <input type="number" value="1000" /> </li>
+					<li name="height" style="padding: 0 10px;"> Height: <input type="number" value="1000" /> </li>
+				 
+	            </li>  
+			</ul>
+			<ul><li style="text-align: center; "> ENTITY </li></ul>
+			<ul id="dEntity">
+				<li>
+				  <a href="#">Body Type</a>
+					<ul >
+		              <li><a href="#">
+		                <input type="radio" id="static" name="dType" value="static" checked>
+		                <label for="static">Static</label>
+		                </a>
+		              </li>
+		              <li><a href="#">
+		                <input type="radio" id="dynamic" name="dType" value="dynamic">
+		                <label for="dynamic">Dynamic</label>
+		                </a>
+		              </li> 
+		            </ul>
+	            </li>
+			</ul>
+	    </div>
+	    <div id="Scene" class="Hide">
+        	<h4>Scene</h4>
+			<ul>
+				<li name="id" style="padding: 0 10px;"> ID: <select style="width:80%; color:#000"> </select> </li>
+			</ul>
+			<ul>
+				<li name="width" style="padding: 0 10px;"> Width: <input type="number" /> </li>
+				<li name="height" style="padding: 0 10px;"> Height: <input type="number" /> </li>
+				<li name="WtoH" style="padding: 0 10px;"> WtoH: <input type="number" step="0.1"/> </li>
+				<li name="gravityX" style="padding: 0 10px;"> gravity X: <input type="number" step="10"/> </li>
+				<li name="gravityY" style="padding: 0 10px;"> gravity Y: <input type="number" step="10"/> </li>
+			</ul>
+	    </div>
+	    <div id="Entity" class="Hide">
+        	<h4>Entity</h4>
+			<ul>
+				<li name="id" style="padding: 0 10px;"> ID: <select style="width:80%; color:#000"> </select> </li>
+				<li name="scene" style="padding: 0 10px;"> Scene: <input type="text" readonly/> </li>
+				<li name="idleBody" style="padding: 0 10px;"> Idle Body: <input type="text" readonly/> </li>
+				<li>
+				  <a href="#">Body Type</a>
+					<ul >
+		              <li><a href="#">
+		                <input type="radio" id="bstatic" name="bType" value="1" checked>
+		                <label for="bstatic">Static</label>
+		                </a>
+		              </li>
+		              <li><a href="#">
+		                <input type="radio" id="bdynamic" name="bType" value="2">
+		                <label for="bdynamic">Dynamic</label>
+		                </a>
+		              </li> 
+		            </ul>
+	            </li> 
+			</ul>
+			<ul>
+				<li name="x" style="padding: 0 10px;"> X: <input type="number" /> </li>
+				<li name="y" style="padding: 0 10px;"> Y: <input type="number" /> </li>
+				<li name="z" style="padding: 0 10px;"> Z: <input type="number" /> </li>
+				<li name="angle" style="padding: 0 10px;"> Angle: <input type="number" /> </li>
+			</ul>
+			<ul>
+				<li name="width" style="padding: 0 10px;"> Width: <input type="number" /> </li>
+				<li name="height" style="padding: 0 10px;"> Height: <input type="number" /> </li>
+				<li name="radius" style="padding: 0 10px;"> Radius: <input type="number" /> </li>
+			</ul>
+			<ul>
+				<li name="groupIndex" style="padding: 0 10px;"> GroupIndex: <input type="number" /> </li>
+				<li name="alpha" style="padding: 0 10px;"> Alpha: <input type="number"  step="0.1"/> </li>  
+				<li name="flip" style="padding: 0 10px;"> Flip: <select style="color:#000">
+				  <option value="none">None</option>
+				  <option value="horizontal">Horizontal</option>
+				  <option value="vertical">Vertical</option>
+				</select> </li>  
+				<li name="eDebugDraw" style="padding: 0 10px;"> EDebugDraw: <input type="checkbox" /> </li>
+				<li name="eDraw" style="padding: 0 10px;"> EDraw: <input type="checkbox" /> </li>   
+				<li name="useImageSize" style="padding: 0 10px;"> UseImageSize: <input type="checkbox" /> </li>   
+			</ul>
+			<ul id="bImages">
+				<li style="text-align: center;"> Body Animation <img src="data/images/delete.png" name="delete"> </li> 
+				<li name="images">
+				<a> 
+					<img src='/data/images/logoNav.png'/> 
+				</a>  
+				</li> 
+				<li> </li> 
+			</ul> 
+			<ul> </ul> 
+	    </div>
+	    <div id="Camera" class="Hide">
+        	<h4>Camera</h4>  
+			<ul>
+				<li name="id" style="padding: 0 10px;"> ID: <select style="width:80%; color:#000"> </select> </li>
+				<li name="scene" style="padding: 0 10px;"> scene: <input style="width:80%;" type="text" readonly/> </li>
+			</ul>
+			<ul>
+				<li name="x" style="padding: 0 10px;"> X: <input type="number" /> </li>
+				<li name="y" style="padding: 0 10px;"> Y: <input type="number" /> </li>
+				<li name="z" style="padding: 0 10px;"> Z: <input type="number" /> </li>
+			</ul>
+			<ul>
+				<li name="width" style="padding: 0 10px;"> Width: <input type="number" /> </li>
+				<li name="height" style="padding: 0 10px;"> Height: <input type="number" /> </li>
+			</ul>
+
+	    </div>
+	    <div id="History" class="Hide">
+        	<h4>History</h4>
+	    </div>
+
+		<div id="NotAvaillable" class="popUp" style="height: 30%; width: 40%;">  
+		    <div class="blog1 " style="background-color: #ff0000"> <div style="width: 100%; height: 100%;  "> Not yet available </div> </div>
+			<div class="blog2">
+				<div id="NotAvaillablePopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Updates will be available very soon.
+				</div>	 
+			</div> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+		     
+		</div> 
+
+		<div id="home" class="popUp" style="height: 35%; min-height: 250px;">  
+		    <div class="blog1 " style="background-color: #ff0000"> <div style="width: 100%; height: 100%; "> Warning </div> 
+			</div>
+			<div class="blog2" style="display:block; ">   
+						<br> 
+						<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> You are about to leave this page. Are you sure?
+						</div>	  
+						<br><br> 
+						<a href="/"><div class="niceDiv" style=" margin: auto; top: 30px; padding:0; width: 50%; height: 30%;"> Yes </div></a>
+				 
+			</div>
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>  
+		</div>
+
+		<div id="deleteGameP" class="popUp" style="height: 35%; min-height: 250px;">  
+		    <div class="blog1 " style="background-color: #ff0000"> <div style="width: 100%; height: 100%; "> Warning </div> 
+			</div>
+			<div class="blog2" style="display:block; ">   
+						<br> 
+						<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> You are about to Delete this game. Are you sure?
+						</div>	  
+						<br><br> 
+						<a onclick="deleteGame()"><div class="niceDiv" style=" margin: auto; top: 30px; padding:0; width: 50%; height: 30%;"> Yes </div></a>
+				 
+			</div>
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>  
+		</div>
+
+		<div id="closeGameP" class="popUp" style="height: 35%; min-height: 250px;">  
+		    <div class="blog1 " style="background-color: #ff0000"> <div style="width: 100%; height: 100%; "> Warning </div> 
+			</div>
+			<div class="blog2" style="display:block; ">   
+						<br> 
+						<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> You are about to Close this game. Are you sure?
+						</div>	  
+						<br><br> 
+						<a onclick="closeGame()"><div class="niceDiv" style=" margin: auto; top: 30px; padding:0; width: 50%; height: 30%;"> Yes </div></a>
+				 
+			</div>
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>  
+		</div>
+
+		<div id="TabIsOpened" class="popUp" style="height: 30%; width: 40%;"> 
+		     
+		    <div class="blog1 " style="background-color: #ff0000"> <div style="width: 100%; height: 100%; "> Warning </div> </div>
+			<div class="blog2">
+				<div id="TabIsOpenedPopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Tab already found in window.
+				</div>	 
+			</div> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+		</div> 
+  
+		<div id="login" class="popUp" >  
+		    <div class="blog1"> 
+		        WELCOME 
+			</div>
+			<div class="blog2">
+				<div style="width: 100%; height: 20%; position: absolute; top: 8%; "> Choose your prefered hosting service
+				</div>	
+				<div style="width: 100%; height: 70%; position: absolute; top: 30%; ">  
+						<div id="gDrive" class="niceDiv gDrive" onclick="gDriveLog()"> 
+							<img src="data/images/google-drive-logo.png"/>
+						</div>	
+						<div id="onedrive" class="niceDiv onedrive" onclick="oneDriveLog()"> 
+							<img src="data/images/drive.png"/>
+						</div>	
+						<div id="dropbox" class="niceDiv dropbox" onclick="dropBoxLog()"> 
+							<img src="data/images/Dropbox-Logo.png"/>
+						</div>	
+						<div id="box" class="niceDiv box" onclick="boxLog()"> 
+							<img src="data/images/boxdotneticon.png"/>
+						</div>	
+				</div>	
+			</div> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>  
+		</div>
+
+		<div id="newGPopUp" class="popUp" style="height: 40%;"> 
+		     
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> New Game </div> </div>
+			<div class="blog2">
+				<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> game name </div>	
+				<form action="javascript:NewGame1();" style="width: 100%; height: 80%;  top: 20%;  "> 
+						<input type="text" id="gameNText" class="gameNText" placeholder="Enter game name here" autofocus> </input> 
+						<div>
+						<div id="gameNClick" class="gameNClick" onclick="NewGame1()">  <div class="niceDiv"> Create </div> </div>
+						</div>
+				</form>	
+			</div>
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+
+		</div>
+		    
+		<div id="gBackground" class="popUp" style="height: 40%;"> 
+		    
+			<div class="blog1 "> <div style="width: 100%; height: 100%; "> Background </div> </div>
+			<div class="blog2">
+				<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> enter image URL / Path </div>	
+				<form action="javascript:backImgChg();" style="width: 100%; height: 80%;  top: 20%;  ">					 
+						<input type="text" id="backImgURL" class="gameNText" placeholder="Enter image url here" autofocus>  </input>
+						<div>
+						<div id="backImgChg" class="gameNClick" onclick="backImgChg()">  <div class="niceDiv"> Change </div> </div>
+						</div>
+				</form>	
+			</div>
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+
+		</div> 
+		
+		<div id="fileOpen" class="popUp" style="height: 40%;"> 
+		     
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> File Open </div> </div>
+			<div class="blog2">
+				<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> enter file Path </div>	
+				<form action="javascript:fileOpenT();" style="width: 100%; height: 80%;  top: 20%;  "> 
+						<input type="text" id="filePath" class="gameNText" placeholder="e.g Scripts/file.js" autofocus> </input>
+						<div>
+						<div id="backImgChg" class="gameNClick" onclick="fileOpenT()">  <div class="niceDiv"> Open </div> </div>
+						</div>
+				</form>	
+			</div> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+		</div>
+
+		<div id="newGStatusPopup" class="popUp" style="height: 30%;"> 
+		     
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Creating files </div> </div>
+			<div class="blog2">
+				<div id="createdFile" style="width: 95%; height: 5%; top: 5%; position: absolute;"> ... files being created...
+				</div>	 
+			</div>
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+		</div>
+		
+		<div id="newFileT" class="popUp" style="height: 40%;"> 
+		    
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> New File </div> </div>
+			<div class="blog2">
+				<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> enter file Name and path	</div>	
+				<form action="javascript:newFileT.close(); newFile();" style="width: 100%; height: 80%;  top: 20%;  ">        <input type="text" id="newFileName" class="gameNText" placeholder="e.g Libraries/css/style.css" autofocus> </input>						 
+						<div>
+						<div id="newfileChg" class="gameNClick" onclick="newFileT.close(); newFile();">  <div class="niceDiv"> Create </div> </div>
+						</div>
+				</form>	
+			</div>
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+		</div> 
+
+		<div id="saveFileT" class="popUp" style="height: 40%;"> 
+		    
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Save File </div> </div>
+			<div class="blog2">
+				<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> enter file Name and path	</div>	
+				<form action="javascript:saveFileT.close(); fileSaveT();" style="width: 100%; height: 80%;  top: 20%;  ">        <input type="text" id="fileName" class="gameNText" placeholder="e.g Libraries/css/style.css" autofocus> </input>						 
+						<div>
+						<div id="fileSaveChg" class="gameNClick" onclick="saveFileT.close(); fileSaveT();">  <div class="niceDiv"> Save </div> </div>
+						</div>
+				</form>	
+			</div>
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+		</div> 
+		
+		<div id="openGameT" class="popUp" style="height: 40%;"> 
+		     
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Open Game </div> </div>
+			<div class="blog2">
+				<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> enter game Name	</div>	
+				<form action="javascript:openGame();" style="width: 100%; height: 80%;  top: 20%;  "> 
+						<input type="text" id="gameN" class="gameNText" placeholder="e.g coolGame " autofocus> </input> 
+						<div>
+						<div id="fileSaveChg" class="gameNClick" onclick="openGame();">  <div class="niceDiv"> Open </div> </div>
+						</div>
+				</form>	
+			</div>
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+
+		</div> 
+
+		<div id="logError" class="popUp" style="height: 30%; "> 
+		    
+
+		    <div class="blog1 " style="background-color: #ff0000"> <div style="width: 100%; height: 100%; "> Error </div> 
+			</div>
+			<div class="blog2">
+				<div id="errorPopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Sorry, an error has occurred. Please try again, or Reload the page.
+				</div>	 
+			</div> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+		</div> 
+
+		<div id="saveGP" class="popUp" style="height: 30%; width: 30%;"> 
+		    
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Saving </div> 
+			</div>
+			<div class="blog2">
+				<div id="saveGPPopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Please wait, game saving in progress.
+				</div>	 
+			</div> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+		</div> 
+		
+		<div id="saveFP" class="popUp" style="height: 30%; width: 30%; "> 
+		    
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Saving </div> 
+			</div>
+			<div class="blog2">
+				<div id="saveFPPopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Please wait, file saving in progress.
+				</div>	 
+			</div> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+		</div> 
+
+		<div id="openGP" class="popUp" style="height: 30%; width: 30%; "> 
+		    
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Opening </div> 
+			</div>
+			<div class="blog2">
+				<div id="openGPPopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Please wait, opening game.
+				</div>	 
+			</div> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+		</div> 
+
+		<div id="openFP" class="popUp" style="height: 30%; width: 30%; "> 
+		    
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Opening </div> 
+			</div>
+			<div class="blog2">
+				<div id="openFPPopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Please wait, opening files.
+				</div>	 
+			</div> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+		</div> 
+
+		<div id="deleteGP" class="popUp" style="height: 30%; width: 30%; "> 
+		    
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Deleting </div> 
+			</div>
+			<div class="blog2">
+				<div id="deleteGPPopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Please wait, deleting files.
+				</div>	 
+			</div> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+		</div> 
+
+		<div id="loginP" class="popUp" style="height: 30%; width: 30%; "> 
+		    
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Login </div> 
+			</div>
+			<div class="blog2">
+				<div id="loginPPopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Please wait, login in progress.
+				</div>	 
+			</div> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+		</div> 
+
+		<div id="publishP" class="popUp" style="height: 70%; width: 60%; min-width: 350px; min-height: 300px;"> 
+		    
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Publish </div> 
+			</div>
+			<div class="blog2">
+				<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> Fill in all the relevant fields ( * are compulsory )
+				</div>	
+				<div style="width: 100%; height: 80%;  top: 20%;  position: absolute;"> 
+						
+						<div class="publishImg" >
+							<span>Screenshoots</span>  
+						<ul id="screenshots" style="height: 60%;">  
+	                    </ul>
+	                    	<span>Trailers</span>  
+						<ul id="trailers" style="height: 25%;">   
+	                    </ul>
+
+						</div>
+
+						<div class="publishProps" > 
+							<form role="form">
+							  <div class="form-group"> 
+							    <input type="text" class="form-control" id="developer" placeholder="*  Developer">
+							  </div>   
+							  <div class="form-group"> 
+							    <span class="input-group-btn btn-group genres" >
+					              <button id="genres" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">All Genres <span class="caret"></span></button>
+					              <ul class="dropdown-menu">  
+					                <li>
+					                  <input type="checkbox" id="genre_2" name="genre" value="2">
+					                  <label for="genre_2">Action</label>
+					                </li>
+					                <li>
+					                  <input type="checkbox" id="genre_3" name="genre" value="3">
+					                  <label for="genre_3">Adventure</label>
+					                </li>
+					                <li>
+					                  <input type="checkbox" id="genre_4" name="genre" value="4">
+					                  <label for="genre_4">Arcade</label>
+					                </li>
+					                <li>
+					                  <input type="checkbox" id="genre_5" name="genre" value="5">
+					                  <label for="genre_5">Application/App</label>
+					                </li>
+					                <li>
+					                  <input type="checkbox" id="genre_6" name="genre" value="6">
+					                  <label for="genre_6">Girls Games</label>
+					                </li>
+					                <li>
+					                  <input type="checkbox" id="genre_7" name="genre" value="7">
+					                  <label for="genre_7">Puzzle</label>
+					                </li>
+					                <li>
+					                  <input type="checkbox" id="genre_9" name="genre" value="9">
+					                  <label for="genre_9">Art</label>
+					                </li>
+					                <li>
+					                  <input type="checkbox" id="genre_10" name="genre" value="10">
+					                  <label for="genre_10">Education</label>
+					                </li>
+					                <li>
+					                  <input type="checkbox" id="genre_11" name="genre" value="11">
+					                  <label for="genre_11">Entertainment</label>
+					                </li>
+					                <li>
+					                  <input type="checkbox" id="genre_12" name="genre" value="12">
+					                  <label for="genre_12">Fighting</label>
+					                </li>
+					                <li>
+					                  <input type="checkbox" id="genre_13" name="genre" value="13">
+					                  <label for="genre_13">Interactive book/Magazine</label>
+					                </li>
+					                <li>
+					                  <input type="checkbox" id="genre_14" name="genre" value="14">
+					                  <label for="genre_14">kids</label>
+					                </li>
+					                <li>
+					                  <input type="checkbox" id="genre_15" name="genre" value="15">
+					                  <label for="genre_15">Platformer</label>
+					                </li>
+					                <li>
+					                  <input type="checkbox" id="genre_16" name="genre" value="16">
+					                  <label for="genre_16">RPG</label>
+					                </li>
+					                <li>
+					                  <input type="checkbox" id="genre_17" name="genre" value="17">
+					                  <label for="genre_17">Sports</label>
+					                </li>
+					                <li>
+					                  <input type="checkbox" id="genre_18" name="genre" value="18">
+					                  <label for="genre_18">Survival</label>
+					                </li>
+					                <li>
+					                  <input type="checkbox" id="genre_19" name="genre" value="19">
+					                  <label for="genre_19">Strategy</label>
+					                </li> 
+					                <li>
+					                  <input type="checkbox" id="genre_20" name="genre" value="20">
+					                  <label for="genre_20">Other</label>
+					                </li> 
+					              </ul>
+					            </span>
+							  </div>  
+						    </form>
+  							  <textarea style="width: 100%; height: 40%; resize: none;" id="description" placeholder="*  Description"></textarea> 
+							  <button  type="submit" style="  border:none; background: none; width: 50%; height: 18%;  top: 83%; left: 50%;  position: absolute; text-align: center;" onclick="Publish();">  <div class="niceDiv" style="width: 100%; height: 100%;"> Publish </div></button>      
+							  <button  type="submit" style="  border:none; background: none; width: 50%; height: 18%;  top: 83%; left: 0%;  position: absolute; text-align: center; visibility:hidden;" id="GUnPublish" onclick="UnPublish();">  <div class="niceDiv" style="width: 100%; height: 100%;"> UnPublish </div></button>  
+						</div>
+				</div>	
+			</div>
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+		</div>
+
+		<div id="tutorialsP" class="popUp" style="height: 70%; width: 60%; min-width: 350px; min-height: 300px; "> 
+		    
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Publish </div> 
+			</div>
+			<div class="blog2">
+				<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> Fill in all the relevant fields ( * are compulsory )
+				</div>	
+				<div style="width: 100%; height: 80%;  top: 20%;  position: absolute;"> 
+						
+						<div class="publishImg" > 
+							<span>Screenshoots</span>  
+						<ul id="screenshotsT" style="height: 60%;">  
+	                    </ul>
+							<span>Tutorials</span> 
+						<ul id="tutorials" style="height: 25%;">   
+	                    </ul>
+
+						</div>
+
+						<div class="publishProps" > 
+							<form role="form">
+							  <div class="form-group"> 
+							    <input type="text" class="form-control" id="titleT" placeholder="*  Tutorial Title">
+							  </div>   
+							  <div class="form-group"> 
+							    <span class="input-group-btn btn-group genres" >
+					              <button id="tagsT" data-toggle="dropdown" class="btn btn-primary dropdown-toggle"> Beginner <span class="caret"></span></button>
+					              <ul class="dropdown-menu">  
+					                <li>
+					                  <input type="checkbox" id="tagT_1" name="tagT" value="1">
+					                  <label for="tagT_1">Beginner</label>
+					                </li>    
+					                <li>
+					                  <input type="checkbox" id="tagT_2" name="tagT" value="2">
+					                  <label for="tagT_2">Intermediate</label>
+					                </li>  
+					                <li>
+					                  <input type="checkbox" id="tagT_3" name="tagT" value="3">
+					                  <label for="tagT_3">Proffesional</label>
+					                </li>      
+					                <li>
+					                  <input type="checkbox" id="tagT_4" name="tagT" value="4">
+					                  <label for="tagT_4">Physics Editor</label>
+					                </li>  
+					                <li>
+					                  <input type="checkbox" id="tagT_5" name="tagT" value="5">
+					                  <label for="tagT_5">Sprites creation</label>
+					                </li>  
+					                <li>
+					                  <input type="checkbox" id="tagT_6" name="tagT" value="6">
+					                  <label for="tagT_6">Texture Packer</label>
+					                </li>  
+					                <li>
+					                  <input type="checkbox" id="tagT_7" name="tagT" value="7">
+					                  <label for="tagT_7">Tile Map</label>
+					                </li>    
+					                <li>
+					                  <input type="checkbox" id="tagT_8" name="tagT" value="8">
+					                  <label for="tagT_8">Other</label>
+					                </li>  
+					              </ul>
+					            </span>
+							  </div>  
+						    </form>
+  							  <textarea style="width: 100%; height: 40%; resize: none;" id="descriptionT" placeholder="*  Description"></textarea> 
+							  <button  type="submit" style="  border:none; background: none; width: 50%; height: 18%;  top: 83%; left: 50%;  position: absolute; text-align: center;" onclick="PublishTutorial();">  <div class="niceDiv" style="width: 100%; height: 100%;"> Publish </div></button>       
+							  <button  type="submit" style="  border:none; background: none; width: 50%; height: 18%;  top: 83%; left: 0%;  position: absolute; text-align: center; visibility:hidden;" id="TUnPublish" onclick="UnPublishT();">  <div class="niceDiv" style="width: 100%; height: 100%;"> UnPublish </div></button>  
+
+
+						</div>
+				</div>	
+			</div>
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+		</div>
+
+		<div id="assetsP" class="popUp" style="height: 70%; width: 60%; min-width: 350px; min-height: 300px; "> 
+		    
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Publish </div> 
+			</div>
+			<div class="blog2">
+				<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> Fill in all the relevant fields ( * are compulsory )
+				</div>	
+				<div style="width: 100%; height: 80%;  top: 20%;  position: absolute;">
+						
+						<div class="publishImg" > 
+							<span>Screenshoots</span> 
+						<ul id="screenshotsA" style="height: 90%;">    
+						</div>
+
+						<div class="publishProps" > 
+							<form role="form">
+							  <div class="form-group"> 
+							    <input type="text" class="form-control" id="nameA" placeholder="*  Asset Name">
+							  </div>   
+							  <div class="form-group"> 
+							    <span class="input-group-btn btn-group genres" >
+					              <button id="tagsA" data-toggle="dropdown" class="btn btn-primary dropdown-toggle"> Sprites <span class="caret"></span></button>
+					              <ul class="dropdown-menu">   
+					                <li>
+					                  <input type="checkbox" id="tagA_4" name="tagA" value="4">
+					                  <label for="tagA_4">Physics Objects</label>
+					                </li>  
+					                <li>
+					                  <input type="checkbox" id="tagA_5" name="tagA" value="5">
+					                  <label for="tagA_5">Sprites</label>
+					                </li>  
+					                <li>
+					                  <input type="checkbox" id="tagA_6" name="tagA" value="6">
+					                  <label for="tagA_6">Textures</label>
+					                </li>  
+					                <li>
+					                  <input type="checkbox" id="tagA_7" name="tagA" value="7">
+					                  <label for="tagA_7">Tiles Map</label>
+					                </li>    
+					                <li>
+					                  <input type="checkbox" id="tagA_8" name="tagA" value="8">
+					                  <label for="tagA_8">Other</label>
+					                </li>  
+					              </ul>
+					            </span>
+							  </div>  
+						    </form>
+  							  <textarea style="width: 100%; height: 40%; resize: none;" id="descriptionA" placeholder="*  Description"></textarea> 
+							  <button  type="submit" style="  border:none; background: none; width: 50%; height: 18%;  top: 83%; left: 50%;  position: absolute; text-align: center;" onclick="PublishAsset();">  <div class="niceDiv" style="width: 100%; height: 100%;"> Publish </div></button>      
+							  <button  type="submit" style="  border:none; background: none; width: 50%; height: 18%;  top: 83%; left: 0%;  position: absolute; text-align: center; visibility:hidden;" id="AUnPublish" onclick="UnPublishA();">  <div class="niceDiv" style="width: 100%; height: 100%;"> UnPublish </div></button>  
+
+
+						</div>
+				</div>	
+			</div>
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+		</div>
+
+		<div id="warningPublished" class="popUp" style="height: 35%; min-height: 250px;"> 
+		    
+
+		    <div class="blog1 " style="background-color: #ff0000"> <div style="width: 100%; height: 100%; "> Warning </div> 
+			</div>
+			<div class="blog2" style="display:block; ">   
+						<br> 
+						<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> Game Already published.
+						</div>	 
+						<div class="niceDiv" onclick="playGame()" style=" margin: auto; padding:0; width: 80%; height: 35%;">  Publish </div>  
+						<br>					
+						<div class="niceDiv" onclick="UnPublish()" style=" margin: auto; top: 30px; padding:0; width: 80%; height: 35%;"> UnPublish </div>
+				 
+			</div>
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+
+		</div>
+
+		<div id="publishedPP" class="popUp" style="height: 35%; min-height: 250px;"> 
+		    
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Published </div> 
+			</div>
+			<div class="blog2" style="display:block; ">   
+						<br>
+						<div class="niceDiv" onclick="playGame()" style=" margin: auto; padding:0; width: 80%; height: 35%;">  Play </div>  
+						<br>					
+						<div class="niceDiv" onclick="openSource()" style=" margin: auto; top: 30px; padding:0; width: 80%; height: 35%;"> Source Code </div>
+				 
+			</div>
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+
+		</div>
+
+		<div id="warningTutPublished" class="popUp" style="height: 35%; min-height: 250px;"> 
+		    
+
+		    <div class="blog1 " style="background-color: #ff0000"> <div style="width: 100%; height: 100%; "> Warning </div> 
+			</div>
+			<div class="blog2" style="display:block; ">   
+						<br> 
+						<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> Tutorial Already published.
+						</div>	  
+						<br> 
+						<div class="niceDiv" onclick="UnPublishT()" style=" margin: auto; top: 30px; padding:0; width: 80%; height: 35%;"> UnPublish </div>
+				 
+			</div>
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+
+		</div>
+
+		<div id="warningAssetPublished" class="popUp" style="height: 35%; min-height: 250px;"> 
+		    
+
+		    <div class="blog1 " style="background-color: #ff0000"> <div style="width: 100%; height: 100%; "> Warning </div> 
+			</div>
+			<div class="blog2" style="display:block; ">   
+						<br> 
+						<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> Asset Already published.
+						</div>	 
+						<br>					
+						<div class="niceDiv" onclick="UnPublishA()" style=" margin: auto; top: 30px; padding:0; width: 80%; height: 35%;"> UnPublish </div>
+				 
+			</div>
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+
+		</div>
+
+		<div id="tutorialsPP" class="popUp" style="height: 35%;"> 
+		    
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Published </div> 
+			</div>  
+			<div class="blog2">
+				<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> Tutorial Published.
+				</div>	 
+			</div> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+		</div>
+
+		<div id="assetsPP" class="popUp" style="height: 35%;"> 
+		    
+
+		    <div class="blog1 "> <div style="width: 100%; height: 100%; "> Published </div> 
+			</div> 
+			<div class="blog2">
+				<div style="width: 95%; height: 5%; top: 5%; position: absolute;"> Asset Published.
+				</div>	 
+			</div> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>  
+		</div>
+
+		<div id='busy'>
+     		<img src="data/images/logoNavLoad.png"/>
+		</div> 
+
+		<div id="warning" class="popUp" style="height: 30%; width: 60%;"> 
+		    
+
+		    <div class="blog1 " style="background-color: #ff0000"> <div style="width: 100%; height: 100%; "> Warning </div> 
+			</div>
+			<div class="blog2">
+				<div id="warningPopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Window size too small.
+				</div>	 
+			</div> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+		</div> 
+
+		<div id="message" class="popUp" style="height: 30%; width: 60%;"> 
+		    
+
+		    <div class="blog1 " style="background-color: #ff0000"> <div style="width: 100%; height: 100%; "> Message </div> 
+			</div>
+			<div class="blog2">
+				<div id="messagePopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> 
+				</div>	 
+			</div> 
+		    <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+		</div> 
+
+		<div id="workSpaceCtxMenu" class="contextMenu dropdown" >
+		    <ul class="dropdown-menu">
+		      <li><a tabindex="-1" href="#">Fullscreen</a></li>
+		    </ul>
+		  </div>
+
+		  <div id="paramsDropdown" class="contextMenu dropdown" >
+		    <ul class="dropdown-menu pull-right">
+              <li><a href="#" tabindex="-1" onclick="newFileT = $('#newFileT').bPopup(fontsize);">New File</a></li> 
+              <li><a href="#" tabindex="-1" onclick="fileOpenTabT = $('#fileOpen').bPopup(fontsize);">Open File</a></li>
+              <li><a href="#" tabindex="-1" onclick="saveFile()">Save File</a></li> 
+		    </ul>
+		  </div> 
+
+		  <div id="newTabDropdown" class="contextMenu dropdown" >
+		    <ul class="dropdown-menu">
+              <li><a href="#" tabindex="-1" onclick="FileBrowser()">File Browser</a></li>
+              <li><a href="#" tabindex="-1" onclick="Documentation()">API</a></li>
+		    </ul>
+		  </div>
+
+		<footer class="text-center" > 
+			<div id="footer" class="perspective">
+				<input type="text" id="footerQuery" class="footerQuery" placeholder="Enter command here"> </input>
+				<div class="footerQueryBtn" data-toggle="tooltip" title="Query" onclick="Query()"> <span class="glyphicon glyphicon-menu-up"></span> </div>
+				<div class="toggleFull" onclick="toggleFull()" data-toggle="tooltip" title="Fullscreen" >
+					<img src="data/images/fullcreenImg.png" />
+				</div>  
+		    </div>
+
+	   	</footer>
+
+		<script>
+			 var game = null; 
+			 var toLoad = 0;
+			 var accLoaded = false;
+			 var Base64 = {_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",encode:function(e){var t="";var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f<e.length){n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n>>2;o=(n&3)<<4|r>>4;u=(r&15)<<2|i>>6;a=i&63;if(isNaN(r)){u=a=64}else if(isNaN(i)){a=64}t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)}return t},decode:function(e){var t="";var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9\+\/\=]/g,"");while(f<e.length){s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s<<2|o>>4;r=(o&15)<<4|u>>2;i=(u&3)<<6|a;t=t+String.fromCharCode(n);if(u!=64){t=t+String.fromCharCode(r)}if(a!=64){t=t+String.fromCharCode(i)}}t=Base64._utf8_decode(t);return t},_utf8_encode:function(e){e=e.replace(/\r\n/g,"\n");var t="";for(var n=0;n<e.length;n++){var r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r)}else if(r>127&&r<2048){t+=String.fromCharCode(r>>6|192);t+=String.fromCharCode(r&63|128)}else{t+=String.fromCharCode(r>>12|224);t+=String.fromCharCode(r>>6&63|128);t+=String.fromCharCode(r&63|128)}}return t},_utf8_decode:function(e){var t="";var n=0;var r=c1=c2=0;while(n<e.length){r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r);n++}else if(r>191&&r<224){c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&31)<<6|c2&63);n+=2}else{c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&15)<<12|(c2&63)<<6|c3&63);n+=3}}return t}};
+
+			 var generisAccFiles = {};
+			 var generisAcc = null;
+			 var gdriveAccFiles = {};
+			 var gdriveAcc = null;
+			 var gAccount = null;
+			 var chooseTabT; 
+			 var TabIsOpenedPopup;
+			 var log = document.getElementById("log");
+			 var logPopup;
+			 var publishPP ; // = $('#publishP').bPopup(fontsize);
+			 var publishedP; // = $('#publishedPP').bPopup(fontsize);
+			 var tutorialsPP; // = $('#tutorialsP').bPopup(fontsize);
+			 var tutorialsP; // = $('#publishedPP').bPopup(fontsize);
+			 var assetsPP ; // = $('#assetsP').bPopup(fontsize);
+			 var assetsP; // = $('#publishedPP').bPopup(fontsize);
+			 var newGPopup; 
+			 var closeGamePP;
+			 var newGStatusPopup;
+			 var FilesTPopup;
+			 var windowProps;
+			 var fileOpenTabT;
+			 var saveFileT;
+			 var newFileT;
+			 var openGameTT;
+			 var gBackgroundT;
+			 var themeTT;
+			 var saveFP;
+			 var saveGP;
+			 var openGP;
+			 var openFP;
+			 var deleteGP;
+			 var loginP;
+			 var warningP;
+			 var warningPublished;
+			 var warningTutPublished;
+			 var warningAssetPublished;
+			 var gameScreenshots="";
+			 var trailerVideos="";
+			 var tutorialScreenshots="";
+			 var tutorialVideos="";
+			 var assetScreenshots="";
+			 var assets="";
+			 var generisBusy = false;
+			 var keys = {}; 
+        	 var browserDragUrl;
+        	 var overEvent;
+
+			$(document).keyup(function (e) {
+			    delete keys[e.which];
+			});
+
+			$(document).keydown(function (e) {  
+			    keys[(e.which) ? e.which : event.keyCode ] = true; 
+			    switch((e.which) ? e.which : event.keyCode ){
+			    	case 78: //alt+N or shift+alt+N or ctrl+alt+N
+			    		if(!keys[18]) break; 
+			    		e.preventDefault();
+			    		if(!(keys[16] || keys[17])) NewGame();
+			    		else if(keys[17]) {
+			    			if(generisBusy || !game) return; newFileT = $('#newFileT').bPopup(fontsize);
+			    		} else if(keys[16]) newWindow();
+			    		keys = {};
+			    		break;
+			    	case 79: //alt+O or ctrl+alt+O
+			    		if(!keys[18]) break;
+			    		e.preventDefault();
+			    		if(!keys[17]) { 
+				    		if(generisBusy || log.innerHTML=='LOGIN') return; openGameTT = $('#openGameT').bPopup(fontsize);
+				    	} else {
+				    		if(generisBusy || !game) return; fileOpenTabT = $('#fileOpen').bPopup(fontsize);
+				    	}
+			    		keys = {};
+			    		break; 
+			    	case 83: //alt+S or ctrl+alt+S
+			    		if(!keys[18]) break;
+			    		e.preventDefault();
+			    		if(!keys[17]) { 
+			    			saveGame();
+				    	} else {
+				    		saveFile()
+				    	}
+			    		keys = {};
+			    		break;
+			    	case 68: //alt+D
+			    		if(!keys[18]) break;
+			    		e.preventDefault();
+			    		if(!keys[17]) $('#deleteGameP').bPopup(fontsize);
+			    		break;
+			    	case 87: //alt+W or ctrl+alt+W
+			    		if(!keys[18] || !game ) break;
+			    		e.preventDefault();
+			    		if(!keys[17]) $('#closeGameP').bPopup(fontsize);
+			    		else closeWindow();
+			    		keys = {};
+			    		break; 
+			    	////////////////////////////////////////////////////////////////// 
+			    	/*
+			    	case 65: //ctrl+A
+			    		if(!keys[17] || !game || !game.activeWindows) break; 
+						var elements = document.getElementById( game.activeWindows[game.activeWindow].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab = game.activeWindows[game.activeWindow].tabs[tabCur2.id];   
+						if(tab.type=="sceneEditor") tab.selectAll();	
+						if(tab.type=="scriptEditor") tab.selectAll();	 
+			    		break;
+			    	*/
+			    	case 67: //ctrl+C
+			    		if(!keys[17] || !game || !game.activeWindows) break; 
+						var elements = document.getElementById( game.activeWindows[game.activeWindow].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab = game.activeWindows[game.activeWindow].tabs[tabCur2.id];   
+						if(tab.type=="sceneEditor") tab.copySelected();	
+						if(tab.type=="scriptEditor") tab.copySelected();	 
+			    		break;
+			    	case 88: //ctrl+X
+			    		if(!keys[17] || !game || !game.activeWindows) break; 
+						var elements = document.getElementById( game.activeWindows[game.activeWindow].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab = game.activeWindows[game.activeWindow].tabs[tabCur2.id];   
+						if(tab.type=="sceneEditor") tab.cutSelected();	
+						if(tab.type=="scriptEditor") tab.cutSelected();	 
+			    		break;
+			    	case 86: //ctrl+V
+			    		if(!keys[17] || !game || !game.activeWindows) break; 
+						var elements = document.getElementById( game.activeWindows[game.activeWindow].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab = game.activeWindows[game.activeWindow].tabs[tabCur2.id];   
+						if(tab.type=="sceneEditor") tab.paste();	
+						if(tab.type=="scriptEditor") tab.paste();	 
+			    		break;
+			    	case 46: //del
+			    		if( !game || !game.activeWindows) break; 
+						var elements = document.getElementById( game.activeWindows[game.activeWindow].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab = game.activeWindows[game.activeWindow].tabs[tabCur2.id];   
+						if(tab.type=="sceneEditor") tab.deleteSelected();	
+						if(tab.type=="scriptEditor") tab.deleteSelected();	 
+			    		break;
+			    	case 90: //ctrl+Z
+			    		if(!keys[17] || !game || !game.activeWindows) break;  
+						var elements = document.getElementById( game.activeWindows[game.activeWindow].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab = game.activeWindows[game.activeWindow].tabs[tabCur2.id];  
+			    		if(!keys[16]) {  
+							if(tab.type=="sceneEditor") tab.undo();	
+							if(tab.type=="scriptEditor") tab.undo();	
+						} else {
+							if(tab.type=="sceneEditor") tab.redo();	
+							if(tab.type=="scriptEditor") tab.redo();	
+						} 
+			    		break;  
+			    }
+			});
+
+			function trigger(type){
+				switch(type){
+					case "undo": 
+						var e1 = jQuery.Event("keydown"); 
+						e1.which = 17; // # Some key code value
+						$(document).trigger(e1);   
+
+						var e = jQuery.Event("keydown"); 
+						e.which = 90; // # Some key code value
+						$(document).trigger(e); 
+						
+						e = jQuery.Event("keyup"); 
+						e.which = 90; // # Some key code value
+						$(document).trigger(e);
+
+						e1 = jQuery.Event("keyup"); 
+						e1.which = 17; // # Some key code value 
+						$(document).trigger(e1);  
+						break;  
+					case "redo": 
+						var e1 = jQuery.Event("keydown"); 
+						e1.which = 17; // # Some key code value
+						$(document).trigger(e1);  
+
+						var e2 = jQuery.Event("keydown"); 
+						e2.which = 16; // # Some key code value
+						$(document).trigger(e2);  
+
+						var e = jQuery.Event("keydown"); 
+						e.which = 90; // # Some key code value
+						$(document).trigger(e); 
+
+						e = jQuery.Event("keyup"); 
+						e.which = 90; // # Some key code value
+						$(document).trigger(e);
+
+						e1 = jQuery.Event("keyup"); 
+						e1.which = 17; // # Some key code value 
+						$(document).trigger(e1); 
+
+						e2 = jQuery.Event("keyup"); 
+						e2.which = 16; // # Some key code value  
+						$(document).trigger(e2);  
+						break;  
+					case "copy": 
+						var e1 = jQuery.Event("keydown"); 
+						e1.which = 17; // # Some key code value
+						$(document).trigger(e1);   
+
+						var e = jQuery.Event("keydown"); 
+						e.which = 67; // # Some key code value
+						$(document).trigger(e); 
+						
+						e = jQuery.Event("keyup"); 
+						e.which = 67; // # Some key code value
+						$(document).trigger(e);
+
+						e1 = jQuery.Event("keyup"); 
+						e1.which = 17; // # Some key code value 
+						$(document).trigger(e1);  
+						break;   
+					case "paste": 
+						var e1 = jQuery.Event("keydown"); 
+						e1.which = 17; // # Some key code value
+						$(document).trigger(e1);   
+
+						var e = jQuery.Event("keydown"); 
+						e.which = 86; // # Some key code value
+						$(document).trigger(e); 
+						
+						e = jQuery.Event("keyup"); 
+						e.which = 86; // # Some key code value
+						$(document).trigger(e);
+
+						e1 = jQuery.Event("keyup"); 
+						e1.which = 17; // # Some key code value 
+						$(document).trigger(e1);  
+						break;   
+					case "del":  
+						var e = jQuery.Event("keydown"); 
+						e.which = 46; // # Some key code value
+						$(document).trigger(e); 
+						
+						e = jQuery.Event("keyup"); 
+						e.which = 46; // # Some key code value
+						$(document).trigger(e);  
+						break;  
+					case "selectAll": 
+						var e1 = jQuery.Event("keydown"); 
+						e1.which = 17; // # Some key code value
+						$(document).trigger(e1);   
+
+						var e = jQuery.Event("keydown"); 
+						e.which = 65; // # Some key code value
+						$(document).trigger(e); 
+						
+						e = jQuery.Event("keyup"); 
+						e.which = 65; // # Some key code value
+						$(document).trigger(e);
+
+						e1 = jQuery.Event("keyup"); 
+						e1.which = 17; // # Some key code value 
+						$(document).trigger(e1);  
+						break;    
+					case "find": 
+						var e1 = jQuery.Event("keydown"); 
+						e1.which = 17; // # Some key code value
+						$(document).trigger(e1);   
+
+						var e = jQuery.Event("keydown"); 
+						e.which = 70; // # Some key code value
+						$(document).trigger(e); 
+						
+						e = jQuery.Event("keyup"); 
+						e.which = 70; // # Some key code value
+						$(document).trigger(e);
+
+						e1 = jQuery.Event("keyup"); 
+						e1.which = 17; // # Some key code value 
+						$(document).trigger(e1);  
+						break;  
+					case "replace": 
+						var e1 = jQuery.Event("keydown"); 
+						e1.which = 17; // # Some key code value
+						$(document).trigger(e1);   
+
+						var e = jQuery.Event("keydown"); 
+						e.which = 72; // # Some key code value
+						$(document).trigger(e); 
+						
+						e = jQuery.Event("keyup"); 
+						e.which = 72; // # Some key code value
+						$(document).trigger(e);
+
+						e1 = jQuery.Event("keyup"); 
+						e1.which = 17; // # Some key code value 
+						$(document).trigger(e1);  
+						break;   
+					case "debug":  
+						var e = jQuery.Event("keydown"); 
+						e.which = 123; // # Some key code value
+						$(document).trigger(e);  
+						break;   
+				}
+			}
+
+			 var workSpaceSize = {
+			 	width: $('#workSpace').width(),
+    	  		height: $('#workSpace').height()
+			 }
+			 
+			 function Query() {
+				$('#warning #warningPopup').html("Please enter a valid command.");
+		    	$('#warning').bPopup(fontsize);  
+			 }
+			 function fontsize(){
+			 	  var blog1 = $(this).find(".blog1");
+			 	  var blog2 = $(this).find(".blog2"); 
+			 	  var This = this;
+
+                  function resize() { 
+                  	var newHeight = $(This).height() - blog1.height();  
+				    $(this).css("height", newHeight); 
+				  } 
+				  blog2.each(resize);
+				  $(window).resize(function(){
+				      blog2.each(resize);
+				  }); 
+
+                  blog1.fitText(1, { maxFontSize: '50px' }); 
+                  $(this).find(".niceDiv").fitText();
+			 }  
+			var busyDiv = document.getElementById("busy");
+			busy = setInterval( function(){
+				if(!generisBusy) busyDiv.style.visibility='hidden';
+				if(generisBusy) busyDiv.style.visibility='visible';
+
+				workSpaceSize.width = $('#workSpace').width();
+				workSpaceSize.height = $('#workSpace').height();  
+
+				$("html, body").scrollTop(0);
+
+			}, 60/1000);
+             
+			 function toggleFull() {
+			       if (!document.fullscreenElement &&    // alternative standard method
+			        !document.mozFullScreenElement && !document.webkitFullscreenElement) {  // current working methods
+			         if (document.documentElement.requestFullscreen) {
+			           document.documentElement.requestFullscreen();
+			         } else if (document.documentElement.mozRequestFullScreen) {
+			           document.documentElement.mozRequestFullScreen();
+			         } else if (document.documentElement.webkitRequestFullscreen) {
+			           document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+			         }
+			       } else {
+			          if (document.cancelFullScreen) {
+			             document.cancelFullScreen();
+			          } else if (document.mozCancelFullScreen) {
+			             document.mozCancelFullScreen();
+			          } else if (document.webkitCancelFullScreen) {
+			            document.webkitCancelFullScreen();
+			          }
+			       }
+			     }
+			
+			$(window).bind('beforeunload', function(){
+			  return 'Are you sure you want to leave?';
+			});
+
+			$(document).ready(function(){
+			  function resize() {
+			    var newHeight = window.innerHeight - 130; 
+			    $(this).css("height", newHeight); 
+                $(this).removeClass('Hide'); 
+			  }
+			  function resize2() {
+			    var newHeight = window.innerHeight - 95; 
+			    $(this).css("height", newHeight); 
+                $(this).removeClass('Hide'); 
+			  }
+
+			  $("#Images").click(function(event){
+			  	  if(event.target.tagName == "A") { 
+					$("#Images ul li").removeClass('sidr-class-active'); 
+					$(event.target).parent().parent().addClass('sidr-class-active'); 
+				  } 
+			  	  if(event.target.name == "close") { 
+			  	  	var bool = $(event.target).parent().parent().hasClass("sidr-class-active"); 
+			  	  	$(event.target).parent().parent().remove();
+			  	  	var elmts = $("#Images").find("li");
+			  	  	if(bool) if(elmts.length>1)
+			  	  				$(elmts[elmts.length-1]).addClass('sidr-class-active');
+			  	  			 else {
+			  	  			 	newAnim(); 
+			  	  				var elmts = $("#Images").find("li");
+			  	  				$(elmts[elmts.length-1]).addClass('sidr-class-active');
+			  	  			 }
+			  	  	if(!bool && elmts.length==1) {
+			  	  		newAnim(); 
+	  	  				var elmts = $("#Images").find("li");
+	  	  				$(elmts[elmts.length-1]).addClass('sidr-class-active');
+			  	  	}
+				  } 
+			  }); 
+
+			var onDragEnter = function(event) { 
+				if(event.target.tagName == "A" || event.target.name == "delete") { 
+				    event.preventDefault();
+				    $(event.target).addClass("dragover");
+				}
+			}, 
+
+			onDragOver = function(event) {
+				if(event.target.tagName == "A" || event.target.name == "delete") { 
+				    event.preventDefault(); 
+				    if(!$(event.target).hasClass("dragover"))
+				        $(event.target).addClass("dragover");
+				}
+			}, 
+
+			onDragLeave = function(event) {
+				if(event.target.tagName == "A" || event.target.name == "delete") { 
+				    event.preventDefault();
+				    $(event.target).removeClass("dragover");
+				}
+			},
+
+			onDrop = function(event) { 
+				if(event.target.tagName == "A") { 
+				    event.preventDefault();
+				    $(event.target).removeClass("dragover");
+	                event.preventDefault();
+	                event.stopPropagation();
+
+		            if(event.originalEvent.dataTransfer.files.length) { 
+		                console.log(event.originalEvent.dataTransfer.files.length);
+		            } else {
+			        	var elmt = event.originalEvent.dataTransfer.getData('text/html');
+						console.log(elmt);
+			        	var url = $(elmt).find("img").attr("src"); 
+			        	if(url) $(event.target).append( "<img src='"+url+"'/>"); 
+		                if(!url){
+		                	var url = $(elmt).attr("src");
+			        		if(url) $(event.target).append( "<img src='"+url+"'/>");
+		                }
+			        }
+				} else  if(event.target.name == "delete") { 
+				    event.preventDefault();
+				    $(event.target).removeClass("dragover");
+	                event.preventDefault();
+	                event.stopPropagation(); 
+		        	var elmt = event.originalEvent.dataTransfer.getData('text/html'); 
+		        	elmt = $(elmt).first();
+		        	var images = $(event.target).parent().parent().find('a');  
+		        	if(elmt.find('a').html())images.html( images.html().replace(elmt.find('a').html(), '') );  
+		        	else images.html( images.html().replace(elmt.html(), '') );  
+		            if(elmt.html()==""){ 
+			        	var elmt = event.originalEvent.dataTransfer.getData('text/html'); 
+			        	var images = $(event.target).parent().parent().find('a'); 
+			        	images.html( images.html().replace(elmt, '') ); 
+		            };
+				} 
+			};
+
+			onDrop2 = function(event) {
+				onDrop(event);
+				$("li[name=images] a").trigger('click');
+			};
+
+			$("#Images")
+			.on("dragenter", onDragEnter)
+			.on("dragover", onDragOver)
+			.on("dragleave", onDragLeave)
+			.on("drop", onDrop);
+
+			$("#Entity")
+			.on("dragenter", onDragEnter)
+			.on("dragover", onDragOver)
+			.on("dragleave", onDragLeave)
+			.on("drop", onDrop2); 
+
+			  $("#workSpace,#Menu,#New,#Extra,#Mouse,#Images,#Props,#Scene,#Entity,#Camera,#History").each(resize);
+		      $("#leftBar,#rightBar").each(resize2); 
+			  $(window).resize(function(){
+			      $("#workSpace,#Menu,#New,#Extra,#Mouse,#Images,#Props,#Scene,#Entity,#Camera,#History").each(resize); 
+			      $("#leftBar,#rightBar").each(resize2); 
+			  });
+			    
+			  $('#MenuBtn').sidr({
+			  	source: '#Menu', name: 'Menu', body:"#workspace", timing: 'ease-in-out', speed: 200
+		      });
+		      $('#NewBtn').sidr({
+			  	source: '#New', name: 'New', body:"#workspace", timing: 'ease-in-out', speed: 200
+		      });
+		      $('#ExtraBtn').sidr({
+			  	source: '#Extra', name: 'Extra', body:"#workspace", timing: 'ease-in-out', speed: 200
+		      });
+		      $('#MouseBtn').sidr({
+			  	source: '#Mouse', name: 'Mouse', body:"#workspace", timing: 'ease-in-out', speed: 200
+		      });
+		      $('#ImagesBtn').sidr({
+			  	source: '#Images', name: 'Images', body:"#workspace", timing: 'ease-in-out', speed: 200
+		      });
+		      $('#PropsBtn').sidr({
+			  	source: '#Props', name: 'Props', body:"#workspace", timing: 'ease-in-out', side: 'right', speed: 200
+		      });
+		      $('#SceneBtn').sidr({
+			  	source: '#Scene', name: 'Scene', body:"#workspace", timing: 'ease-in-out', side: 'right', speed: 200
+		      });
+		      $('#EntityBtn').sidr({
+			  	source: '#Entity', name: 'Entity', body:"#workspace", timing: 'ease-in-out', side: 'right', speed: 200
+		      });
+		      $('#CameraBtn').sidr({
+			  	source: '#Camera', name: 'Camera', body:"#workspace", timing: 'ease-in-out', side: 'right', speed: 200
+		      }); 
+		      $('#HistoryBtn').sidr({
+			  	source: '#History', name: 'History', body:"#workspace", timing: 'ease-in-out', side: 'right', speed: 200
+		      });
+		      $( window ).resize(function () {
+			      $.sidr('close', 'Menu');
+			      $.sidr('close', 'New');
+			      $.sidr('close', 'Extra');
+			      $.sidr('close', 'Mouse');
+			      $.sidr('close', 'Images');
+			      $.sidr('close', 'Props');
+			      $.sidr('close', 'Scene');
+			      $.sidr('close', 'Entity');
+			      $.sidr('close', 'Camera');
+			      $.sidr('close', 'History');
+			    });
+		      $( "#Mouse" ).click(function (event) { 
+				    $.sidr('close', 'Mouse');
+		      });
+		      $( "#New" ).click(function (event) { 
+				    $.sidr('close', 'New');
+		      });
+		      $( ".btn" ).click(function (event) { 
+		      	  var id=$(this).attr("id");  
+
+		      	  if(id == "1ExtraBtn" || id == "1HistoryBtn") { 
+				      $.sidr('close', 'Menu');
+				      $.sidr('close', 'New');
+				      $.sidr('close', 'Extra');
+				      $.sidr('close', 'Mouse');
+				      $.sidr('close', 'Images');
+				      $.sidr('close', 'Props');
+				      $.sidr('close', 'Scene');
+				      $.sidr('close', 'Entity');
+				      $.sidr('close', 'Camera');
+				      $.sidr('close', 'History'); 
+			      	  $(".btn").removeClass('active'); 
+				  } else {
+				  	  if(!$(this).hasClass("active")){
+			      		$(".btn").removeClass('active');
+				      	$(this).addClass('active'); 
+				      } else
+			      		 $(".btn").removeClass('active');
+				  }
+			    });
+		      $('#Menu,#New,#Extra,#Mouse,#Props,#Scene,#Entity,#Camera,#History').on('click', function (event) {
+                    if($(event.target).parent().data('sel')) {
+	                    $("#"+$(this).attr('id')+' li').removeClass('sidr-class-active'); 
+	                    $(event.target).parent().addClass('sidr-class-active'); 
+	                }
+				}); 
+
+				$("#Scene [name=id] select").change(function(){
+	                try { 
+	                    var name = $(this).val();
+			        	$("#Scene [name=width] input").val(game.scenes[name].params.width); 
+			        	$("#Scene [name=height] input").val(game.scenes[name].params.height);
+			        	$("#Scene [name=WtoH] input").val(game.scenes[name].params.WtoH);
+			        	$("#Scene [name=gravityX] input").val(game.scenes[name].params.gravity.x);
+			        	$("#Scene [name=gravityY] input").val(game.scenes[name].params.gravity.y);
+				    } catch(e) {}
+				});
+				$("#Scene [name=width] input").change(function(){
+                  try {  
+					var params = {param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].params;
+					params.param.width = parseFloat($(this).val());
+					game.setParams("scene", params);
+						game.refreshGameCode(); 
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	 
+						if(tab1.type=="script" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	  
+			        }
+			      } catch(e) {}
+				});
+				$("#Scene [name=height] input").change(function(){
+                  try { 
+					var params = {param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].params;
+					params.param.height = parseFloat($(this).val());
+					game.setParams("scene", params);
+						game.refreshGameCode(); 
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	  
+			        }
+			      } catch(e) {}
+				});  
+				$("#Scene [name=WtoH] input").change(function(){
+                  try { 
+					var params = {param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].params;
+					params.param.WtoH = parseFloat($(this).val());
+					game.setParams("scene", params);
+						game.refreshGameCode(); 
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	  
+			        }
+			      } catch(e) {}
+				});  
+				$("#Scene [name=gravityX] input").change(function(){
+                  try { 
+					var params = {param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].params;
+					params.param.gravity.x = parseFloat($(this).val());
+					game.setParams("scene", params);
+						game.refreshGameCode(); 
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	  
+			        }
+			      } catch(e) {}
+				});  
+				$("#Scene [name=gravityY] input").change(function(){
+                  try { 
+					var params = {param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].params;
+					params.param.gravity.y = parseFloat($(this).val());
+					game.setParams("scene", params);
+						game.refreshGameCode(); 
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	  
+			        }
+			      } catch(e) {}
+				});  
+	        	$("#Camera [name=id] select").change(function(){
+                    try { 
+                    	var name = $("#Scene [name=id] select").val();
+						var params = game.scenes[name].cameras[$(this).val()].params;
+			        	$("#Camera [name=scene] input").val(name); 
+			        	$("#Camera [name=x] input").val(params.x); 
+			        	$("#Camera [name=y] input").val(params.y); 
+			        	$("#Camera [name=z] input").val(params.z);  
+			        	$("#Camera [name=width] input").val(params.width); 
+			        	$("#Camera [name=height] input").val(params.height); 
+			        } catch(e) {}
+				});
+	        	$("#Camera [name=x] input").change(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].cameras[$("#Camera [name=id] select").val()].params;
+					params.param.x = parseFloat($(this).val());
+					game.setParams("camera", params);
+						game.refreshGameCode(); 
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Entity [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	 
+			        }
+			      } catch(e) {}
+				});
+	        	$("#Camera [name=y] input").change(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].cameras[$("#Camera [name=id] select").val()].params;
+					params.param.y = parseFloat($(this).val());
+					game.setParams("camera", params);
+						game.refreshGameCode(); 
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Entity [name=id] select").val()) tab1.refresh();
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();		 
+			        }
+			      } catch(e) {}
+				});
+	        	$("#Camera [name=z] input").change(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].cameras[$("#Camera [name=id] select").val()].params;
+					params.param.z = parseFloat($(this).val());
+					game.setParams("camera", params);
+						game.refreshGameCode(); 
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Entity [name=id] select").val()) tab1.refresh();
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();		 
+			        }
+			      } catch(e) {}
+				}); 
+	        	$("#Camera [name=width] input").change(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].cameras[$("#Camera [name=id] select").val()].params;
+					params.param.width = parseFloat($(this).val());
+					game.setParams("camera", params);
+						game.refreshGameCode(); 
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Entity [name=id] select").val()) tab1.refresh();
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();		 
+			        }
+			      } catch(e) {}
+				});
+	        	$("#Camera [name=height] input").change(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].cameras[$("#Camera [name=id] select").val()].params;
+					params.param.height = parseFloat($(this).val());
+					game.setParams("camera", params);
+						game.refreshGameCode(); 
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Entity [name=id] select").val()) tab1.refresh();
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();		 
+			        }
+			      } catch(e) {}
+				});  
+	        	$("#Entity [name=id] select").change(function(){
+                  try { 
+                	var name = $("#Scene [name=id] select").val(); 
+					var param = game.scenes[name].entities[$(this).val()].params; 
+					var idle = param.bodies[param.idleBody]; 
+		        	$("#Entity [name=scene] input").val(name); 
+		        	$("#Entity [name=idleBody] input").val(param.idleBody); 
+		        	$("#Entity [name=x] input").val(idle.x);  
+		        	$("#Entity [name=y] input").val(idle.y);  
+		        	$("#Entity [name=z] input").val(idle.z);  
+		        	$("#Entity [name=angle] input").val(idle.angle*180/Math.PI);  
+		        	$("#Entity [name=width] input").val(idle.width);  
+		        	$("#Entity [name=height] input").val(idle.height); 
+		        	if(idle.radius) { 
+			        	$("#Entity [name=radius] input").val(idle.radius);   
+			        } else if(idle.width) { 
+			        	$("#Entity [name=width] input").val(idle.width);  
+			        	$("#Entity [name=height] input").val(idle.height); 
+			        }
+		        	if(idle.type=="static") $("#sidr-id-bstatic").attr('checked',true); 
+		        	if(idle.type=="dynamic") $("#sidr-id-bdynamic").attr('checked',true); 
+
+		        	$("#Entity [name=alpha] input").val(idle.alpha); 	
+		        	$("#Entity [name=groupIndex] input").val(idle.groupIndex);  
+		        	$("#Entity [name=flip] input").val(idle.flip);  
+		        	if(idle.eDebugDraw) $("#Entity [name=eDebugDraw] input").attr('checked',true); 
+		        	if(idle.eDraw) $("#Entity [name=eDraw] input").attr('checked',true);  
+		        	if(idle.useImageSize) $("#Entity [name=useImageSize] input").attr('checked',true);  
+		        	
+		        	putImgs( param.bodies[param.idleBody].frames );  
+			      } catch(e) {}
+				});
+	        	$("#Entity [name=idleBody] input").change(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].entities[$("#Entity [name=id] select").val()].params;
+					params.param.idleBody = $(this).val() ;
+					game.setParams("entity", params);
+						game.refreshGameCode();  
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Entity [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	 
+			        }
+			      } catch(e) {}
+				});
+	        	$("#Entity [name=x] input").change(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].entities[$("#Entity [name=id] select").val()].params;
+					params.param.bodies[params.param.idleBody].x = parseFloat($(this).val());
+					game.setParams("entity", params);
+						game.refreshGameCode(); 
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Entity [name=id] select").val()) tab1.refresh();
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();		 
+			        }
+			      } catch(e) {}
+				});  
+	        	$("#Entity [name=y] input").change(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].entities[$("#Entity [name=id] select").val()].params;
+					params.param.bodies[params.param.idleBody].y = parseFloat($(this).val());
+					game.setParams("entity", params);
+						game.refreshGameCode(); 
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Entity [name=id] select").val()) tab1.refresh();
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();		 
+			        }
+			      } catch(e) {}
+				});
+	        	$("#Entity [name=z] input").change(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].entities[$("#Entity [name=id] select").val()].params;
+					params.param.bodies[params.param.idleBody].z = parseFloat($(this).val());
+					game.setParams("entity", params);
+						game.refreshGameCode(); 
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Entity [name=id] select").val()) tab1.refresh();
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();		 
+			        }
+			      } catch(e) {}
+				});
+	        	$("#Entity [name=width] input").change(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].entities[$("#Entity [name=id] select").val()].params;
+					params.param.bodies[params.param.idleBody].width = parseFloat($(this).val());
+					game.setParams("entity", params);
+						game.refreshGameCode(); 
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Entity [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	 
+			        }
+			      } catch(e) {}
+				}); 
+	        	$("#Entity [name=height] input").change(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].entities[$("#Entity [name=id] select").val()].params;
+					params.param.bodies[params.param.idleBody].height = parseFloat($(this).val());
+					game.setParams("entity", params);
+						game.refreshGameCode(); 
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Entity [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	 
+			        }
+			      } catch(e) {}
+				});
+	        	$("#Entity [name=angle] input").change(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].entities[$("#Entity [name=id] select").val()].params;
+					params.param.bodies[params.param.idleBody].angle = parseFloat($(this).val())*(Math.PI/180);
+					game.setParams("entity", params);
+						game.refreshGameCode();  
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Entity [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	 
+			        } 
+			      } catch(e) {
+    	console.log(e);}
+				});
+	        	$("#Entity [name=groupIndex] input").change(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].entities[$("#Entity [name=id] select").val()].params;
+					params.param.bodies[params.param.idleBody].groupIndex = parseFloat($(this).val())*(Math.PI/180);
+					game.setParams("entity", params);
+						game.refreshGameCode();  
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Entity [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	 
+			        } 
+			      } catch(e) {
+    	console.log(e);}
+				});
+	        	$("#Entity [name=radius] input").change(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].entities[$("#Entity [name=id] select").val()].params;
+					params.param.bodies[params.param.idleBody].radius = parseFloat($(this).val());
+					game.setParams("entity", params);
+						game.refreshGameCode();  
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Entity [name=id] select").val()) tab1.refresh(); 
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	 
+			        } 
+			      } catch(e) {
+    	console.log(e);}
+				});
+	        	$("#Entity [name=eDebugDraw] input").change(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].entities[$("#Entity [name=id] select").val()].params;
+					params.param.bodies[params.param.idleBody].eDebugDraw = $(this).is(":checked");
+					game.setParams("entity", params);
+						game.refreshGameCode();  
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Entity [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	 
+			        } 
+			      } catch(e) {
+    	console.log(e);}
+				});
+	        	$("#Entity [name=eDraw] input").change(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].entities[$("#Entity [name=id] select").val()].params;
+					params.param.bodies[params.param.idleBody].eDraw = $(this).is(":checked");
+					game.setParams("entity", params);
+						game.refreshGameCode();  
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Entity [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	 
+			        } 
+			      } catch(e) {
+    	console.log(e);}
+				}); 
+	        	$("#Entity [name=alpha] input").change(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].entities[$("#Entity [name=id] select").val()].params;
+					params.param.bodies[params.param.idleBody].alpha = parseFloat($(this).val());
+					game.setParams("entity", params);
+						game.refreshGameCode();  
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Entity [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	 
+			        } 
+			      } catch(e) {
+    	console.log(e);}
+				});
+	        	$("#Entity [name=useImageSize] input").change(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].entities[$("#Entity [name=id] select").val()].params;
+					params.param.bodies[params.param.idleBody].useImageSize = $(this).is(":checked");
+					game.setParams("entity", params);
+						game.refreshGameCode();  
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Entity [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	 
+			        } 
+			      } catch(e) {
+    	console.log(e);}
+				}); 
+	        	$("#Entity [name=flip] select").change(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].entities[$("#Entity [name=id] select").val()].params;
+					params.param.bodies[params.param.idleBody].flip = $(this).val();
+					game.setParams("entity", params);
+						game.refreshGameCode();  
+					for(var i in game.activeWindows){ 
+						var elements = document.getElementById( game.activeWindows[i].id ); 
+						var tabCur2 = elements.getElementsByClassName("tab-link active")[0]; 
+						var tab1 = game.activeWindows[i].tabs[tabCur2.id];   
+						if(tab1.type=="sceneEditor" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="script" && tab1.title == $("#Entity [name=id] select").val()) tab1.refresh();	
+						if(tab1.type=="sceneViewer" && tab1.title == $("#Scene [name=id] select").val()) tab1.refresh();	 
+			        } 
+			      } catch(e) {
+    	console.log(e);}
+				});
+	        	$("#sidr-id-bstatic").click(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].entities[$("#Entity [name=id] select").val()].params;
+					params.param.bodies[params.param.idleBody].type = "static";
+      					$("#Entity [name=z] input").trigger('change');
+			      } catch(e) {
+    	console.log(e);}
+				});
+	        	$("#sidr-id-bdynamic").click(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].entities[$("#Entity [name=id] select").val()].params;
+					params.param.bodies[params.param.idleBody].type = "dynamic";
+      					$("#Entity [name=z] input").trigger('change'); 
+			      } catch(e) {
+    	console.log(e);}
+				});
+	        	$("li[name=images] a").click(function(){
+                  try { 
+					var params = {scene: ($("#Scene [name=id] select").val()), param:{}};
+					params.param = game.scenes[$("#Scene [name=id] select").val()].entities[$("#Entity [name=id] select").val()].params; 
+					params.param.bodies[params.param.idleBody].frames = listImgs($("li[name=images] a").html());
+					$("#Entity [name=z] input").trigger('change');
+			      } catch(e) {
+    	console.log(e);}
+				});
+
+			});  
+
+			function ctxMenuCreate(ctxMenutrigger, ctxMenu){
+					$(ctxMenutrigger).bind('contextmenu', function (e){ 
+						$(".contextMenu").hide(); 
+						$(ctxMenu).css({
+						  display: "block",
+						  left: e.pageX,
+						  top: e.pageY
+						});
+				        e.preventDefault();
+				    });
+				  	$(document).on("click" , function() { $(".contextMenu").hide(); });  
+			    } 
+			  	// ctxMenuCreate("#workSpace", "#workSpaceCtxMenu"); checkAuth, fontsize
+
+			// check if browser window has focus		
+			var notIE = (document.documentMode === undefined),
+			    isChromium = window.chrome;
+			      
+			if (notIE && !isChromium) {
+
+			    // checks for Firefox and other  NON IE Chrome versions
+			    $(window).on("focusin", function () {  
+			        keys = {}; 
+			    }).on("focusout", function () {
+			        keys = {}; 
+			    });
+
+			} else {
+			    
+			    // checks for IE and Chromium versions
+			    if (window.addEventListener) { 
+			        // bind focus event
+			        window.addEventListener("focus", function (event) {
+			        	keys = {}; 	
+			        }, false);  
+			    } else { 
+			        // bind focus event
+			        window.attachEvent("focus", function (event) {
+			        	keys = {};  
+			        }); 
+			    }
+			}
+
+
+             /*
+			document.getElementById('backImgURL').onkeypress=function(e){
+			    if(e.keyCode==13){
+			        document.getElementById('backImgChg').click();
+			    }
+			}
+			$('.cf-se-input[autofocus]').trigger('focus').focus(function(){});
+			src="https://apis.google.com/js/client.js?onload=checkAuth"
+			*/ 
+		</script>
+		<script src="https://apis.google.com/js/client.js?onload=checkAuth"> </script>
+
+	</body>
+
+</html>

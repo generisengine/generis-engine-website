@@ -1,0 +1,906 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Scripting API</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"><style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata|Raleway:200');.hljs-comment,.hljs-title{color:#8e908c}.hljs-variable,.hljs-attribute,.hljs-tag,.hljs-regexp,.ruby .hljs-constant,.xml .hljs-tag .hljs-title,.xml .hljs-pi,.xml .hljs-doctype,.html .hljs-doctype,.css .hljs-id,.css .hljs-class,.css .hljs-pseudo{color:#c82829}.hljs-number,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.hljs-literal,.hljs-params,.hljs-constant{color:#f5871f}.ruby .hljs-class .hljs-title,.css .hljs-rules .hljs-attribute{color:#eab700}.hljs-string,.hljs-value,.hljs-inheritance,.hljs-header,.ruby .hljs-symbol,.xml .hljs-cdata{color:#718c00}.css .hljs-hexcolor{color:#3e999f}.hljs-function,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword,.perl .hljs-sub,.javascript .hljs-title,.coffeescript .hljs-title{color:#4271ae}.hljs-keyword,.javascript .hljs-function{color:#8959a8}.hljs{display:block;background:white;color:#4d4d4c;padding:.5em}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata{opacity:.5}.right .hljs-comment{color:#969896}.right .css .hljs-class,.right .css .hljs-id,.right .css .hljs-pseudo,.right .hljs-attribute,.right .hljs-regexp,.right .hljs-tag,.right .hljs-variable,.right .html .hljs-doctype,.right .ruby .hljs-constant,.right .xml .hljs-doctype,.right .xml .hljs-pi,.right .xml .hljs-tag .hljs-title{color:#c66}.right .hljs-built_in,.right .hljs-constant,.right .hljs-literal,.right .hljs-number,.right .hljs-params,.right .hljs-pragma,.right .hljs-preprocessor{color:#de935f}.right .css .hljs-rule .hljs-attribute,.right .ruby .hljs-class .hljs-title{color:#f0c674}.right .hljs-header,.right .hljs-inheritance,.right .hljs-name,.right .hljs-string,.right .hljs-value,.right .ruby .hljs-symbol,.right .xml .hljs-cdata{color:#b5bd68}.right .css .hljs-hexcolor,.right .hljs-title{color:#8abeb7}.right .coffeescript .hljs-title,.right .hljs-function,.right .javascript .hljs-title,.right .perl .hljs-sub,.right .python .hljs-decorator,.right .python .hljs-title,.right .ruby .hljs-function .hljs-title,.right .ruby .hljs-title .hljs-keyword{color:#81a2be}.right .hljs-keyword,.right .javascript .hljs-function{color:#b294bb}.right .hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:.5em;-webkit-text-size-adjust:none}.right .coffeescript .javascript,.right .javascript .xml,.right .tex .hljs-formula,.right .xml .css,.right .xml .hljs-cdata,.right .xml .javascript,.right .xml .vbscript{opacity:.5}.hljs-comment,.hljs-quote{color:#9e8f9e}.hljs-attribute,.hljs-link,.hljs-name,.hljs-regexp,.hljs-selector-class,.hljs-selector-id,.hljs-tag,.hljs-template-variable,.hljs-variable{color:#ca402b}.hljs-built_in,.hljs-literal,.hljs-meta,.hljs-number,.hljs-params,.hljs-type{color:#a65926}.hljs-bullet,.hljs-string,.hljs-symbol{color:#918b3b}.hljs-section,.hljs-title{color:#516aec}.hljs-keyword,.hljs-selector-tag{color:#7b59c0}.hljs{display:block;overflow-x:auto;background:#1b181b;color:#ab9bab;padding:.5em}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.right .hljs-comment,.right .hljs-quote{color:#776977}.right .hljs-attribute,.right .hljs-link,.right .hljs-name,.right .hljs-regexp,.right .hljs-selector-class,.right .hljs-selector-id,.right .hljs-tag,.right .hljs-template-variable,.right .hljs-variable{color:#ca402b}.right .hljs-built_in,.right .hljs-literal,.right .hljs-meta,.right .hljs-number,.right .hljs-params,.right .hljs-type{color:#a65926}.right .hljs-bullet,.right .hljs-string,.right .hljs-symbol{color:#918b3b}.right .hljs-section,.right .hljs-title{color:#516aec}.right .hljs-keyword,.right .hljs-selector-tag{color:#7b59c0}.right .hljs{display:block;overflow-x:auto;background:#f7f3f7;color:#695d69;padding:.5em}.right .hljs-emphasis{font-style:italic}.right .hljs-strong{font-weight:700}body{color:#c8c8c8;background:#272b30;font:400 14px / 1.42 'Roboto',Helvetica,sans-serif}header{border-bottom:1px solid #373d44;margin-bottom:12px}h1,h2,h3,h4,h5{color:#c8c8c8;margin:12px 0}h1 .permalink,h2 .permalink,h3 .permalink,h4 .permalink,h5 .permalink{margin-left:0;opacity:0;transition:opacity .25s ease}h1:hover .permalink,h2:hover .permalink,h3:hover .permalink,h4:hover .permalink,h5:hover .permalink{opacity:1}.triple h1 .permalink,.triple h2 .permalink,.triple h3 .permalink,.triple h4 .permalink,.triple h5 .permalink{opacity:.15}.triple h1:hover .permalink,.triple h2:hover .permalink,.triple h3:hover .permalink,.triple h4:hover .permalink,.triple h5:hover .permalink{opacity:.15}h1{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:36px}h2{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:30px}h3{font-size:100%;text-transform:uppercase}h5{font-size:100%;font-weight:normal}p{margin:0 0 10px}p.choices{line-height:1.6}a{color:white;text-decoration:none}li p{margin:0}hr.split{border:0;height:1px;width:100%;padding-left:6px;margin:12px auto;background-image:linear-gradient(to right, rgba(200,200,200,0) 20%, rgba(200,200,200,0.2) 51.4%, rgba(39,43,48,0.2) 51.4%, rgba(39,43,48,0) 80%)}dl dt{float:left;width:130px;clear:left;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-left:150px}blockquote{color:rgba(200,200,200,0.5);font-size:15.5px;padding:10px 20px;margin:12px 0;border-left:5px solid #2b3237}blockquote p:last-child{margin-bottom:0}pre{background-color:#202529;padding:12px;border:1px solid #424c54;border-radius:6px;overflow:auto}pre code{color:#c8c8c8;background-color:transparent;padding:0;border:none}code{color:#ddd;background-color:#373b40;font:'Inconsolata',monospace;padding:1px 4px;border:1px solid #424c54;border-radius:3px}ul,ol{padding-left:2em}table{border-collapse:collapse;border-spacing:0;margin-bottom:12px}table tr:nth-child(2n){background-color:#22262a}table th,table td{padding:6px 12px;border:1px solid #101214}.text-muted{opacity:.5}.note,.warning{padding:.3em 1em;margin:1em 0;border-radius:2px;font-size:90%}.note h1,.warning h1,.note h2,.warning h2,.note h3,.warning h3,.note h4,.warning h4,.note h5,.warning h5,.note h6,.warning h6{font-family:200 36px 'Raleway',Helvetica,sans-serif;font-size:135%;font-weight:500}.note p,.warning p{margin:.5em 0}.note{color:#c8c8c8;background-color:#2b373e;border-left:4px solid #5bc0de}.note h1,.note h2,.note h3,.note h4,.note h5,.note h6{color:#5bc0de}.warning{color:#c8c8c8;background-color:#352b30;border-left:4px solid #e9322d}.warning h1,.warning h2,.warning h3,.warning h4,.warning h5,.warning h6{color:#e9322d}header{margin-top:24px}nav{position:fixed;top:24px;bottom:0;overflow-y:auto}nav .resource-group{padding:0}nav .resource-group .heading{position:relative}nav .resource-group .heading .chevron{position:absolute;top:12px;right:12px;opacity:.5}nav .resource-group .heading a{display:block;color:#c8c8c8;opacity:.7;border-left:2px solid transparent;margin:0}nav .resource-group .heading a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid #c8c8c8}nav ul{list-style-type:none;padding-left:0}nav ul a{display:block;font-size:13px;color:rgba(200,200,200,0.7);padding:8px 12px;border-top:1px solid #202020;border-left:2px solid transparent;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}nav ul a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid #c8c8c8}nav ul>li{margin:0}nav ul>li:first-child{margin-top:-12px}nav ul>li:last-child{margin-bottom:-12px}nav ul ul a{padding-left:24px}nav ul ul li{margin:0}nav ul ul li:first-child{margin-top:0}nav ul ul li:last-child{margin-bottom:0}nav>div>div>ul>li:first-child>a{border-top:none}.preload *{transition:none !important}.pull-left{float:left}.pull-right{float:right}.badge{display:inline-block;float:right;min-width:10px;min-height:14px;padding:3px 7px;font-size:12px;color:#fff;background-color:#373d44;border-radius:10px;margin:-2px 0}.badge.get{color:white;background-color:#5bc0de}.badge.head{color:white;background-color:#5bc0de}.badge.options{color:white;background-color:#5bc0de}.badge.put{color:white;background-color:#f89406}.badge.patch{color:white;background-color:#f89406}.badge.post{color:white;background-color:#62c462}.badge.delete{color:white;background-color:#ee5f5b}.collapse-button{float:right}.collapse-button .close{display:none;color:white;cursor:pointer}.collapse-button .open{color:white;cursor:pointer}.collapse-button.show .close{display:inline}.collapse-button.show .open{display:none}.collapse-content{max-height:0;overflow:hidden;transition:max-height .3s ease-in-out}nav{width:220px}.container{max-width:940px;margin-left:auto;margin-right:auto}.container .row .content{margin-left:244px;width:696px}.container .row:after{content:'';display:block;clear:both}.container-fluid nav{width:22%}.container-fluid .row .content{margin-left:24%}.container-fluid.triple nav{width:16.5%;padding-right:1px}.container-fluid.triple .row .content{position:relative;margin-left:16.5%;padding-left:24px}.middle:before,.middle:after{content:'';display:table}.middle:after{clear:both}.middle{box-sizing:border-box;width:51.5%;padding-right:12px}.right{box-sizing:border-box;float:right;width:48.5%;padding-left:12px}.right a{color:#666}.right h1,.right h2,.right h3,.right h4,.right h5,.right p,.right div{color:#272b30}.right pre{background-color:#f7f6f5;border:1px solid #f7f6f5}.right pre code{color:#333}.right .description{margin-top:12px}.triple .resource-heading{font-size:125%}.definition{margin-top:12px;margin-bottom:12px}.definition .method{font-weight:bold}.definition .method.get{color:#2e98b8}.definition .method.head{color:#2e98b8}.definition .method.options{color:#2e98b8}.definition .method.post{color:#2eb82e}.definition .method.put{color:#b87f2e}.definition .method.patch{color:#b87f2e}.definition .method.delete{color:#b8322e}.definition .uri{word-break:break-all;word-wrap:break-word}.definition .hostname{opacity:.5}.example-names{background-color:#eee;padding:12px;border-radius:6px}.example-names .tab-button{cursor:pointer;color:#c8c8c8;border:1px solid #ddd;padding:6px;margin-left:12px}.example-names .tab-button.active{background-color:#d5d5d5}.right .example-names{background-color:#adaaa6}.right .example-names .tab-button{color:#272b30;border:1px solid #d8d4cf;border-radius:6px}.right .example-names .tab-button.active{background-color:#95918b}#nav-background{position:fixed;left:0;top:0;bottom:0;width:16.5%;padding-right:14.4px;background-color:#272b30;border-right:1px solid #272b30;z-index:-1}#right-panel-background{position:absolute;right:-12px;top:-12px;bottom:-12px;width:48.6%;background-color:#d8d4cf;z-index:-1}@media (max-width:1200px){nav{width:198px}.container{max-width:840px}.container .row .content{margin-left:224px;width:606px}}@media (max-width:992px){nav{width:169.4px}.container{max-width:720px}.container .row .content{margin-left:194px;width:526px}}@media (max-width:768px){nav{display:none}.container{width:95%;max-width:none}.container .row .content,.container-fluid .row .content,.container-fluid.triple .row .content{margin-left:auto;margin-right:auto;width:95%}#nav-background{display:none}#right-panel-background{width:48.6%}}.back-to-top{position:fixed;z-index:1;bottom:0;right:24px;padding:4px 8px;color:rgba(200,200,200,0.5);background-color:#373d44;text-decoration:none !important;border-top:1px solid #202020;border-left:1px solid #202020;border-right:1px solid #202020;border-top-left-radius:3px;border-top-right-radius:3px}.resource-group{padding:12px;margin-bottom:12px;background-color:#272b30;border:1px solid #202020;border-radius:6px}.resource-group h2.group-heading,.resource-group .heading a{padding:12px;margin:-12px -12px 12px -12px;background-color:#373d44;border-bottom:1px solid #202020;border-top-left-radius:6px;border-top-right-radius:6px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.triple .content .resource-group{padding:0;border:none}.triple .content .resource-group h2.group-heading,.triple .content .resource-group .heading a{margin:0 0 12px 0;border:1px solid #202020}nav .resource-group .heading a{padding:12px;margin-bottom:0}nav .resource-group .collapse-content{padding:0}.action{margin-bottom:12px;padding:12px 12px 0 12px;overflow:hidden;border:1px solid transparent;border-radius:6px}.action h4.action-heading{padding:12px;margin:-12px -12px 12px -12px;border-bottom:1px solid transparent;border-top-left-radius:6px;border-top-right-radius:6px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.action h4.action-heading .name{float:right;font-weight:normal}.action h4.action-heading .method{padding:6px 12px;margin-right:12px;border-radius:3px}.action h4.action-heading .method.get{color:#fff;background-color:#2390b0}.action h4.action-heading .method.head{color:#fff;background-color:#2390b0}.action h4.action-heading .method.options{color:#fff;background-color:#2390b0}.action h4.action-heading .method.put{color:#fff;background-color:#945904}.action h4.action-heading .method.patch{color:#fff;background-color:#945904}.action h4.action-heading .method.post{color:#fff;background-color:#348c34}.action h4.action-heading .method.delete{color:#fff;background-color:#ce1a15}.action h4.action-heading code{color:black;background-color:rgba(255,255,255,0.7);border-color:transparent;font-weight:normal}.action dl.inner{padding-bottom:2px}.action .title{border-bottom:1px solid #272b30;margin:0 -12px -1px -12px;padding:12px}.action.get{border-color:#202020}.action.get h4.action-heading{color:#2390b0;background:#5bc0de;border-bottom-color:#202020}.action.head{border-color:#202020}.action.head h4.action-heading{color:#2390b0;background:#5bc0de;border-bottom-color:#202020}.action.options{border-color:#202020}.action.options h4.action-heading{color:#2390b0;background:#5bc0de;border-bottom-color:#202020}.action.post{border-color:#202020}.action.post h4.action-heading{color:#348c34;background:#62c462;border-bottom-color:#202020}.action.put{border-color:#202020}.action.put h4.action-heading{color:#945904;background:#f89406;border-bottom-color:#202020}.action.patch{border-color:#202020}.action.patch h4.action-heading{color:#945904;background:#f89406;border-bottom-color:#202020}.action.delete{border-color:#202020}.action.delete h4.action-heading{color:#ce1a15;background:#ee5f5b;border-bottom-color:#202020}</style></head><body class="preload"><a href="#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container-fluid"><div class="row"><nav><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#game-engine">Game Engine</a></div><div class="collapse-content"><ul><li><a href="#header-properties">PROPERTIES</a></li><li><a href="#header-all-scenes">All Scenes</a></li><li><a href="#header-active-scene">Active Scene</a></li><li><a href="#header-functions">FUNCTIONS</a></li><li><a href="#header-create-new-scene">Create New Scene</a></li><li><a href="#header-close-scene">Close Scene</a></li><li><a href="#header-start-scene">Start Scene</a></li><li><a href="#header-delete-scene">Delete Scene</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#scene-engine">Scene Engine</a></div><div class="collapse-content"><ul><li><a href="#header-properties-1">PROPERTIES</a></li><li><a href="#header-scene-name">Scene Name</a></li><li><a href="#header-all-scene-entities">All Scene Entities</a></li><li><a href="#header-functions-1">FUNCTIONS</a></li><li><a href="#header-start-scene-1">Start Scene</a></li><li><a href="#header-set-scene-gravity">Set Scene Gravity</a></li><li><a href="#header-create-new-entities">Create new Entities</a></li><li><a href="#header-remove-entity-from-scene">Remove Entity From Scene</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#entity-engine">Entity Engine</a></div><div class="collapse-content"><ul><li><a href="#header-properties-2">PROPERTIES</a></li><li><a href="#header-entity-definition">Entity Definition</a></li><li><a href="#header-entity-animation-frames">Entity Animation Frames</a></li><li><a href="#header-entity-animation-bodies">Entity Animation Bodies</a></li><li><a href="#header-entity-current-animation">Entity Current Animation</a></li><li><a href="#header-animation-body-frame">Animation Body Frame</a></li><li><a href="#header-use-image-size">Use Image Size</a></li><li><a href="#header-use-sprites">Use Sprites</a></li><li><a href="#header-update-body-by-image-size">Update Body By Image Size</a></li><li><a href="#header-offset-image-size">Offset image size</a></li><li><a href="#header-offset-physics-body-size">Offset Physics Body size</a></li><li><a href="#header-physics-body-position">Physics Body Position</a></li><li><a href="#header-physics-body-size">Physics Body Size</a></li><li><a href="#header-body-image-position">Body Image Position</a></li><li><a href="#header-body-image-size">Body Image Size</a></li><li><a href="#header-entity-id">Entity Id</a></li><li><a href="#header-entity-physics-body">Entity Physics Body</a></li><li><a href="#header-x-speed">X Speed</a></li><li><a href="#header-y-speed">Y Speed</a></li><li><a href="#header-x-direction">X Direction</a></li><li><a href="#header-y-direction">Y Direction</a></li><li><a href="#header-z-index">Z Index</a></li><li><a href="#header-lifetime">Lifetime</a></li><li><a href="#header-markfordeath">markForDeath</a></li><li><a href="#header-user-data">User Data</a></li><li><a href="#header-body-sounds">Body sounds</a></li><li><a href="#header-functions-2">FUNCTIONS</a></li><li><a href="#header-get-user-data">Get User Data</a></li><li><a href="#header-kill-entitity">Kill Entitity</a></li><li><a href="#header-change-entity-body">Change Entity Body</a></li><li><a href="#header-entity-on-touch">Entity On Touch</a></li><li><a href="#header-entity-on-key-down">Entity On Key Down</a></li><li><a href="#header-entity-on-mouse-hover">Entity On Mouse Hover</a></li><li><a href="#header-entity-on-mouse-down">Entity On Mouse Down</a></li><li><a href="#header-entity-on-mouse-up">Entity On Mouse Up</a></li><li><a href="#header-entity-additional-update">Entity Additional Update</a></li></ul></div></div></nav><div class="content"><header><h1 id="top">Scripting API</h1></header><p>Find here details of the scripting API that Generis provide.</p>
+<p>This page is extensively furnished with example code that you are free to use for any purpose without crediting Generis.</p>
+<section id="game-engine" class="resource-group"><h2 class="group-heading">Game Engine <a href="#game-engine" class="permalink">&para;</a></h2><h2 id="header-properties">PROPERTIES <a class="permalink" href="#header-properties" aria-hidden="true">¶</a></h2>
+<div class="note">
+<h3 id="header-all-scenes"><strong>All Scenes</strong> <a class="permalink" href="#header-all-scenes" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">gGameEngine.scenes</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Dictionary</span>
+<span class="hljs-attribute">Keys</span>: <span class="hljs-string">Scene names</span>
+<span class="hljs-attribute">Values</span>: <span class="hljs-string">Scene Objects </span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Dictionary of all scenes created.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-active-scene"><strong>Active Scene</strong> <a class="permalink" href="#header-active-scene" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">gGameEngine.currScene</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">String</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Name of currently active scene.</span></code></pre>
+</div>
+<blockquote>
+<hr>
+</blockquote>
+<h2 id="header-functions">FUNCTIONS <a class="permalink" href="#header-functions" aria-hidden="true">¶</a></h2>
+<div class="note">
+<h3 id="header-create-new-scene"><strong>Create New Scene</strong> <a class="permalink" href="#header-create-new-scene" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">gGameEngine.newScene(name, canvas, width, height, x, y, camWidth, camHeight, camX, camY)</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Returns a Scene Object.</span></code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">name</td>
+<td>String</td>
+<td>The name of the scene to be created</td>
+</tr>
+<tr>
+<td style="text-align:right">canvas</td>
+<td>Canvas</td>
+<td>The canvas on which the scene will be shown</td>
+</tr>
+<tr>
+<td style="text-align:right">width</td>
+<td>Double</td>
+<td>Scene width</td>
+</tr>
+<tr>
+<td style="text-align:right">Height</td>
+<td>Double</td>
+<td>Scene height</td>
+</tr>
+<tr>
+<td style="text-align:right">x</td>
+<td>Double</td>
+<td>Scene x position relative to the canvas. Usually 0.</td>
+</tr>
+<tr>
+<td style="text-align:right">y</td>
+<td>Double</td>
+<td>Scene y position relative to the canvas. Usually 0.</td>
+</tr>
+<tr>
+<td style="text-align:right">cameraWidth</td>
+<td>Double</td>
+<td>Camera width</td>
+</tr>
+<tr>
+<td style="text-align:right">cameraHeight</td>
+<td>Double</td>
+<td>Camera height</td>
+</tr>
+<tr>
+<td style="text-align:right">cameraX</td>
+<td>Double</td>
+<td>Camera x position relative to the scene.</td>
+</tr>
+<tr>
+<td style="text-align:right">cameraY</td>
+<td>Double</td>
+<td>Camera y position relative to the scene.</td>
+</tr>
+</tbody>
+</table>
+<pre><code><span class="hljs-comment">// Example</span>
+    var canvas = document.getElementById(canvas); 
+    var scene = gGameEngine.newScene(<span class="hljs-string">"CoolGame"</span>, canvas, <span class="hljs-number">500</span>, <span class="hljs-number">500</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">500</span>, <span class="hljs-number">500</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);</code></pre>
+</div>
+<div class="note">
+<h3 id="header-close-scene"><strong>Close Scene</strong> <a class="permalink" href="#header-close-scene" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">gGameEngine.closeScene(name)</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Closes scene with given name.</span></code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">name</td>
+<td>String</td>
+<td>The name of the scene to be closed</td>
+</tr>
+</tbody>
+</table>
+<pre><code><span class="hljs-comment">// Example</span>
+    gGameEngine.closeScene(<span class="hljs-string">"CoolGame"</span>);</code></pre>
+</div>
+<div class="note">
+<h3 id="header-start-scene"><strong>Start Scene</strong> <a class="permalink" href="#header-start-scene" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">gGameEngine.startScene(name)</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Starts scene with given name.</span></code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">name</td>
+<td>String</td>
+<td>The name of the scene to be started</td>
+</tr>
+</tbody>
+</table>
+<pre><code><span class="hljs-comment">// Example</span>
+    gGameEngine.startScene(<span class="hljs-string">"CoolGame"</span>);</code></pre>
+</div>
+<div class="note">
+<h3 id="header-delete-scene"><strong>Delete Scene</strong> <a class="permalink" href="#header-delete-scene" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">gGameEngine.delScene(name)</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Delete scene with given name.</span></code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">name</td>
+<td>String</td>
+<td>The name of the scene to be deleted</td>
+</tr>
+</tbody>
+</table>
+<pre><code><span class="hljs-comment">// Example</span>
+    gGameEngine.delScene(<span class="hljs-string">"CoolGame"</span>);</code></pre>
+</div>
+</section><section id="scene-engine" class="resource-group"><h2 class="group-heading">Scene Engine <a href="#scene-engine" class="permalink">&para;</a></h2><div class="note">
+<pre><code><span class="hljs-comment">// "scene" here is a Scene Object. For Example</span>
+    var scene = gGameEngine.newScene(“CoolGame”, canvas, <span class="hljs-number">500</span>, <span class="hljs-number">500</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">500</span>, <span class="hljs-number">500</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);</code></pre>
+</div>
+<h2 id="header-properties-1">PROPERTIES <a class="permalink" href="#header-properties-1" aria-hidden="true">¶</a></h2>
+<div class="note">
+<h3 id="header-scene-name"><strong>Scene Name</strong> <a class="permalink" href="#header-scene-name" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">scene.name</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">String</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">name of scene.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-all-scene-entities"><strong>All Scene Entities</strong> <a class="permalink" href="#header-all-scene-entities" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">scene.entities</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">List</span>
+<span class="hljs-attribute">Values</span>: <span class="hljs-string">Entities Objects</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">List of all entities in scene.</span></code></pre>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">scene.objects</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Dictionary</span>
+<span class="hljs-attribute">keys</span>: <span class="hljs-string">names</span>
+<span class="hljs-attribute">Values</span>: <span class="hljs-string">Entities Objects</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Dictionary of all entities in scene.</span></code></pre>
+</div>
+<blockquote>
+<hr>
+</blockquote>
+<h2 id="header-functions-1">FUNCTIONS <a class="permalink" href="#header-functions-1" aria-hidden="true">¶</a></h2>
+<div class="note">
+<h3 id="header-start-scene-1"><strong>Start Scene</strong> <a class="permalink" href="#header-start-scene-1" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">scene.start()</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Deletes entity from scene.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-set-scene-gravity"><strong>Set Scene Gravity</strong> <a class="permalink" href="#header-set-scene-gravity" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">scene.setGravity(x, y)</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Closes scene with given name.</span></code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">x</td>
+<td>Double</td>
+<td>horizontal component of gravity</td>
+</tr>
+<tr>
+<td style="text-align:right">y</td>
+<td>Double</td>
+<td>horizontal component of gravity</td>
+</tr>
+</tbody>
+</table>
+<pre><code><span class="hljs-comment">// Example</span>
+    gGameEngine.delScene(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>);</code></pre>
+</div>
+<div class="note">
+<h3 id="header-create-new-entities"><strong>Create new Entities</strong> <a class="permalink" href="#header-create-new-entities" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">scene.spawnEntity(entityProps)</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Creates a new entity in the Scene</span></code></pre>
+<blockquote>
+<p>Entity Properties</p>
+</blockquote>
+<pre><code>{
+    <span class="hljs-attribute">id</span>: NAME,
+    <span class="hljs-attribute">animbodies</span>: ANIMBODIES,
+    <span class="hljs-attribute">animFrames</span>: ANIMFRAMES,
+    <span class="hljs-attribute">initBody</span>: INITBODY,
+    <span class="hljs-attribute">zIndex</span>: ZINDEX
+}</code></pre>
+<blockquote>
+<p>Animation Bodies</p>
+</blockquote>
+<pre><code>{
+    <span class="hljs-string">"animBody1"</span>: <span class="hljs-name">SETTINGS1</span>,
+    <span class="hljs-string">"animBody2"</span>: <span class="hljs-name">SETTINGS2</span>,
+        .
+        .
+        .
+}</code></pre>
+<blockquote>
+<p>Settings</p>
+</blockquote>
+<pre><code>{
+    <span class="hljs-tag">pos</span>: {
+        <span class="hljs-tag">x</span>: <span class="hljs-tag">X</span>,
+        <span class="hljs-tag">y</span>: <span class="hljs-tag">Y</span>
+    },
+    <span class="hljs-tag">size</span>: {
+        <span class="hljs-tag">width</span>: <span class="hljs-tag">WIDTH</span>,
+        <span class="hljs-tag">height</span>: <span class="hljs-tag">HEIGHT</span>
+    },
+    <span class="hljs-tag">imageSizeFx</span>: <span class="hljs-tag">function</span>(width, height) {
+        .
+        .
+        .
+        <span class="hljs-tag">return</span> <span class="hljs-attr_selector">[WIDTH, HEIGHT]</span>;
+    },
+    <span class="hljs-tag">imageSizeFx</span>: <span class="hljs-tag">function</span>(x, y) {
+        .
+        .
+        .
+        <span class="hljs-tag">return</span> <span class="hljs-attr_selector">[X, Y]</span>;
+    },
+    <span class="hljs-attribute">type</span>: TYPE,
+    <span class="hljs-attribute">categories</span>: CATEGORIES,
+    <span class="hljs-attribute">collidesWith</span>: COLLIDESWITH,
+    <span class="hljs-attribute">userData</span>: USERDATA,
+    <span class="hljs-attribute">enablePhysBody</span>: ENABLEPHYSBODY,
+    <span class="hljs-attribute">entityDef</span>: ENTITYDEF,
+    <span class="hljs-attribute">trueOffset</span>: TRUEOFFSET,
+    <span class="hljs-attribute">updBdByImgSize</span>: UPDBDBYIMGSIZE,
+    <span class="hljs-attribute">orientation</span>: ORIENTATION,
+    <span class="hljs-attribute">useCurrentPos</span>: USECURRENTPOS,
+    <span class="hljs-attribute">useImageSize</span>: USEIMAGESIZE,
+    <span class="hljs-attribute">showImage</span>: SHOWIMAGE,
+    <span class="hljs-attribute">useSprites</span>: USESPRITES
+
+}</code></pre>
+<blockquote>
+<p>Animation Frames</p>
+</blockquote>
+<pre><code>[
+    [<span class="hljs-string">"animBody1"</span>, [ IMAGE1, IMAGE2, ... ]],
+    [<span class="hljs-string">"animBody2"</span>, [ IMAGE1, IMAGE2, ... ]],
+        .
+        .
+        .
+]</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">entityProps</td>
+<td>Dictionary</td>
+<td>All properties deffining the entity. It is formatted as shown above.</td>
+</tr>
+</tbody>
+</table>
+<pre><code><span class="hljs-comment">// Minimum example</span>
+    var sets = { <span class="hljs-string">pos:</span> { <span class="hljs-string">x:</span> <span class="hljs-number">0</span> , <span class="hljs-string">y:</span> <span class="hljs-number">500</span> } , <span class="hljs-string">size:</span> { <span class="hljs-string">height:</span> <span class="hljs-number">100</span> , <span class="hljs-string">width:</span> <span class="hljs-number">1000</span> } };
+    var charPs = { <span class="hljs-string">id:</span> <span class="hljs-string">'floor'</span>, <span class="hljs-string">animBodies:</span> { <span class="hljs-string">Idle:</span> sets }, <span class="hljs-string">animFrames:</span> [[ <span class="hljs-string">"Idle"</span>, [<span class="hljs-string">"floor.png"</span>]]], <span class="hljs-string">initBody:</span> <span class="hljs-string">"Idle"</span>, <span class="hljs-string">zIndex:</span> <span class="hljs-number">1</span> };
+    var entity = scene.spawnEntity(charPs);</code></pre>
+</div>
+<div class="note">
+<h3 id="header-remove-entity-from-scene"><strong>Remove Entity From Scene</strong> <a class="permalink" href="#header-remove-entity-from-scene" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">scene.removeEntity(entityName)</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Deletes entity from scene.</span></code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">entityName</td>
+<td>String</td>
+<td>Name(id) of entity to be removed</td>
+</tr>
+</tbody>
+</table>
+<pre><code><span class="hljs-comment">// Example</span>
+    gGameEngine.removeEntity(<span class="hljs-string">"floor"</span>);</code></pre>
+</div>
+</section><section id="entity-engine" class="resource-group"><h2 class="group-heading">Entity Engine <a href="#entity-engine" class="permalink">&para;</a></h2><div class="note">
+<pre><code><span class="hljs-comment">// Let "entity" be a previously created entity. For Example</span>
+    <span class="hljs-variable"><span class="hljs-keyword">var</span> entity</span> = scene.spawnEntity(charPs);</code></pre>
+</div>
+<h2 id="header-properties-2">PROPERTIES <a class="permalink" href="#header-properties-2" aria-hidden="true">¶</a></h2>
+<div class="note">
+<h3 id="header-entity-definition"><strong>Entity Definition</strong> <a class="permalink" href="#header-entity-definition" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.entityDef</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Dictionary</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">the entity definition used to create this entity.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-entity-animation-frames"><strong>Entity Animation Frames</strong> <a class="permalink" href="#header-entity-animation-frames" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.animationFrames</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Dictionary</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">entity entity animation frames as provided during entity creation.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-entity-animation-bodies"><strong>Entity Animation Bodies</strong> <a class="permalink" href="#header-entity-animation-bodies" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.animationBodies</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Dictionary</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">entity entity animation bodies as provided during entity creation.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-entity-current-animation"><strong>Entity Current Animation</strong> <a class="permalink" href="#header-entity-current-animation" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.currentAnimation</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">String</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">The name of the current animation body of the entity.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-animation-body-frame"><strong>Animation Body Frame</strong> <a class="permalink" href="#header-animation-body-frame" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.frame</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Integer</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Frame number of current Animation Body current frame.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-use-image-size"><strong>Use Image Size</strong> <a class="permalink" href="#header-use-image-size" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.useImageSize</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">bool</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">If true, animation body frames will be rendered using their actual size. If false, animation body frames will be rendered using size provided in body settings.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-use-sprites"><strong>Use Sprites</strong> <a class="permalink" href="#header-use-sprites" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.useSprites</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">bool</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">If true, animation body images should be in a spritesheet. If false, animation body images should use absolute paths.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-update-body-by-image-size"><strong>Update Body By Image Size</strong> <a class="permalink" href="#header-update-body-by-image-size" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.updBdByImgSize</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">bool</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">If true, entity physics body will have same size as body image. If false, entity physics body will have a fix size.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-offset-image-size"><strong>Offset image size</strong> <a class="permalink" href="#header-offset-image-size" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.trueOffset</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Double</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Offset image size by given amount.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-offset-physics-body-size"><strong>Offset Physics Body size</strong> <a class="permalink" href="#header-offset-physics-body-size" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.offset</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Double</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Offset physics body size by given amount.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-physics-body-position"><strong>Physics Body Position</strong> <a class="permalink" href="#header-physics-body-position" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.pos</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Position Vector</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">x and y position of body.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-physics-body-size"><strong>Physics Body Size</strong> <a class="permalink" href="#header-physics-body-size" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.size</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Size Vector</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">height and width of body.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-body-image-position"><strong>Body Image Position</strong> <a class="permalink" href="#header-body-image-position" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.imagePos</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Position Vector</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">x and y position of body image.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-body-image-size"><strong>Body Image Size</strong> <a class="permalink" href="#header-body-image-size" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.imageSize</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Size Vector</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">height and width of body image.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-entity-id"><strong>Entity Id</strong> <a class="permalink" href="#header-entity-id" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.id</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">String</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">The name of the entity.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-entity-physics-body"><strong>Entity Physics Body</strong> <a class="permalink" href="#header-entity-physics-body" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.physBody</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Physics Object</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">The physics body of entity, if any.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-x-speed"><strong>X Speed</strong> <a class="permalink" href="#header-x-speed" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.moveSpeedX</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Double</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">The magnitude of the speed of the entity in the x direction.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-y-speed"><strong>Y Speed</strong> <a class="permalink" href="#header-y-speed" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.moveSpeedY</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Double</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">The magnitude of the speed of the entity in the y direction.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-x-direction"><strong>X Direction</strong> <a class="permalink" href="#header-x-direction" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.movingDirX</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Double</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">The x component of the entity directional vertor.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-y-direction"><strong>Y Direction</strong> <a class="permalink" href="#header-y-direction" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.movingDirY</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Double</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">The y component of the entity directional vertor.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-z-index"><strong>Z Index</strong> <a class="permalink" href="#header-z-index" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.zIndex</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Integer</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">The z index of the entity.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-lifetime"><strong>Lifetime</strong> <a class="permalink" href="#header-lifetime" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.lifetime</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Double</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">The lifetime of the entity.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-markfordeath"><strong>markForDeath</strong> <a class="permalink" href="#header-markfordeath" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.markForDeath</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Boolean</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Wether or not the entity is gets deleted(true) or not(false).</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-user-data"><strong>User Data</strong> <a class="permalink" href="#header-user-data" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.userData</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Dictionary</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Data provided by user on entity creation.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-body-sounds"><strong>Body sounds</strong> <a class="permalink" href="#header-body-sounds" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.sounds</span>
+<span class="hljs-attribute">Type</span>: <span class="hljs-string">Dictionary</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Dictionary of body sounds.</span></code></pre>
+</div>
+<blockquote>
+<hr>
+</blockquote>
+<h2 id="header-functions-2">FUNCTIONS <a class="permalink" href="#header-functions-2" aria-hidden="true">¶</a></h2>
+<div class="note">
+<h3 id="header-get-user-data"><strong>Get User Data</strong> <a class="permalink" href="#header-get-user-data" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.GetUserData()</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Gets user data provided during entity creation.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-kill-entitity"><strong>Kill Entitity</strong> <a class="permalink" href="#header-kill-entitity" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.Kill()</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Kills/delete entity.</span></code></pre>
+</div>
+<div class="note">
+<h3 id="header-change-entity-body"><strong>Change Entity Body</strong> <a class="permalink" href="#header-change-entity-body" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.changeCurrentAnimation(bodyName)</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Changes current entity body.</span></code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">bodyName</td>
+<td>String</td>
+<td>Name of animation body to change to</td>
+</tr>
+</tbody>
+</table>
+<pre><code><span class="hljs-comment">// Example</span>
+    entity.changeCurrentAnimation(<span class="hljs-string">"Idle"</span>);</code></pre>
+</div>
+<div class="note">
+<h3 id="header-entity-on-touch"><strong>Entity On Touch</strong> <a class="permalink" href="#header-entity-on-touch" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.addOnTouch(otherBody, point, impulse, physOwner)</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Specifies what happens when entity physics body gets into contact with any other entity physics body.</span></code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">otherBody</td>
+<td>Object</td>
+<td>Touched entity</td>
+</tr>
+<tr>
+<td style="text-align:right">point</td>
+<td>Vetor</td>
+<td>Body touched</td>
+</tr>
+<tr>
+<td style="text-align:right">impulse</td>
+<td>Vector</td>
+<td>Body touched</td>
+</tr>
+<tr>
+<td style="text-align:right">physOwner</td>
+<td>Object</td>
+<td>Physics Body of the Touched entity</td>
+</tr>
+</tbody>
+</table>
+<pre><code><span class="hljs-comment">// Example</span>
+    entity.addOnTouch = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(otherBody, point, impulse, physOwner)</span> </span>{ 
+        entity.changeCurrentAnimation(<span class="hljs-string">"animationClickDown"</span>); 
+        physOwner.changeCurrentAnimation(<span class="hljs-string">"animationClickDown"</span>); 
+    }</code></pre>
+</div>
+<div class="note">
+<h3 id="header-entity-on-key-down"><strong>Entity On Key Down</strong> <a class="permalink" href="#header-entity-on-key-down" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.onKeyDown(event)</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Specifies what happens to the entity when keys on the keyboard are pressed.</span></code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">event</td>
+<td>Array</td>
+<td>Currently pressed keys.s</td>
+</tr>
+</tbody>
+</table>
+<pre><code><span class="hljs-comment">// Example</span>
+    entity.onKeyDown = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(event)</span></span>{ 
+        <span class="hljs-keyword">if</span>( event[<span class="hljs-number">0</span>] == <span class="hljs-string">"Left"</span> ){
+            <span class="hljs-keyword">var</span> pos = <span class="hljs-keyword">this</span>.physBody.GetPosition();
+            pos.x -=  <span class="hljs-number">30</span>;
+            <span class="hljs-keyword">this</span>.physBody.SetPosition(pos);
+        }
+    }</code></pre>
+</div>
+<div class="note">
+<h3 id="header-entity-on-mouse-hover"><strong>Entity On Mouse Hover</strong> <a class="permalink" href="#header-entity-on-mouse-hover" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.onMouseHover(event)</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Specifies what happens to the entity when the coursor hovers on the entity.</span></code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">event</td>
+<td>Vector</td>
+<td>Cursor position</td>
+</tr>
+</tbody>
+</table>
+<pre><code><span class="hljs-comment">// Example</span>
+    entity.onMouseHover = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(event)</span></span>{ 
+        playSoundInstance( <span class="hljs-string">"Media/Audio/impact.mp3"</span>, <span class="hljs-literal">false</span> );
+    }</code></pre>
+</div>
+<div class="note">
+<h3 id="header-entity-on-mouse-down"><strong>Entity On Mouse Down</strong> <a class="permalink" href="#header-entity-on-mouse-down" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.onMouseDown(event)</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Specifies what happens to the entity when the coursor is pressed on the entity.</span></code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">event</td>
+<td>Vector</td>
+<td>Cursor position</td>
+</tr>
+</tbody>
+</table>
+<pre><code><span class="hljs-comment">// Example</span>
+    entity.onMouseDown = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(event)</span></span>{ 
+        playSoundInstance( <span class="hljs-string">"Media/Audio/impact.mp3"</span>, <span class="hljs-literal">false</span> );
+    }</code></pre>
+</div>
+<div class="note">
+<h3 id="header-entity-on-mouse-up"><strong>Entity On Mouse Up</strong> <a class="permalink" href="#header-entity-on-mouse-up" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.onMouseUp(event)</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Specifies what happens to the entity when the coursor realeased from the entity ( but still hovering on it ).</span></code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">event</td>
+<td>Vector</td>
+<td>Cursor position</td>
+</tr>
+</tbody>
+</table>
+<pre><code><span class="hljs-comment">// Example</span>
+    entity.onMouseUp = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(event)</span></span>{ 
+        playSoundInstance( <span class="hljs-string">"Media/Audio/impact.mp3"</span>, <span class="hljs-literal">false</span> );
+    }</code></pre>
+</div>
+<div class="note">
+<h3 id="header-entity-additional-update"><strong>Entity Additional Update</strong> <a class="permalink" href="#header-entity-additional-update" aria-hidden="true">¶</a></h3>
+<pre><code class="language-http"><span class="hljs-attribute">Usage</span>: <span class="hljs-string">entity.additionalUpdate()</span>
+<span class="hljs-attribute">Description</span>: <span class="hljs-string">Specifies what happens to the entity when the coursor hovers on the entity.</span></code></pre>
+<pre><code><span class="hljs-comment">// Example</span>
+    entity.additionalUpdate = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(event)</span></span>{ 
+         <span class="hljs-keyword">if</span>(entity.currentAnimation == <span class="hljs-string">"explode"</span> &amp;&amp; entity.frame == <span class="hljs-number">5</span>) scene.removeEntity(entity.id);
+    }</code></pre>
+</div>
+</section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 20 Mar 2016</p><script>/* eslint-env browser */
+/* eslint quotes: [2, "single"] */
+'use strict';
+
+/*
+  Determine if a string ends with another string.
+*/
+function endsWith(str, suffix) {
+    return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
+
+/*
+  Get a list of direct child elements by class name.
+*/
+function childrenByClass(element, name) {
+  var filtered = [];
+
+  for (var i = 0; i < element.children.length; i++) {
+    var child = element.children[i];
+    var classNames = child.className.split(' ');
+    if (classNames.indexOf(name) !== -1) {
+      filtered.push(child);
+    }
+  }
+
+  return filtered;
+}
+
+/*
+  Get an array [width, height] of the window.
+*/
+function getWindowDimensions() {
+  var w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.body,
+      x = w.innerWidth || e.clientWidth || g.clientWidth,
+      y = w.innerHeight || e.clientHeight || g.clientHeight;
+
+  return [x, y];
+}
+
+/*
+  Collapse or show a request/response example.
+*/
+function toggleCollapseButton(event) {
+    var button = event.target.parentNode;
+    var content = button.parentNode.nextSibling;
+    var inner = content.children[0];
+
+    if (button.className.indexOf('collapse-button') === -1) {
+      // Clicked without hitting the right element?
+      return;
+    }
+
+    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+        // Currently showing, so let's hide it
+        button.className = 'collapse-button';
+        content.style.maxHeight = '0px';
+    } else {
+        // Currently hidden, so let's show it
+        button.className = 'collapse-button show';
+        content.style.maxHeight = inner.offsetHeight + 12 + 'px';
+    }
+}
+
+function toggleTabButton(event) {
+    var i, index;
+    var button = event.target;
+
+    // Get index of the current button.
+    var buttons = childrenByClass(button.parentNode, 'tab-button');
+    for (i = 0; i < buttons.length; i++) {
+        if (buttons[i] === button) {
+            index = i;
+            button.className = 'tab-button active';
+        } else {
+            buttons[i].className = 'tab-button';
+        }
+    }
+
+    // Hide other tabs and show this one.
+    var tabs = childrenByClass(button.parentNode.parentNode, 'tab');
+    for (i = 0; i < tabs.length; i++) {
+        if (i === index) {
+            tabs[i].style.display = 'block';
+        } else {
+            tabs[i].style.display = 'none';
+        }
+    }
+}
+
+/*
+  Collapse or show a navigation menu. It will not be hidden unless it
+  is currently selected or `force` has been passed.
+*/
+function toggleCollapseNav(event, force) {
+    var heading = event.target.parentNode;
+    var content = heading.nextSibling;
+    var inner = content.children[0];
+
+    if (heading.className.indexOf('heading') === -1) {
+      // Clicked without hitting the right element?
+      return;
+    }
+
+    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+      // Currently showing, so let's hide it, but only if this nav item
+      // is already selected. This prevents newly selected items from
+      // collapsing in an annoying fashion.
+      if (force || window.location.hash && endsWith(event.target.href, window.location.hash)) {
+        content.style.maxHeight = '0px';
+      }
+    } else {
+      // Currently hidden, so let's show it
+      content.style.maxHeight = inner.offsetHeight + 12 + 'px';
+    }
+}
+
+/*
+  Refresh the page after a live update from the server. This only
+  works in live preview mode (using the `--server` parameter).
+*/
+function refresh(body) {
+    document.querySelector('body').className = 'preload';
+    document.body.innerHTML = body;
+
+    // Re-initialize the page
+    init();
+    autoCollapse();
+
+    document.querySelector('body').className = '';
+}
+
+/*
+  Determine which navigation items should be auto-collapsed to show as many
+  as possible on the screen, based on the current window height. This also
+  collapses them.
+*/
+function autoCollapse() {
+  var windowHeight = getWindowDimensions()[1];
+  var itemsHeight = 64; /* Account for some padding */
+  var itemsArray = Array.prototype.slice.call(
+    document.querySelectorAll('nav .resource-group .heading'));
+
+  // Get the total height of the navigation items
+  itemsArray.forEach(function (item) {
+    itemsHeight += item.parentNode.offsetHeight;
+  });
+
+  // Should we auto-collapse any nav items? Try to find the smallest item
+  // that can be collapsed to show all items on the screen. If not possible,
+  // then collapse the largest item and do it again. First, sort the items
+  // by height from smallest to largest.
+  var sortedItems = itemsArray.sort(function (a, b) {
+    return a.parentNode.offsetHeight - b.parentNode.offsetHeight;
+  });
+
+  while (sortedItems.length && itemsHeight > windowHeight) {
+    for (var i = 0; i < sortedItems.length; i++) {
+      // Will collapsing this item help?
+      var itemHeight = sortedItems[i].nextSibling.offsetHeight;
+      if ((itemsHeight - itemHeight <= windowHeight) || i === sortedItems.length - 1) {
+        // It will, so let's collapse it, remove its content height from
+        // our total and then remove it from our list of candidates
+        // that can be collapsed.
+        itemsHeight -= itemHeight;
+        toggleCollapseNav({target: sortedItems[i].children[0]}, true);
+        sortedItems.splice(i, 1);
+        break;
+      }
+    }
+  }
+}
+
+/*
+  Initialize the interactive functionality of the page.
+*/
+function init() {
+    var i, j;
+
+    // Make collapse buttons clickable
+    var buttons = document.querySelectorAll('.collapse-button');
+    for (i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = toggleCollapseButton;
+
+        // Show by default? Then toggle now.
+        if (buttons[i].className.indexOf('show') !== -1) {
+            toggleCollapseButton({target: buttons[i].children[0]});
+        }
+    }
+
+    var responseCodes = document.querySelectorAll('.example-names');
+    for (i = 0; i < responseCodes.length; i++) {
+        var tabButtons = childrenByClass(responseCodes[i], 'tab-button');
+        for (j = 0; j < tabButtons.length; j++) {
+            tabButtons[j].onclick = toggleTabButton;
+
+            // Show by default?
+            if (j === 0) {
+                toggleTabButton({target: tabButtons[j]});
+            }
+        }
+    }
+
+    // Make nav items clickable to collapse/expand their content.
+    var navItems = document.querySelectorAll('nav .resource-group .heading');
+    for (i = 0; i < navItems.length; i++) {
+        navItems[i].onclick = toggleCollapseNav;
+
+        // Show all by default
+        toggleCollapseNav({target: navItems[i].children[0]});
+    }
+}
+
+// Initial call to set up buttons
+init();
+
+window.onload = function () {
+    autoCollapse();
+    // Remove the `preload` class to enable animations
+    document.querySelector('body').className = '';
+};
+</script></body></html>

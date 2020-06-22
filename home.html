@@ -1,0 +1,654 @@
+
+<!doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang=en  xmlns="https://www.w3.org/1999/xhtml">
+  <head >
+ 
+    <title>Generis</title>
+    <meta charset="UTF-8">
+    <meta property="og:title" content="Generis 2D Web Game Engine">
+    <meta property="og:url" content="https://generisengine.appspot.com">
+    <meta name="description" content="Online Html Game Engine">
+    <meta name="keywords" content="Generis,2D,Game,Engine,Web,Online,HTML,CSS,JavaScript">
+    <meta name="author" content="Geraud NT">
+  <link rel="icon" type="image/gif" href="data/images/logo11Thumb.png" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/css_Lato.css" />
+  <link rel="stylesheet" href="css/css_Montserrat.css" />  
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.bpopup.min.js"></script>  
+    <script src="js/jquery.fittext.js"></script> 
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
+  
+  <link rel="stylesheet" href="css/style2.css" />
+ 
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50" >
+      
+     <div class="container-fluid" style="height: 80px;" ></div>
+
+    <nav id="menubar" class="navbar navbar-default navbar-fixed-top"> 
+
+        <a href='/engine' onclick="location.href='/engine' " data-tag="tooltip" title="Engine"><img style="width:60px; height:65px; left:45%;top:10px; position:absolute" src="data/images/logoNav.png"/></a> 
+      <div >
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button> 
+        </div> 
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-left"> 
+            <li><a class="current"><h5>Home</h5></a></li> 
+            <li><a href="/engine" onclick="location.href='/engine' "><h5>Engine</h5></a></li> 
+            <li><a href="/showcase" onclick="location.href='/showcase' "><h5>Showcase</h5></a></li>  
+          </ul>               
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/tutorials" onclick="location.href='/tutorials' "><h5>Tutorials</h5></a></li>
+            <li><a href="/assets" onclick="location.href='/assets' "><h5>Assets</h5></a></li>
+            <li><a href="/docs" onclick="location.href='/docs' "><h5>Docs</h5></a></li>
+            <li class="dropdown"> 
+              <a id="userIcon" class="dropdown-toggle" data-toggle="dropdown" title="User" onclick="if(log.innerHTML == 'LOGIN') logPopup = $('#login').bPopup(fontsize);  " > 
+              </a>
+              <div  id="userInfo" class="dropdown-menu dropdown-menu-right userInfo" style="visibility:hidden">  
+                <div>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <a id="hostUrl" href="/" target="_blank">
+                            <img id="hostLogo" src="data/images/logoNav.png" class="logo1" data-toggle="tooltip" title="Host">
+                          </a>
+                        </div>
+                        <div class="col-sm-8">
+                          <div id="userName"> User Name </div>
+                    <div id="userEmail"> username@email.com </div>
+                    <button id="userAccount" data-toggle="tooltip" title="Account Settings"> My Account </button>
+                        </div>
+                      </div>
+                    </div>
+                <div id="log" onclick="userLoging()">LOGIN</div>
+              </div> 
+            </li>
+          
+          </ul>
+        </div> 
+      </div>
+    </nav>  
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li> 
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox" style="background:#000">
+            <div class="item active">
+              <img src="data/images/gland_4.png" alt="Generis"> 
+            </div>
+            <div class="item">
+              <img src="data/images/gland_5.png" alt="Generis"> 
+            </div> 
+             <div class="item">
+              <img src="data/images/gland_6.png" alt="Generis"> 
+            </div> 
+             <div class="item">
+              <img src="data/images/gland_7.png" alt="Generis" > 
+            </div> 
+          </div>
+         <div class="carousel-inner-body"> 
+            <div class="overlay" style="overflow: hidden;">  
+                <div style="width:100%; height:100%;">   
+                       <div >
+                        <div class="overlayImg" style="overflow: hidden;">
+                          <img src="data/images/logo11.png" class="logo1" alt="Random Name">
+                        </div>
+                        <div class="overlayProps">
+                          <h1 >Generis <span class="textCool">2D</span></h1>
+                          <h2 > Web Game Engine </h2>
+                          <h3 > game developement never been easier </h3>   
+                        </div>
+                          <button class=" niceDiv " style="paddind: 0; height:70px;left: 40%;bottom: 60px; position: absolute;" onclick="location.href='/engine' ">Start Developing</button>
+                      </div> 
+                </div> 
+            </div>
+        </div>
+    </div> 
+ 
+
+<!-- ABOUT -->
+<div id="about" class="section-dark" style="z-index:1000;border-top: 15px solid #222222">
+   
+  <div class="inner-shades-dark">
+    <div class="container" style="text-align: center; "> 
+      <div class="wowload fadeInDown animated" >
+        <h2>ABOUT</h2>  
+      </div>
+      <div class="wowload fadeInDown animated" > 
+        <p>Generis is a free open source game engine that allows novice to proffesional 2D web game development entirely online...</p>  
+      </div> 
+      <div class="wowload fadeInDown animated">
+        <div class="col-sm-4">
+          <p class="text-center"><strong>From Concept</strong></p><br>
+          <a href="#demo" data-toggle="collapse">
+            <img src="data/images/concept.jpg"  class=" person"  alt="Random Name">
+          </a>
+          <div id="demo" class="collapse">
+            <p>Got an idea for a great game?</p>
+            <p>Thought about the design?</p>
+            <p>Perfect.</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <p class="text-center"><strong>To Implementation</strong></p><br>
+          <a href="#demo2" data-toggle="collapse">
+            <img src="data/images/web-dev.png" class=" person" alt="Random Name">
+          </a>
+          <div id="demo2" class="collapse"> 
+            <p>Implement your game game using</p>
+            <p>e.g HTML, JAVASCRIPT, CSS</p> 
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <p class="text-center"><strong>To Publishing</strong></p><br>
+          <a href="#demo3" data-toggle="collapse">
+            <img src="data/images/OneDrive-Dropbox-Google-Drive-and-Box.png" class=" person" alt="Random Name">
+          </a>
+          <div id="demo3" class="collapse">
+            <p>Choose were you want to host all your game data.</p>
+            <p>i.e OneDrive, GoogleDrive, Dropbox, box</p>
+            <p>Publish your game directly using Generis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>   
+ 
+
+<!-- GAMES -->
+<div>
+  <div class="mobile-resize-bg" data-parallax="scroll" data-image-src="data/images/generisAssetsWall.jpg" style="border-top: 15px solid #618bac; text-align: center">
+     <div id="games" class="section-dark" style="background:none">
+      <div class="inner-shades-dark">
+        <div class="container">
+          <div class="wowload fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+            <h2>GAMES</h2>  
+            <h4>Sample games created with Generis</h4>
+          </div>
+          <div class="row text-center">
+            <div  class="wowload fadeInDown animated">
+              <div class="col-sm-4">
+                <div class="thumbnail niceDiv">
+                  <img src="data/images/GLANDScrenshot.jpg" alt="GLAND">
+                  <p><strong><a href="https://googledrive.com/host/0B2X1aDnxHpX1cVhtd3dma0F3bkk/GLAND.html">GLAND</a></strong></p>
+                  <p>2D Platform Game. <br> - Uses generis game engine <br>
+                   - Published with generis engine <br>
+                   - Published externally <p>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="thumbnail niceDiv">
+                  <img src="data/images/tetris.jpg" alt="Cool Tetris">
+                  <p><strong><a href="https://3161e1ba4ea4223ef3ed6e4ac1b56513462c13dd.googledrive.com/host/0B2C_qWYBrGFZOE9DbUo5cFEyZVE/Cool%20Tetris.html">Cool Tetris</a></strong></p>
+                  <p>2D classic game. <br> - Uses generis game engine <br>  
+                   - Published with generis engine <p>
+                </div> 
+              </div>
+              <div class="col-sm-4">
+               <div class="thumbnail niceDiv">
+                  <img src="data/images/minesweeper.png" alt="Minesweeper">
+                  <p><strong><a href="https://minesweeper3d.appspot.com/">Minesweeper</a></strong></p>
+                  <p>3D logic game. <br> - Uses External libraries ( threejs ) <br>
+                   - Published with generis engine <br>
+                   - Published externally  <p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <h3>What Game Developers say</h3>
+        <div id="myCarousel2" class="carousel slide text-center wowload fadeInDown animated" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel2" data-slide-to="1"></li>
+            <li data-target="#myCarousel2" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner " role="listbox">
+            <div class="item active wowload fadeInDown animated">
+            <h4>"This game engine is the best.<br> I am a total beginner in game development and programming but I was able to create a cool tetris game."<br>
+                 <span style="font-style:normal;">
+                 1st year programmer
+                 </span></h4>
+            </div>
+            <div class="item wowload fadeInDown animated">
+              <h4>"I have used quite a few good web game engines in the past years,<br> but I must say this one is quite promissing."<br> 
+              <span style="font-style:normal;"> 
+              Game Developer
+              </span></h4>
+            </div>
+            <div class="item wowload fadeInDown animated">
+              <h4>" I don't know how I got here,  but I am glad I did."<br> 
+              <span style="font-style:normal;">
+              Software Developer
+              </span></h4>
+            </div>
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel2" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel2" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div> 
+        
+        </div>  
+      </div>
+      
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div  id="services" class="section-dark" style="z-index:1000;border-top: 15px solid #222222; border-bottom: 15px solid #222222">
+   
+  <div class="inner-shades-dark">
+    <div class="container" style="text-align: center; "> 
+      <div class="wowload fadeInDown animated" >
+        <h2>SERVICES</h2>  
+        <h4>What Generis Engine Offers</h4>  
+      </div>
+        <div class="row wowload fadeInDown animated">
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-cog"></span>
+                <h4>Scene Engine</h4>
+                <p>Handles Creation and Management of world scenes.</p>
+            </div>
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-user"></span>
+                <h4>Entity Engine</h4>
+                <p>Handles Creation and Management of entities.</p>
+            </div>  
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-user"></span>
+                <h4>Event Engine</h4>
+                <p>Handles Creation and Management of events.</p>
+            </div>  
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-hand-down"></span>
+                <h4>Input Engine</h4>
+                <p>Handles all world inputs. e.g Keyboard, Mouse, Touchscreen, ...</p>
+            </div>
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-eye-open"></span>
+                <h4>Render Engine</h4>
+                <p>Handles everything related world rendering.</p>
+            </div> 
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-volume-up"></span>
+                <h4>Sound Manager</h4>
+                <p>Handles everything related world sounds.</p>
+            </div> 
+        </div>
+        <br><br>
+        
+        <div class="row wowload fadeInDown animated">
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-picture"></span>
+                <h4>Sprites Manager</h4>
+                <p> Enables you to use Spritesheets.</p>
+            </div>
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-th"></span>
+                <h4>Tiles Manager</h4>
+                <p>Enables you to use Tile Maps.</p>
+            </div>
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-wrench"></span>
+                <h4>Helper Functions</h4>
+                <p>Functions to make your game dev life a lot more easier. e.g walk, jump, attack ... </p>
+            </div>
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-certificate"></span>
+                <h4>Effects</h4>
+                <p>Tween & Transition effects</p>
+            </div>  
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-globe"></span>
+                <h4>Cross Browser Compatible</h4>
+                <p>Compatible with all major browsers & mobile devices: </p>
+                <p>Chrome, Safari, Firefox, Opera, IE, Android, iOS</p>
+            </div>
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-cloud"></span>
+                <h4>Cloud</h4> 
+                <p> Save and Publish your game in the cloud.</p>
+            </div>
+            <div class="col-sm-2">
+                <span class="glyphicon glyphicon-plus-sign"></span>
+                <h4>And Much More</h4> 
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+  
+     <footer class="text-center" >
+      <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      </a><br><br>
+      <p> Copyright © Generis Engine 2016 ... </p>
+      <div class="row"> 
+            <div class="col-sm-4 text-center"> 
+                <h3> <strong> TOOLS </strong> </h3>  <br>
+                <div data-toggle="tooltip" title="Tiles Map Creator" class="row"> <a href="https://www.mapeditor.org/"> 
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/tiled.png" class="logo2" alt="Tiles Map Creator">    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Tiled</h3> 
+                </div>  
+                </a> </div>   
+                <div data-toggle="tooltip" title="Texture Packer" class="row"> <a href="https://www.codeandweb.com/texturepacker">
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/texturepacker.png" class="logo2" >    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>TexturePacker</h3> 
+                </div>  
+                </a> </div>  
+                <div data-toggle="tooltip" title="Physics Editor" class="row"> <a href="https://www.codeandweb.com/physicseditor">
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/phyeditor.png" class="logo2" >    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Physics Editor</h3> 
+                </div>  
+                </a> </div>  
+                <div data-toggle="tooltip" title="Image Editor" class="row"> <a href="https://www.gimp.org">
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/gimp.png" class="logo2" >    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Gimp</h3> 
+                </div>  
+                </a> </div>   
+         
+            </div>
+            <div class="col-sm-4 text-center">  
+                <h3> <strong> RESOURCES </strong> </h3> <br>
+                <div data-toggle="tooltip" title="Showcase" class="row"> <a href="/showcase" > 
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;"  src="data/images/showcase.png">    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Showcase</h3> 
+                </div>  
+                </a> </div>   
+                <div data-toggle="tooltip" title="Tutorials" class="row"> <a href="/tutorials" >
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/tutorials.png">    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Tutorials</h3> 
+                </div>  
+                </a> </div>  
+                <div data-toggle="tooltip" title="Assets" class="row"> <a href="/assets">
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;"  src="data/images/assets1.png" >    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Assets</h3> 
+                </div>  
+                </a> </div>  
+                <div data-toggle="tooltip" title="Documentation" class="row"> <a href="/docs">
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/docs1.png" >    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Documentation</h3> 
+                </div>  
+                </a> </div>   
+              </div>
+            <div class="col-sm-4 text-center">  
+              <h3> <strong> COMMUNITY </strong>  </h3> <br>
+               <div data-toggle="tooltip" title="Forum" class="row"> <a href="/forum" > 
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;"  src="data/images/forum.png">    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Forum</h3> 
+                </div>  
+                </a> </div>   
+                <div data-toggle="tooltip" title="Github Repository" class="row"> <a href="https://github.com/Nangue-Tasse/generis2d" >
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/github.png">    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Github Repository</h3> 
+                </div>  
+                </a> </div>  
+                <div data-toggle="tooltip" title="Facebook Page" class="row"> <a href="https://www.facebook.com/generisengine">
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;"  src="data/images/facebook.png" >    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Facebook Page</h3> 
+                </div>  
+                </a> </div>  
+                <div data-toggle="tooltip" title="Twitter" class="row"> <a href="https://twitter.com/generisengine">
+                <div class="col-sm-6">
+                  <img style="width:60px; height:60px;" src="data/images/twitter.png" >    
+                </div> 
+                <div class="col-sm-6">
+                   <h3>Twitter</h3> 
+                </div>  
+                </a> </div>   
+            </div> 
+
+        </div> 
+    </footer>
+
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript">
+    var wow = new WOW(
+      {
+        boxClass:     'wowload',      // animated element css class (default is wow)
+        animateClass: 'animated', // animation css class (default is animated)
+        offset:       0,          // distance to the element when triggering the animation (default is 0)
+        mobile:       true,       // trigger animations on mobile devices (default is true)
+        live:         true        // act on asynchronously loaded content (default is true)
+      }
+    );
+    wow.init();
+
+
+    $(document).ready(function(){
+        // Initialize Tooltip
+        $('[data-toggle="tooltip"]').tooltip();
+    })
+
+    $(document).ready(function(){
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+            try { 
+              // Prevent default anchor click behavior
+              event.preventDefault(); 
+              // Store hash
+              var hash = this.hash; 
+              // Using jQuery's animate() method to add smooth page scroll
+              // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+              $('html, body').animate(
+                  { scrollTop: $(hash).offset().top }, 900, 
+                  function(){  window.location.hash = hash; }
+              );
+            } catch(e) {}
+        });
+    })
+
+    $(window).resize(function(){
+       jQuery(".overlayProps").fitText();
+       console.log("yes");
+    }); 
+       jQuery(".overlayProps").fitText();
+
+ 
+
+    </script>
+
+    <div id="login" class="popUp" >  
+        <div class="blog1"> 
+            WELCOME 
+      </div>
+      <div class="blog2">
+        <div style="width: 100%; height: 20%; position: absolute; top: 8%; "> Choose your prefered hosting service
+        </div>  
+        <div style="width: 100%; height: 70%; position: absolute; top: 30%; ">  
+            <div id="gDrive" class="niceDiv gDrive" onclick="gDriveLog()"> 
+              <img src="data/images/google-drive-logo.png"/>
+            </div>  
+            <div id="onedrive" class="niceDiv onedrive" onclick="oneDriveLog()"> 
+              <img src="data/images/drive.png"/>
+            </div>  
+            <div id="dropbox" class="niceDiv dropbox" onclick="dropBoxLog()"> 
+              <img src="data/images/Dropbox-Logo.png"/>
+            </div>  
+            <div id="box" class="niceDiv box" onclick="boxLog()"> 
+              <img src="data/images/boxdotneticon.png"/>
+            </div>  
+        </div>  
+      </div> 
+        <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div>  
+    </div>
+
+    <div id="NotAvaillable" class="popUp" style="height: 30%; width: 40%;">  
+        <div class="blog1 " style="background-color: #ff0000"> <div style="width: 100%; height: 100%;  "> Not yet available </div> </div>
+      <div class="blog2">
+        <div id="NotAvaillablePopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Updates will be available very soon.
+        </div>   
+      </div> 
+        <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+         
+    </div> 
+
+    <div id="logError" class="popUp" style="height: 30%; ">  
+        <div class="blog1 " style="background-color: #ff0000"> <div style="width: 100%; height: 100%; "> Error </div> 
+      </div>
+      <div class="blog2">
+        <div id="errorPopup" style="width: 95%; height: 5%; top: 5%; position: absolute;"> Sorry, an error has occurred. Please try again, or Reload the page.
+        </div>   
+      </div> 
+        <div class="closePop"> <div class="img-circle b-close"> <img src="data/images/close.png" /> </div> </div> 
+    </div> 
+
+    <script>
+       var log = document.getElementById("log");
+       var logPopup;
+       var displayName , emailAddress;
+
+       function fontsize(){
+          var blog1 = $(this).find(".blog1");
+          var blog2 = $(this).find(".blog2"); 
+          var This = this;
+
+                  function resize() { 
+                    var newHeight = $(This).height() - blog1.height();  
+            $(this).css("height", newHeight); 
+          } 
+          blog2.each(resize);
+          $(window).resize(function(){
+              blog2.each(resize);
+          }); 
+
+                  blog1.fitText(1, { maxFontSize: '50px' }); 
+       }  
+
+        CLIENT_ID= '414084492097-5tdnrmuu79k3fqecf8sn6t2211celnjc.apps.googleusercontent.com';
+        SCOPES= ['https://www.googleapis.com/auth/drive'];
+ 
+        function gDriveLog() {     
+          gapi.auth.authorize( {client_id: this.CLIENT_ID, scope: this.SCOPES, immediate: false},
+                                  gDriveAuthResult_2);
+        }
+
+        function checkAuth() { 
+          gapi.auth.authorize( {client_id: this.CLIENT_ID, scope: this.SCOPES.join(' '), immediate: true},
+                                  gDriveAuthResult_1);
+        }
+        function gDriveAuthResult_1(authResult) { 
+            if (authResult && !authResult.error) loadDriveApi(); 
+        }
+        function gDriveAuthResult_2(authResult) { 
+            if (authResult && !authResult.error) { 
+              loadDriveApi();  
+              try { logPopup.close(); } catch(e) {}
+            } else { 
+               $('#logError').bPopup(fontsize); 
+            }
+        }
+
+        function loadDriveApi() {
+            gapi.client.load('drive', 'v2', setup);
+        } 
+
+        function setup() { 
+           var request = gapi.client.drive.about.get();
+
+            request.execute(function(resp) {  
+                displayName = resp.user.displayName;
+                emailAddress = resp.user.emailAddress;
+                document.getElementById("userName").innerHTML = resp.user.displayName;
+                document.getElementById("userEmail").innerHTML = resp.user.emailAddress;
+                document.getElementById("userInfo").style.visibility = "visible";
+                document.getElementById("hostUrl").href = "https://drive.google.com/drive/my-drive";
+                document.getElementById("userAccount").onclick = function(){location.href="https://drive.google.com/drive/my-drive";}
+                document.getElementById("hostLogo").src = "data/images/google-drive-logo.png";
+                log.innerHTML = "LOGOUT";
+                try { loginP.close(); } catch(e) {}
+            });   
+          } 
+
+          function userLoging(){  
+            log = document.getElementById("log");
+            if(log.innerHTML == "LOGOUT") {   
+              log.innerHTML = "LOGIN";
+              document.getElementById("userInfo").style.visibility = "hidden";
+              logPopup = $('#login').bPopup(fontsize); 
+            }
+          } 
+
+          function boxLog() { 
+             $('#NotAvaillable').bPopup(fontsize);
+
+           }
+           
+           function oneDriveLog(){ 
+            $('#NotAvaillable').bPopup(fontsize);
+           }
+           
+           function dropBoxLog(){ 
+            $('#NotAvaillable').bPopup(fontsize);
+           }
+    </script>
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth "> </script>
+    
+</body>
+</html>
