@@ -514,6 +514,7 @@
         games = [{"gameUrl": "https://drive.google.com/uc?id=0B5Fq0Fh1vSnUck9TUGZ5aS1EbVk", "viewers": "nangue tasse geraud", "raters": "nangue tasse geraud", "gameRating": "5", "gameViews": "1"}, 
                 ];
         */
+       /*
         var seen = [];
         var newGames = [];
 
@@ -524,6 +525,14 @@
           }
         }
         games = newGames;
+        */
+        var newGames = [];
+        for(var i=0; i<games.length; i++){
+          newGames.push(games[i]); 
+          newGames[i].gameCode = "";
+        }
+        games = newGames;
+        
         notDone = games.length;
 
         console.log(games);
